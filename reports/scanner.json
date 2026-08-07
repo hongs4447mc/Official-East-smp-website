@@ -1,0 +1,122 @@
+[
+  {
+    "type": "📁 Files",
+    "name": "package.json",
+    "passed": true,
+    "details": "File exists"
+  },
+  {
+    "type": "📁 Files",
+    "name": "astro.config.mjs",
+    "passed": true,
+    "details": "File exists"
+  },
+  {
+    "type": "📁 Files",
+    "name": "src/pages/index.astro",
+    "passed": true,
+    "details": "File exists"
+  },
+  {
+    "type": "📁 Files",
+    "name": "src/pages/rules.astro",
+    "passed": true,
+    "details": "File exists"
+  },
+  {
+    "type": "📁 Files",
+    "name": "src/pages/roles.astro",
+    "passed": true,
+    "details": "File exists"
+  },
+  {
+    "type": "📁 Files",
+    "name": "src/pages/updates.astro",
+    "passed": true,
+    "details": "File exists"
+  },
+  {
+    "type": "📁 Files",
+    "name": "src/pages/story.astro",
+    "passed": true,
+    "details": "File exists"
+  },
+  {
+    "type": "📁 Files",
+    "name": "src/pages/applications.astro",
+    "passed": true,
+    "details": "File exists"
+  },
+  {
+    "type": "📁 Files",
+    "name": "src/layouts/layout.astro",
+    "passed": true,
+    "details": "File exists"
+  },
+  {
+    "type": "📁 Files",
+    "name": "src/styles/styles.css",
+    "passed": true,
+    "details": "File exists"
+  },
+  {
+    "type": "📂 Folder",
+    "name": "src",
+    "passed": true,
+    "details": "Folder exists"
+  },
+  {
+    "type": "📂 Folder",
+    "name": "src/pages",
+    "passed": true,
+    "details": "Folder exists"
+  },
+  {
+    "type": "📂 Folder",
+    "name": "src/components",
+    "passed": true,
+    "details": "Folder exists"
+  },
+  {
+    "type": "📂 Folder",
+    "name": "src/layouts",
+    "passed": true,
+    "details": "Folder exists"
+  },
+  {
+    "type": "📂 Folder",
+    "name": "src/scripts",
+    "passed": true,
+    "details": "Folder exists"
+  },
+  {
+    "type": "📂 Folder",
+    "name": "public",
+    "passed": true,
+    "details": "Folder exists"
+  },
+  {
+    "type": "📂 Folder",
+    "name": "tools",
+    "passed": true,
+    "details": "Folder exists"
+  },
+  {
+    "type": "⚡ Astro",
+    "name": "Astro Components",
+    "passed": true,
+    "details": "18 Astro files found"
+  },
+  {
+    "type": "🟨 JavaScript",
+    "name": "Scripts Found",
+    "passed": true,
+    "details": "5 JS/TS files found"
+  },
+  {
+    "type": "🎨 CSS",
+    "name": "Stylesheets",
+    "passed": true,
+    "details": "1 CSS files found"
+  }
+]
