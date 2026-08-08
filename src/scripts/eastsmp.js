@@ -754,9 +754,9 @@ if (
        ----------------------------------------------------- */
 
     document.addEventListener(
-        "astro:page-load",
-        startEastSMP
-    );
+    "astro:page-load",
+    startEastSMP
+);
 
 }
-```
+
