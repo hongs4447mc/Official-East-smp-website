@@ -1,659 +1,832 @@
-/* =========================
-EAST SMP ASTRO JAVASCRIPT
-========================= */
+```javascript
+/* =========================================================
+   EAST SMP ASTRO JAVASCRIPT
+   GitHub Pages Compatible
+   ========================================================= */
 
-console.log(
-	"✅ EASTSMP.JS IS RUNNING"
-);
+console.log("✅ EASTSMP.JS IS RUNNING");
 
 
+/* =========================================================
+   WEBSITE SETTINGS
+   ========================================================= */
 
 const websiteSettings = {
-
-	version: "Version 2.0",
-
-	serverIP: "eastsmp.mc.gg"
-
+    version: "Version 2.0",
+    serverIP: "eastsmp.mc.gg"
 };
 
 
+/* =========================================================
+   GITHUB PAGES BASE PATH
+   ========================================================= */
+
+const basePath =
+    typeof import.meta !== "undefined" &&
+    import.meta.env &&
+    import.meta.env.BASE_URL
+        ? import.meta.env.BASE_URL
+        : "/";
+
+
+function sitePath(path = "") {
+
+    const cleanPath =
+        path
+            .replace(/^\/+/, "")
+            .replace(/\/+$/, "");
+
+    if (!cleanPath) {
+        return basePath;
+    }
+
+    return (
+        basePath.replace(/\/+$/, "") +
+        "/" +
+        cleanPath +
+        "/"
+    );
+}
+
+
+/* =========================================================
+   GLOBAL VARIABLES
+   ========================================================= */
 
 let lastCheckTime = null;
-
 let lastCheckInterval = null;
 
 
+/* =========================================================
+   COPY IP BUTTON
+   ========================================================= */
 
-/* =========================
-COPY IP BUTTON
-========================= */
+function setupCopyButton() {
 
-function setupCopyButton(){
-
-	const copyButton =
-		document.querySelector(
-			".copy-button"
-		);
+    const copyButton =
+        document.querySelector(".copy-button");
 
 
-
-	if(!copyButton)
-		return;
-
-
-
-	copyButton.onclick = async()=>{
-
-		try{
-
-			await navigator.clipboard.writeText(
-				websiteSettings.serverIP
-			);
+    if (!copyButton) {
+        return;
+    }
 
 
-
-			copyButton.textContent =
-				"Copied!";
-
-
-
-			setTimeout(()=>{
-
-				copyButton.textContent =
-					"Copy IP";
-
-			},2000);
+    if (copyButton.dataset.copySetup === "true") {
+        return;
+    }
 
 
-		}
-		catch(error){
-
-			console.log(error);
-
-		}
-
-	};
-
-}
+    copyButton.dataset.copySetup = "true";
 
 
+    copyButton.addEventListener(
+        "click",
+        async () => {
 
-/* =========================
-MOBILE MENU
-========================= */
+            try {
 
-function setupMenu(){
-
-	const menuButton =
-		document.querySelector(
-			".menu-button"
-		);
+                await navigator.clipboard.writeText(
+                    websiteSettings.serverIP
+                );
 
 
-
-	const navLinks =
-		document.querySelector(
-			".nav-links"
-		);
+                copyButton.textContent =
+                    "Copied!";
 
 
+                setTimeout(() => {
 
-	if(!menuButton || !navLinks)
-		return;
+                    copyButton.textContent =
+                        "Copy IP";
 
+                }, 2000);
 
+            }
 
-	menuButton.onclick = (event)=>{
+            catch (error) {
 
-		event.preventDefault();
+                console.error(
+                    "Could not copy server IP:",
+                    error
+                );
 
+            }
 
-
-		navLinks.classList.toggle(
-			"active"
-		);
-
-
-	};
+        }
+    );
 
 }
 
 
+/* =========================================================
+   MOBILE MENU
+   ========================================================= */
 
-/* =========================
-DROPDOWNS
-========================= */
+function setupMenu() {
 
-function setupDropdowns(){
-
-	const suggestionButton =
-		document.querySelector(
-			".suggestion-arrow"
-		);
+    const menuButton =
+        document.querySelector(".menu-button");
 
 
-
-	const suggestionBox =
-		document.querySelector(
-			".suggestion-box"
-		);
+    const navLinks =
+        document.querySelector(".nav-links");
 
 
-
-	const statusButton =
-		document.querySelector(
-			".status-arrow"
-		);
+    if (!menuButton || !navLinks) {
+        return;
+    }
 
 
-
-	const statusBox =
-		document.querySelector(
-			".status-box"
-		);
+    if (menuButton.dataset.menuSetup === "true") {
+        return;
+    }
 
 
-
-	console.log(
-		"Dropdown setup:",
-		suggestionButton,
-		suggestionBox,
-		statusButton,
-		statusBox
-	);
+    menuButton.dataset.menuSetup = "true";
 
 
+    menuButton.addEventListener(
+        "click",
+        (event) => {
+
+            event.preventDefault();
 
 
-	if(
-		suggestionButton &&
-		suggestionBox
-	){
+            navLinks.classList.toggle(
+                "active"
+            );
 
-		suggestionButton.onclick = (event)=>{
-
-			event.preventDefault();
-
-
-
-			suggestionBox.classList.toggle(
-				"open"
-			);
-
-
-		};
-
-	}
-
-
-
-
-
-	if(
-		statusButton &&
-		statusBox
-	){
-
-		statusButton.onclick = (event)=>{
-
-			event.preventDefault();
-
-
-
-			statusBox.classList.toggle(
-				"open"
-			);
-
-
-		};
-
-	}
+        }
+    );
 
 }
 
 
+/* =========================================================
+   DROPDOWNS
+   ========================================================= */
 
-/* =========================
-SERVER STATUS
-========================= */
+function setupDropdowns() {
 
-async function checkServerStatus(){
+    const suggestionButton =
+        document.querySelector(
+            ".suggestion-arrow"
+        );
 
-	const status =
-		document.getElementById(
-			"server-status"
-		);
 
+    const suggestionBox =
+        document.querySelector(
+            ".suggestion-box"
+        );
 
 
-	const players =
-		document.getElementById(
-			"player-count"
-		);
+    const statusButton =
+        document.querySelector(
+            ".status-arrow"
+        );
 
 
+    const statusBox =
+        document.querySelector(
+            ".status-box"
+        );
 
-	const lastChecked =
-		document.getElementById(
-			"last-checked"
-		);
 
+    console.log(
+        "Dropdown setup:",
+        suggestionButton,
+        suggestionBox,
+        statusButton,
+        statusBox
+    );
 
 
-	if(!status || !players)
-		return;
+    if (
+        suggestionButton &&
+        suggestionBox &&
+        suggestionButton.dataset.dropdownSetup !== "true"
+    ) {
 
+        suggestionButton.dataset.dropdownSetup =
+            "true";
 
 
+        suggestionButton.addEventListener(
+            "click",
+            (event) => {
 
-	try{
+                event.preventDefault();
 
 
-		const response =
-			await fetch(
+                suggestionBox.classList.toggle(
+                    "open"
+                );
 
-			`https://api.mcstatus.io/v2/status/java/${websiteSettings.serverIP}`
+            }
+        );
 
-			);
+    }
 
 
+    if (
+        statusButton &&
+        statusBox &&
+        statusButton.dataset.dropdownSetup !== "true"
+    ) {
 
-		const data =
-			await response.json();
+        statusButton.dataset.dropdownSetup =
+            "true";
 
 
+        statusButton.addEventListener(
+            "click",
+            (event) => {
 
+                event.preventDefault();
 
-		if(data.online){
 
+                statusBox.classList.toggle(
+                    "open"
+                );
 
-			status.textContent =
-				"🟢 Online";
+            }
+        );
 
-
-
-			players.textContent =
-				"Players: "
-				+
-				data.players.online
-				+
-				"/"
-				+
-				data.players.max;
-
-
-		}
-
-		else{
-
-
-			status.textContent =
-				"🔴 Offline";
-
-
-
-			players.textContent =
-				"Players: 0";
-
-
-		}
-
-
-	}
-
-
-	catch{
-
-
-		status.textContent =
-			"⚠️ Error";
-
-
-
-		players.textContent =
-			"Could not check server";
-
-
-	}
-
-
-
-
-
-	lastCheckTime =
-		Date.now();
-
-
-
-
-	if(lastChecked){
-
-		lastChecked.textContent =
-			"Last Checked: 0 seconds ago";
-
-	}
-
-
-
-
-	if(!lastCheckInterval){
-
-
-		lastCheckInterval =
-			setInterval(()=>{
-
-
-				if(
-					lastChecked &&
-					lastCheckTime
-				){
-
-
-					const seconds =
-						Math.floor(
-							(Date.now()-lastCheckTime)
-							/
-							1000
-						);
-
-
-
-					lastChecked.textContent =
-						"Last Checked: "
-						+
-						seconds
-						+
-						" seconds ago";
-
-
-				}
-
-
-			},1000);
-
-
-	}
-
+    }
 
 }
 
 
+/* =========================================================
+   SERVER STATUS
+   ========================================================= */
 
-/* =========================
-LOADING SCREEN
-========================= */
+async function checkServerStatus() {
 
-function setupLoadingScreen(){
-
-	const loadingScreen =
-		document.getElementById(
-			"loading-screen"
-		);
-
+    const status =
+        document.getElementById(
+            "server-status"
+        );
 
 
-	const loadingPercent =
-		document.getElementById(
-			"loading-percent"
-		);
+    const players =
+        document.getElementById(
+            "player-count"
+        );
 
 
-
-	const loadingBar =
-		document.querySelector(
-			".loading-progress"
-		);
-
+    const lastChecked =
+        document.getElementById(
+            "last-checked"
+        );
 
 
-	if(!loadingScreen)
-		return;
+    if (!status || !players) {
+        return;
+    }
 
 
+    try {
 
-	let percent = 0;
-
-
-
-	const timer =
-		setInterval(()=>{
-
-
-			percent++;
-
-
-
-			if(loadingPercent){
-
-				loadingPercent.textContent =
-					percent + "%";
-
-			}
+        const response =
+            await fetch(
+                "https://api.mcstatus.io/v2/status/java/"
+                +
+                encodeURIComponent(
+                    websiteSettings.serverIP
+                )
+            );
 
 
+        if (!response.ok) {
 
-			if(loadingBar){
+            throw new Error(
+                "MCStatus API returned "
+                +
+                response.status
+            );
 
-				loadingBar.style.width =
-					percent + "%";
-
-			}
-
-
-
-
-
-			if(percent >= 100){
+        }
 
 
-				clearInterval(timer);
+        const data =
+            await response.json();
 
 
+        if (data.online) {
 
-				loadingScreen.classList.add(
-					"hide"
-				);
-
-
-			}
+            status.textContent =
+                "🟢 Online";
 
 
+            players.textContent =
+                "Players: "
+                +
+                data.players.online
+                +
+                "/"
+                +
+                data.players.max;
 
-		},40);
+        }
 
+        else {
+
+            status.textContent =
+                "🔴 Offline";
+
+
+            players.textContent =
+                "Players: 0";
+
+        }
+
+    }
+
+    catch (error) {
+
+        console.error(
+            "Server status check failed:",
+            error
+        );
+
+
+        status.textContent =
+            "⚠️ Error";
+
+
+        players.textContent =
+            "Could not check server";
+
+    }
+
+
+    lastCheckTime =
+        Date.now();
+
+
+    if (lastChecked) {
+
+        lastChecked.textContent =
+            "Last Checked: 0 seconds ago";
+
+    }
+
+
+    if (!lastCheckInterval) {
+
+        lastCheckInterval =
+            setInterval(() => {
+
+                if (
+                    lastChecked &&
+                    lastCheckTime
+                ) {
+
+                    const seconds =
+                        Math.floor(
+                            (
+                                Date.now()
+                                -
+                                lastCheckTime
+                            )
+                            /
+                            1000
+                        );
+
+
+                    lastChecked.textContent =
+                        "Last Checked: "
+                        +
+                        seconds
+                        +
+                        " seconds ago";
+
+                }
+
+            }, 1000);
+
+    }
 
 }
 
 
+/* =========================================================
+   LOADING SCREEN
+   ========================================================= */
 
-/* =========================
-SHORTCUTS
-========================= */
+function setupLoadingScreen() {
 
-function setupShortcuts(){
-
-	document.addEventListener(
-		"keydown",
-		(event)=>{
-
-
-			if(
-				event.ctrlKey &&
-				event.shiftKey &&
-				event.key.toLowerCase()=="b"
-			){
+    const loadingScreen =
+        document.getElementById(
+            "loading-screen"
+        );
 
 
-				event.preventDefault();
+    const loadingPercent =
+        document.getElementById(
+            "loading-percent"
+        );
 
 
-
-				window.location.href =
-					"/beta";
-
-
-			}
+    const loadingBar =
+        document.querySelector(
+            ".loading-progress"
+        );
 
 
+    if (!loadingScreen) {
+        return;
+    }
 
 
-			if(
-				event.ctrlKey &&
-				event.key.toLowerCase()=="b"
-			){
+    if (
+        loadingScreen.dataset.loadingSetup ===
+        "true"
+    ) {
+        return;
+    }
 
 
-				event.preventDefault();
+    loadingScreen.dataset.loadingSetup =
+        "true";
 
 
-
-				window.location.href =
-					"/beta-tester-bot";
+    let percent = 0;
 
 
-			}
+    const timer =
+        setInterval(() => {
+
+            percent++;
 
 
-		}
-	);
+            if (loadingPercent) {
 
-}
+                loadingPercent.textContent =
+                    percent + "%";
 
-/* =========================
-RULE SEARCH
-========================= */
-
-function setupRuleSearch(){
-
-	const search =
-		document.getElementById(
-			"rule-search"
-		);
+            }
 
 
-	const ruleBoxes =
-		document.querySelectorAll(
-			".rule-box"
-		);
+            if (loadingBar) {
+
+                loadingBar.style.width =
+                    percent + "%";
+
+            }
 
 
-	if(!search || ruleBoxes.length === 0)
-		return;
+            if (percent >= 100) {
+
+                clearInterval(timer);
 
 
-	search.addEventListener(
-		"input",
-		()=>{
+                loadingScreen.classList.add(
+                    "hide"
+                );
 
+            }
 
-			const value =
-				search.value.toLowerCase()
-				.trim();
-
-
-
-			ruleBoxes.forEach(box=>{
-
-
-				const text =
-					box.textContent
-					.toLowerCase();
-
-
-
-				if(
-					text.includes(value)
-				){
-
-					box.style.display =
-						"block";
-
-				}
-
-				else{
-
-					box.style.display =
-						"none";
-
-				}
-
-
-			});
-
-
-		}
-	);
+        }, 40);
 
 }
 
-/* =========================
-LOAD EVERYTHING
-========================= */
 
-function loadEastSMP(){
+/* =========================================================
+   KEYBOARD SHORTCUTS
+   ========================================================= */
 
-	console.log(
-		"Loading East SMP features"
-	);
+function setupShortcuts() {
+
+    if (window.eastSMPShortcutsSetup) {
+        return;
+    }
 
 
+    window.eastSMPShortcutsSetup = true;
 
-	setupCopyButton();
 
-	setupMenu();
+    document.addEventListener(
+        "keydown",
+        (event) => {
 
-	setupDropdowns();
+            if (
+                event.ctrlKey &&
+                event.shiftKey &&
+                event.key.toLowerCase() === "b"
+            ) {
 
-	setupLoadingScreen();
+                event.preventDefault();
 
-	setupShortcuts();
 
-	checkServerStatus();
+                window.location.href =
+                    sitePath("beta");
+
+
+                return;
+
+            }
+
+
+            if (
+                event.ctrlKey &&
+                !event.shiftKey &&
+                event.key.toLowerCase() === "b"
+            ) {
+
+                event.preventDefault();
+
+
+                window.location.href =
+                    sitePath(
+                        "beta-tester-bot"
+                    );
+
+            }
+
+        }
+    );
 
 }
 
 
+/* =========================================================
+   RULE SEARCH
+   ========================================================= */
 
-/* =========================
-ASTRO START
-========================= */
+function setupRuleSearch() {
 
-function startEastSMP(){
-
-	console.log(
-		"Starting East SMP"
-	);
+    const search =
+        document.getElementById(
+            "rule-search"
+        );
 
 
-	loadEastSMP();
+    const ruleBoxes =
+        document.querySelectorAll(
+            ".rule-box"
+        );
+
+
+    if (
+        !search ||
+        ruleBoxes.length === 0
+    ) {
+        return;
+    }
+
+
+    if (
+        search.dataset.searchSetup ===
+        "true"
+    ) {
+        return;
+    }
+
+
+    search.dataset.searchSetup =
+        "true";
+
+
+    search.addEventListener(
+        "input",
+        () => {
+
+            const value =
+                search.value
+                    .toLowerCase()
+                    .trim();
+
+
+            ruleBoxes.forEach(
+                (box) => {
+
+                    const text =
+                        box.textContent
+                            .toLowerCase();
+
+
+                    if (
+                        text.includes(value)
+                    ) {
+
+                        box.style.display =
+                            "block";
+
+                    }
+
+                    else {
+
+                        box.style.display =
+                            "none";
+
+                    }
+
+                }
+            );
+
+        }
+    );
 
 }
 
 
+/* =========================================================
+   INTERNAL LINKS
+   ========================================================= */
 
-if(typeof window !== "undefined"){
+function setupInternalLinks() {
 
-
-	document.addEventListener(
-		"DOMContentLoaded",
-		startEastSMP
-	);
-
-
-
-	document.addEventListener(
-		"astro:page-load",
-		startEastSMP
-	);
+    const links =
+        document.querySelectorAll(
+            "a[href]"
+        );
 
 
+    links.forEach(
+        (link) => {
+
+            const href =
+                link.getAttribute("href");
 
 
-	if(document.readyState !== "loading"){
+            if (!href) {
+                return;
+            }
 
-		startEastSMP();
 
-	}
+            if (
+                href.startsWith("http://") ||
+                href.startsWith("https://") ||
+                href.startsWith("mailto:") ||
+                href.startsWith("tel:") ||
+                href.startsWith("#") ||
+                href.startsWith("javascript:")
+            ) {
+                return;
+            }
 
+
+            if (
+                href.startsWith(basePath)
+            ) {
+                return;
+            }
+
+
+            if (
+                href.startsWith("/")
+            ) {
+
+                const clean =
+                    href.replace(
+                        /^\/+/,
+                        ""
+                    );
+
+
+                link.setAttribute(
+                    "href",
+                    sitePath(clean)
+                );
+
+            }
+
+        }
+    );
 
 }
+
+
+/* =========================================================
+   MOBILE MENU LINK CLOSING
+   ========================================================= */
+
+function setupMenuLinkClosing() {
+
+    const navLinks =
+        document.querySelector(
+            ".nav-links"
+        );
+
+
+    if (!navLinks) {
+        return;
+    }
+
+
+    const links =
+        navLinks.querySelectorAll(
+            "a"
+        );
+
+
+    links.forEach(
+        (link) => {
+
+            link.addEventListener(
+                "click",
+                () => {
+
+                    navLinks.classList.remove(
+                        "active"
+                    );
+
+                }
+            );
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   LOAD EVERYTHING
+   ========================================================= */
+
+function loadEastSMP() {
+
+    console.log(
+        "🚀 Loading East SMP features"
+    );
+
+
+    setupCopyButton();
+
+    setupMenu();
+
+    setupDropdowns();
+
+    setupLoadingScreen();
+
+    setupShortcuts();
+
+    setupRuleSearch();
+
+    setupInternalLinks();
+
+    setupMenuLinkClosing();
+
+    checkServerStatus();
+
+
+    console.log(
+        "✅ East SMP features loaded"
+    );
+
+}
+
+
+/* =========================================================
+   START EAST SMP
+   ========================================================= */
+
+function startEastSMP() {
+
+    console.log(
+        "🚀 Starting East SMP"
+    );
+
+
+    loadEastSMP();
+
+}
+
+
+/* =========================================================
+   INITIAL PAGE LOAD
+   ========================================================= */
+
+if (
+    document.readyState === "loading"
+) {
+
+    document.addEventListener(
+        "DOMContentLoaded",
+        startEastSMP,
+        {
+            once: true
+        }
+    );
+
+}
+
+else {
+
+    startEastSMP();
+
+}
+
+
+/* =========================================================
+   ASTRO CLIENT-SIDE NAVIGATION
+   ========================================================= */
+
+document.addEventListener(
+    "astro:page-load",
+    startEastSMP
+);
+```
