@@ -1,0 +1,243 @@
+---
+import Layout from "../layouts/layout.astro";
+import { siteInfo } from "../data/siteInfo.js";
+---
+
+
+<Layout title="East SMP">
+
+
+<div class="page-content main-content">
+
+
+
+<h1>
+	Official East SMP Server
+</h1>
+
+
+
+<h1>
+	Welcome to the East SMP Website!
+</h1>
+
+
+
+
+
+<div class="page-info">
+
+<p>
+
+	Website Version:
+	<b>
+		{siteInfo.version}
+	</b>
+
+	<br>
+
+	Last Updated:
+	{siteInfo.lastUpdated}
+
+</p>
+
+</div>
+
+
+
+
+
+
+
+<section>
+
+<h2>
+	Server Information
+</h2>
+
+
+
+<div class="server-ip">
+
+
+<p>
+
+	Server IP:
+	
+	<strong>
+		eastsmp.mc.gg
+	</strong>
+
+</p>
+
+
+
+<button 
+class="copy-button"
+type="button"
+>
+
+Copy IP
+
+</button>
+
+
+
+</div>
+
+
+
+
+
+<p>
+
+	Version:
+
+	<strong>
+		1.21.11
+	</strong>
+
+</p>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+
+<section>
+
+<h2>
+	East SMP Features
+</h2>
+
+
+
+<p>
+	📝 Scripted Story
+</p>
+
+
+<p>
+	🎉 Community Events
+</p>
+
+
+<p>
+	👥 Trusted Members
+</p>
+
+
+<p>
+⭐ Creator/Protag Program
+</p>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<section>
+
+<h2>
+	Upcoming Events
+</h2>
+
+
+
+<p>
+	No events currently planned.
+</p>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<section>
+
+<h2>
+	Join East SMP
+</h2>
+
+
+
+<p>
+	Want to be part of East SMP?
+</p>
+
+
+
+<p>
+	Join our Discord and apply!
+</p>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+</div>
+
+
+<script is:inline>
+
+const copyButton =
+document.querySelector(".copy-button");
+
+
+if(copyButton){
+
+copyButton.onclick = async()=>{
+
+await navigator.clipboard.writeText(
+"eastsmp.mc.gg"
+);
+
+
+copyButton.textContent =
+"Copied!";
+
+
+setTimeout(()=>{
+
+copyButton.textContent =
+"Copy IP";
+
+},2000);
+
+
+};
+
+}
+
+</script>
+
+</Layout>

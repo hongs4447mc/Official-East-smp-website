@@ -1,12 +1,14 @@
-/* =========================
+/* =========================================================
 EAST SMP ASTRO JAVASCRIPT
-========================= */
+GitHub Pages + Astro Compatible
+========================================================= */
 
-console.log(
-	"✅ EASTSMP.JS IS RUNNING"
-);
+console.log("✅ EASTSMP.JS IS RUNNING");
 
 
+/* =========================================================
+WEBSITE SETTINGS
+========================================================= */
 
 const websiteSettings = {
 
@@ -17,18 +19,18 @@ const websiteSettings = {
 };
 
 
-
 let lastCheckTime = null;
 
 let lastCheckInterval = null;
 
 
 
-/* =========================
+/* =========================================================
 COPY IP BUTTON
-========================= */
+========================================================= */
 
-function setupCopyButton(){
+function setupCopyButton() {
+
 
 	const copyButton =
 		document.querySelector(
@@ -37,52 +39,87 @@ function setupCopyButton(){
 
 
 
-	if(!copyButton)
+	if (!copyButton) {
+
 		return;
 
-
-
-	copyButton.onclick = async()=>{
-
-		try{
-
-			await navigator.clipboard.writeText(
-				websiteSettings.serverIP
-			);
+	}
 
 
 
-			copyButton.textContent =
-				"Copied!";
+	if (
+		copyButton.dataset.copySetup === "true"
+	) {
+
+		return;
+
+	}
 
 
 
-			setTimeout(()=>{
+	copyButton.dataset.copySetup =
+		"true";
+
+
+
+	copyButton.addEventListener(
+		"click",
+		async () => {
+
+
+			try {
+
+
+				await navigator.clipboard.writeText(
+					websiteSettings.serverIP
+				);
+
+
 
 				copyButton.textContent =
-					"Copy IP";
+					"Copied!";
 
-			},2000);
+
+
+				setTimeout(
+					() => {
+
+						copyButton.textContent =
+							"Copy IP";
+
+					},
+					2000
+				);
+
+
+			}
+
+			catch(error) {
+
+
+				console.error(
+					"Could not copy server IP:",
+					error
+				);
+
+
+			}
 
 
 		}
-		catch(error){
+	);
 
-			console.log(error);
-
-		}
-
-	};
 
 }
 
 
 
-/* =========================
+/* =========================================================
 MOBILE MENU
-========================= */
+========================================================= */
 
-function setupMenu(){
+function setupMenu() {
+
 
 	const menuButton =
 		document.querySelector(
@@ -98,33 +135,60 @@ function setupMenu(){
 
 
 
-	if(!menuButton || !navLinks)
+	if (
+		!menuButton ||
+		!navLinks
+	) {
+
 		return;
 
-
-
-	menuButton.onclick = (event)=>{
-
-		event.preventDefault();
+	}
 
 
 
-		navLinks.classList.toggle(
-			"active"
-		);
+	if (
+		menuButton.dataset.menuSetup === "true"
+	) {
+
+		return;
+
+	}
 
 
-	};
+
+	menuButton.dataset.menuSetup =
+		"true";
+
+
+
+	menuButton.addEventListener(
+		"click",
+		(event) => {
+
+
+			event.preventDefault();
+
+
+
+			navLinks.classList.toggle(
+				"active"
+			);
+
+
+		}
+	);
+
 
 }
 
 
 
-/* =========================
+/* =========================================================
 DROPDOWNS
-========================= */
+========================================================= */
 
-function setupDropdowns(){
+function setupDropdowns() {
+
 
 	const suggestionButton =
 		document.querySelector(
@@ -154,70 +218,81 @@ function setupDropdowns(){
 
 
 
-	console.log(
-		"Dropdown setup:",
-		suggestionButton,
-		suggestionBox,
-		statusButton,
-		statusBox
-	);
-
-
-
-
-	if(
+	if (
 		suggestionButton &&
-		suggestionBox
-	){
-
-		suggestionButton.onclick = (event)=>{
-
-			event.preventDefault();
+		suggestionBox &&
+		suggestionButton.dataset.dropdownSetup !== "true"
+	) {
 
 
-
-			suggestionBox.classList.toggle(
-				"open"
-			);
+		suggestionButton.dataset.dropdownSetup =
+			"true";
 
 
-		};
+
+		suggestionButton.addEventListener(
+			"click",
+			(event) => {
+
+
+				event.preventDefault();
+
+
+
+				suggestionBox.classList.toggle(
+					"open"
+				);
+
+
+			}
+		);
+
 
 	}
 
 
 
 
-
-	if(
+	if (
 		statusButton &&
-		statusBox
-	){
-
-		statusButton.onclick = (event)=>{
-
-			event.preventDefault();
+		statusBox &&
+		statusButton.dataset.dropdownSetup !== "true"
+	) {
 
 
-
-			statusBox.classList.toggle(
-				"open"
-			);
+		statusButton.dataset.dropdownSetup =
+			"true";
 
 
-		};
+
+		statusButton.addEventListener(
+			"click",
+			(event) => {
+
+
+				event.preventDefault();
+
+
+
+				statusBox.classList.toggle(
+					"open"
+				);
+
+
+			}
+		);
+
 
 	}
+
 
 }
-
-
-
-/* =========================
+/* =========================================================
 SERVER STATUS
-========================= */
+========================================================= */
 
-async function checkServerStatus(){
+async function checkServerStatus() {
+
 
 	const status =
 		document.getElementById(
@@ -240,21 +315,40 @@ async function checkServerStatus(){
 
 
 
-	if(!status || !players)
+	if (
+		!status ||
+		!players
+	) {
+
 		return;
 
+	}
 
 
 
-	try{
+	try {
 
 
 		const response =
 			await fetch(
-
-			`https://api.mcstatus.io/v2/status/java/${websiteSettings.serverIP}`
-
+				"https://api.mcstatus.io/v2/status/java/"
+				+
+				encodeURIComponent(
+					websiteSettings.serverIP
+				)
 			);
+
+
+
+		if (!response.ok) {
+
+			throw new Error(
+				"MCStatus API returned "
+				+
+				response.status
+			);
+
+		}
 
 
 
@@ -263,8 +357,7 @@ async function checkServerStatus(){
 
 
 
-
-		if(data.online){
+		if (data.online) {
 
 
 			status.textContent =
@@ -282,9 +375,10 @@ async function checkServerStatus(){
 				data.players.max;
 
 
+
 		}
 
-		else{
+		else {
 
 
 			status.textContent =
@@ -302,7 +396,15 @@ async function checkServerStatus(){
 	}
 
 
-	catch{
+
+	catch(error) {
+
+
+		console.error(
+			"Server status check failed:",
+			error
+		);
+
 
 
 		status.textContent =
@@ -318,58 +420,63 @@ async function checkServerStatus(){
 
 
 
-
-
 	lastCheckTime =
 		Date.now();
 
 
 
+	if (lastChecked) {
 
-	if(lastChecked){
 
 		lastChecked.textContent =
 			"Last Checked: 0 seconds ago";
+
 
 	}
 
 
 
-
-	if(!lastCheckInterval){
+	if (!lastCheckInterval) {
 
 
 		lastCheckInterval =
-			setInterval(()=>{
+			setInterval(
+				() => {
 
 
-				if(
-					lastChecked &&
-					lastCheckTime
-				){
+					if (
+						lastChecked &&
+						lastCheckTime
+					) {
 
 
-					const seconds =
-						Math.floor(
-							(Date.now()-lastCheckTime)
-							/
-							1000
-						);
+						const seconds =
+							Math.floor(
+								(
+									Date.now()
+									-
+									lastCheckTime
+								)
+								/
+								1000
+							);
 
 
 
-					lastChecked.textContent =
-						"Last Checked: "
-						+
-						seconds
-						+
-						" seconds ago";
+						lastChecked.textContent =
+							"Last Checked: "
+							+
+							seconds
+							+
+							" seconds ago";
 
 
-				}
+					}
 
 
-			},1000);
+				},
+				1000
+			);
 
 
 	}
@@ -379,11 +486,14 @@ async function checkServerStatus(){
 
 
 
-/* =========================
-LOADING SCREEN
-========================= */
 
-function setupLoadingScreen(){
+
+/* =========================================================
+LOADING SCREEN
+========================================================= */
+
+function setupLoadingScreen() {
+
 
 	const loadingScreen =
 		document.getElementById(
@@ -406,8 +516,26 @@ function setupLoadingScreen(){
 
 
 
-	if(!loadingScreen)
+	if (!loadingScreen) {
+
 		return;
+
+	}
+
+
+
+	if (
+		loadingScreen.dataset.loadingSetup === "true"
+	) {
+
+		return;
+
+	}
+
+
+
+	loadingScreen.dataset.loadingSetup =
+		"true";
 
 
 
@@ -416,119 +544,175 @@ function setupLoadingScreen(){
 
 
 	const timer =
-		setInterval(()=>{
+		setInterval(
+			() => {
 
 
-			percent++;
-
-
-
-			if(loadingPercent){
-
-				loadingPercent.textContent =
-					percent + "%";
-
-			}
+				percent++;
 
 
 
-			if(loadingBar){
-
-				loadingBar.style.width =
-					percent + "%";
-
-			}
+				if (loadingPercent) {
 
 
+					loadingPercent.textContent =
+						percent + "%";
 
 
-
-			if(percent >= 100){
-
-
-				clearInterval(timer);
+				}
 
 
 
-				loadingScreen.classList.add(
-					"hide"
-				);
+				if (loadingBar) {
 
 
-			}
+					loadingBar.style.width =
+						percent + "%";
+
+
+				}
 
 
 
-		},40);
+				if (percent >= 100) {
+
+
+					clearInterval(
+						timer
+					);
+
+
+
+
+
+
+
+					loadingScreen.classList.add(
+						"hide"
+					);
+
+
+				}
+
+
+			},
+			40
+		);
+
+
 
 
 }
-
-
-
-/* =========================
+/* =========================================================
 SHORTCUTS
-========================= */
+GitHub Pages + Astro Compatible
+========================================================= */
 
-function setupShortcuts(){
-
-	document.addEventListener(
-		"keydown",
-		(event)=>{
+function setupShortcuts() {
 
 
-			if(
-				event.ctrlKey &&
-				event.shiftKey &&
-				event.key.toLowerCase()=="b"
-			){
+	if (
+		window.eastSMPShortcutsSetup
+	) {
 
+		return;
 
-				event.preventDefault();
+	}
 
 
 
-				window.location.href =
-					"/beta";
-
-
-			}
+	window.eastSMPShortcutsSetup =
+		true;
 
 
 
 
-			if(
-				event.ctrlKey &&
-				event.key.toLowerCase()=="b"
-			){
+/*
+ * Astro BASE URL
+ */
+
+const base =
+	import.meta.env.BASE_URL;
 
 
-				event.preventDefault();
+
+const normalizedBase =
+	base.endsWith("/")
+		?
+		base.slice(0, -1)
+		:
+		base;
 
 
 
-				window.location.href =
-					"/beta-tester-bot";
 
 
-			}
+document.addEventListener(
+	"keydown",
+	(event) => {
+
+    
+
+
+
+
+
+		/*
+		 * OPEN DEV PANEL
+		 *
+		 * CTRL + B
+		 */
+
+		if (
+			event.ctrlKey &&
+			!event.shiftKey &&
+			event.key.toLowerCase() === "b"
+		) {
+
+
+			event.preventDefault();
+
+
+
+			window.location.href =
+				normalizedBase
+				+
+				"/developer-panel/";
+
+
+
+			return;
 
 
 		}
-	);
+
+
+
+	}
+
+);
+
 
 }
 
-/* =========================
-RULE SEARCH
-========================= */
 
-function setupRuleSearch(){
+
+
+
+
+/* =========================================================
+RULE SEARCH
+========================================================= */
+
+function setupRuleSearch() {
+
 
 	const search =
 		document.getElementById(
 			"rule-search"
 		);
+
+
 
 
 	const ruleBoxes =
@@ -537,123 +721,198 @@ function setupRuleSearch(){
 		);
 
 
-	if(!search || ruleBoxes.length === 0)
+
+
+	if (
+		!search ||
+		ruleBoxes.length === 0
+	) {
+
 		return;
+
+	}
+
+
+
+
+	if (
+		search.dataset.searchSetup ===
+		"true"
+	) {
+
+		return;
+
+	}
+
+
+
+
+
+	search.dataset.searchSetup =
+		"true";
+
+
+
 
 
 	search.addEventListener(
 		"input",
-		()=>{
+		() => {
 
 
 			const value =
-				search.value.toLowerCase()
-				.trim();
+				search.value
+					.toLowerCase()
+					.trim();
 
 
 
-			ruleBoxes.forEach(box=>{
 
-
-				const text =
-					box.textContent
-					.toLowerCase();
+			ruleBoxes.forEach(
+				(box) => {
 
 
 
-				if(
-					text.includes(value)
-				){
+					const text =
+						box.textContent
+							.toLowerCase();
 
-					box.style.display =
-						"block";
+
+
+
+					if (
+						text.includes(value)
+					) {
+
+
+						box.style.display =
+							"block";
+
+
+					}
+
+					else {
+
+
+						box.style.display =
+							"none";
+
+
+					}
+
+
 
 				}
+			);
 
-				else{
-
-					box.style.display =
-						"none";
-
-				}
-
-
-			});
 
 
 		}
+
 	);
 
-}
 
-/* =========================
+
+}
+/* =========================================================
 LOAD EVERYTHING
-========================= */
+========================================================= */
 
-function loadEastSMP(){
+function loadEastSMP() {
 
-	console.log(
-		"Loading East SMP features"
-	);
-
-
-
-	setupCopyButton();
-
-	setupMenu();
-
-	setupDropdowns();
-
-	setupLoadingScreen();
-
-	setupShortcuts();
-
-	checkServerStatus();
-
-}
+    console.log(
+        "🚀 Loading East SMP features"
+    );
 
 
+    setupCopyButton();
 
-/* =========================
-ASTRO START
-========================= */
+    setupMenu();
 
-function startEastSMP(){
+    setupDropdowns();
 
-	console.log(
-		"Starting East SMP"
-	);
+    setupLoadingScreen();
+
+    setupShortcuts();
+
+    setupRuleSearch();
+
+    checkServerStatus();
 
 
-	loadEastSMP();
+    console.log(
+        "✅ East SMP features loaded"
+    );
 
 }
 
 
 
-if(typeof window !== "undefined"){
+/* =========================================================
+START EAST SMP
+========================================================= */
+
+function startEastSMP() {
+
+    console.log(
+        "🚀 Starting East SMP"
+    );
 
 
-	document.addEventListener(
-		"DOMContentLoaded",
-		startEastSMP
-	);
+    loadEastSMP();
+
+}
 
 
 
-	document.addEventListener(
-		"astro:page-load",
-		startEastSMP
-	);
+/* =========================================================
+INITIAL PAGE LOAD
+========================================================= */
+
+if (
+    typeof window !== "undefined"
+) {
+
+
+    if (
+        document.readyState ===
+        "loading"
+    ) {
+
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            startEastSMP,
+            {
+                once: true
+            }
+        );
+
+
+    }
+
+    else {
+
+
+        startEastSMP();
+
+
+    }
 
 
 
 
-	if(document.readyState !== "loading"){
 
-		startEastSMP();
+    /*
+     * Astro client-side navigation
+     *
+     * Runs again when Astro changes pages
+     */
 
-	}
+    document.addEventListener(
+        "astro:page-load",
+        startEastSMP
+    );
 
 
 }

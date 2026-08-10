@@ -1,0 +1,28 @@
+{
+  "started": "2026-08-08T12:17:37",
+  "completed": "2026-08-08T12:17:41",
+  "project": "East SMP",
+  "pipeline_passed": true,
+  "automatic_modification": false,
+  "repairs": {
+    "original_count": 0,
+    "original_files": [],
+    "dependent_files": [],
+    "complete_fix_set": []
+  },
+  "dependent_analysis": {
+    "recursive": true,
+    "maximum_depth": 10,
+    "completed": true,
+    "edges": []
+  },
+  "repair_permission": {
+    "allowed": false,
+    "reason": "SAFETY_ANALYSIS_BLOCKED",
+    "reasons": [
+      "The current repair plan contains no repairs."
+    ]
+  },
+  "files_modified": 0,
+  "final_decision": "BLOCKED"
+}

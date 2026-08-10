@@ -1,0 +1,2791 @@
+---
+import "../../styles/dashboard.css";
+
+interface ScanResult {
+	type: string;
+	name: string;
+	passed: boolean;
+	details: string;
+}
+
+const results: ScanResult[] = [
+	{
+		type: "Scanner",
+		name: "Developer Scanner",
+		passed: true,
+		details: "Developer scanner interface is online."
+	},
+	{
+		type: "Security",
+		name: "Developer Panel",
+		passed: true,
+		details: "Developer panel interface is available."
+	},
+	{
+		type: "Keyboard",
+		name: "Ctrl + B",
+		passed: true,
+		details: "Developer panel keyboard shortcut is enabled."
+	},
+	{
+		type: "AI",
+		name: "AI Scanner",
+		passed: false,
+		details: "AI scanner integration has not been configured yet."
+	}
+];
+
+const passed = results.filter((result) => result.passed).length;
+const total = results.length;
+const score = Math.round((passed / total) * 100);
+
+const basePath = "/Official-East-smp-website";
+---
+
+<style>
+	html,
+	body {
+		margin: 0;
+		padding: 0;
+		min-width: 100%;
+		min-height: 100%;
+		background: #05070d;
+		color: #f4f7fb;
+	}
+
+	body {
+		overflow-x: hidden;
+	}
+
+	#root {
+		min-height: 100vh;
+		background: #05070d;
+	}
+
+	/* =====================================================
+	   LOADING SCREEN
+	   ===================================================== */
+
+	#ai-loading {
+		position: fixed;
+		inset: 0;
+		z-index: 99999;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		background:
+			radial-gradient(
+				circle at 50% 40%,
+				rgba(88, 101, 242, 0.16),
+				transparent 35%
+			),
+			#05070d;
+
+		color: #f4f7fb;
+
+		transition:
+			opacity 0.35s ease,
+			visibility 0.35s ease;
+	}
+
+	#ai-loading.hidden {
+		opacity: 0;
+		visibility: hidden;
+		pointer-events: none;
+	}
+
+	.loading-inner {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 14px;
+
+		text-align: center;
+	}
+
+	.loading-logo {
+		font-size: 24px;
+		font-weight: 900;
+		letter-spacing: 5px;
+	}
+
+	.loading-title {
+		color: #9da8b8;
+		font-size: 10px;
+		font-weight: 800;
+		letter-spacing: 3px;
+	}
+
+	.loading-spinner {
+		width: 30px;
+		height: 30px;
+
+		border: 3px solid rgba(255, 255, 255, 0.1);
+		border-top-color: #5865f2;
+		border-radius: 50%;
+
+		animation: ai-spin 0.8s linear infinite;
+	}
+
+	.loading-status {
+		color: #8995a7;
+		font-size: 9px;
+		letter-spacing: 1.5px;
+	}
+
+	@keyframes ai-spin {
+		to {
+			transform: rotate(360deg);
+		}
+	}
+
+	/* =====================================================
+	   DEVELOPER SIDEBAR
+	   ===================================================== */
+
+	.dev-shell {
+		min-height: 100vh;
+		display: flex;
+
+		background:
+			radial-gradient(
+				circle at 50% 0%,
+				rgba(88, 101, 242, 0.08),
+				transparent 35%
+			),
+			#05070d;
+	}
+
+	.dev-sidebar {
+		position: fixed;
+		left: 0;
+		top: 0;
+		bottom: 0;
+		z-index: 1000;
+
+		width: 238px;
+
+		display: flex;
+		flex-direction: column;
+
+		padding: 22px 14px;
+
+		border-right: 1px solid rgba(255, 255, 255, 0.1);
+
+		background:
+			linear-gradient(
+				180deg,
+				rgba(255, 255, 255, 0.025),
+				rgba(255, 255, 255, 0.008)
+			),
+			#080b12;
+
+		box-sizing: border-box;
+	}
+
+	.dev-sidebar-logo {
+		display: flex;
+		align-items: center;
+		gap: 11px;
+
+		padding: 10px 11px 22px;
+
+		color: #f4f7fb;
+
+		font-size: 15px;
+		font-weight: 900;
+		letter-spacing: 0.5px;
+	}
+
+	.dev-sidebar-logo-icon {
+		width: 34px;
+		height: 34px;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		border: 1px solid rgba(88, 101, 242, 0.35);
+		border-radius: 9px;
+
+		background: rgba(88, 101, 242, 0.12);
+		color: #8d97ff;
+	}
+
+	.dev-sidebar-section {
+		padding: 0 11px;
+		margin: 4px 0 10px;
+
+		color: #697589;
+
+		font-size: 9px;
+		font-weight: 900;
+		letter-spacing: 1.8px;
+		text-transform: uppercase;
+	}
+
+	.dev-nav {
+		display: flex;
+		flex-direction: column;
+		gap: 4px;
+	}
+
+	.dev-nav-item {
+		display: flex;
+		align-items: center;
+		gap: 11px;
+
+		width: 100%;
+		min-height: 42px;
+
+		padding: 9px 11px;
+
+		box-sizing: border-box;
+
+		border: 1px solid transparent;
+		border-radius: 8px;
+
+		background: transparent;
+
+		color: #929daf;
+
+		text-decoration: none;
+
+		font-size: 12px;
+		font-weight: 700;
+
+		transition:
+			background 0.2s ease,
+			border-color 0.2s ease,
+			color 0.2s ease,
+			transform 0.2s ease;
+	}
+
+	.dev-nav-item:hover {
+		background: rgba(255, 255, 255, 0.045);
+		color: #ffffff;
+	}
+
+	.dev-nav-item.active {
+		border-color: rgba(88, 101, 242, 0.2);
+		background: rgba(88, 101, 242, 0.13);
+		color: #ffffff;
+	}
+
+	.dev-nav-icon {
+		width: 20px;
+		height: 20px;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		flex-shrink: 0;
+
+		color: #7885ff;
+	}
+
+	.dev-nav-item:not(.active) .dev-nav-icon {
+		color: #788497;
+	}
+
+	.dev-nav-label {
+		white-space: nowrap;
+	}
+
+	.dev-sidebar-divider {
+		height: 1px;
+		margin: 18px 8px;
+
+		background: rgba(255, 255, 255, 0.08);
+	}
+
+	.dev-sidebar-bottom {
+		margin-top: auto;
+	}
+
+	.dev-user-status {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+
+		padding: 11px;
+
+		border: 1px solid rgba(255, 255, 255, 0.07);
+		border-radius: 9px;
+
+		background: rgba(255, 255, 255, 0.018);
+	}
+
+	.dev-user-status-icon {
+		width: 30px;
+		height: 30px;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		border-radius: 8px;
+
+		background: rgba(57, 217, 138, 0.08);
+		color: #39d98a;
+	}
+
+	.dev-user-status-info {
+		min-width: 0;
+	}
+
+	.dev-user-status-name {
+		color: #e8edf5;
+		font-size: 10px;
+		font-weight: 800;
+	}
+
+	.dev-user-status-role {
+		margin-top: 3px;
+
+		color: #657183;
+		font-size: 8px;
+	}
+
+	/* Simple icon system */
+
+	.dev-icon {
+		position: relative;
+
+		display: inline-block;
+
+		width: 16px;
+		height: 16px;
+
+		box-sizing: border-box;
+	}
+
+	.dev-icon-home::before {
+		content: "⌂";
+		font-size: 17px;
+	}
+
+	.dev-icon-scanner::before {
+		content: "⌕";
+		font-size: 19px;
+	}
+
+	.dev-icon-ai::before {
+		content: "✦";
+		font-size: 15px;
+	}
+
+	.dev-icon-security::before {
+		content: "◆";
+		font-size: 10px;
+	}
+
+	.dev-icon-restore::before {
+		content: "↶";
+		font-size: 17px;
+	}
+
+	.dev-icon-logs::before {
+		content: "≡";
+		font-size: 19px;
+	}
+
+	.dev-icon-settings::before {
+		content: "⚙";
+		font-size: 14px;
+	}
+
+	.dev-icon-tools::before {
+		content: "⚒";
+		font-size: 14px;
+	}
+
+	.dev-icon-online::before {
+		content: "●";
+		font-size: 10px;
+	}
+
+	/* =====================================================
+	   MAIN AREA
+	   ===================================================== */
+
+	.dev-main {
+		width: calc(100% - 238px);
+		margin-left: 238px;
+		min-width: 0;
+	}
+
+	/* =====================================================
+	   TOP BAR
+	   ===================================================== */
+
+	.dev-topbar {
+		min-height: 82px;
+
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		gap: 20px;
+
+		padding: 17px 30px;
+
+		box-sizing: border-box;
+
+		border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+		background:
+			linear-gradient(
+				180deg,
+				rgba(255, 255, 255, 0.025),
+				transparent
+			);
+	}
+
+	.dev-page-heading {
+		min-width: 0;
+	}
+
+	.dev-title-row {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+	}
+
+	.dev-page-title {
+		margin: 0;
+
+		display: flex;
+		align-items: center;
+		gap: 9px;
+
+		color: #f4f7fb;
+
+		font-size: 17px;
+		font-weight: 850;
+		letter-spacing: 0.2px;
+	}
+
+	.dev-page-subtitle {
+		margin: 5px 0 0;
+
+		color: #788496;
+
+		font-size: 10px;
+	}
+
+	.dev-title-icon {
+		color: #7885ff;
+	}
+
+	.dev-mobile-menu {
+		display: none;
+
+		width: 36px;
+		height: 36px;
+
+		border: 1px solid rgba(255, 255, 255, 0.1);
+		border-radius: 8px;
+
+		background: rgba(255, 255, 255, 0.03);
+
+		color: white;
+
+		cursor: pointer;
+	}
+
+	.dev-status {
+		display: inline-flex;
+		align-items: center;
+		gap: 7px;
+
+		color: #8793a5;
+
+		font-size: 9px;
+		font-weight: 850;
+		letter-spacing: 1px;
+		text-transform: uppercase;
+	}
+
+	.dev-status.online {
+		color: #39d98a;
+	}
+
+	.dev-status-dot {
+		width: 6px;
+		height: 6px;
+
+		border-radius: 50%;
+
+		background: currentColor;
+
+		box-shadow:
+			0 0 9px currentColor;
+	}
+
+	/* =====================================================
+	   AI COMMAND CENTER
+	   ===================================================== */
+
+	.ai-command-center {
+		padding: 30px;
+
+		box-sizing: border-box;
+	}
+
+	.ai-header {
+		min-height: 130px;
+
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+
+		padding: 20px;
+
+		border: 1px solid rgba(255, 255, 255, 0.08);
+		border-radius: 12px;
+
+		background:
+			radial-gradient(
+				circle at 50% 0%,
+				rgba(88, 101, 242, 0.1),
+				transparent 55%
+			),
+			linear-gradient(
+				180deg,
+				rgba(255, 255, 255, 0.025),
+				transparent
+			);
+	}
+
+	.ai-logo {
+		font-size: 27px;
+		font-weight: 900;
+		letter-spacing: 5px;
+	}
+
+	.ai-header-title {
+		margin-top: 6px;
+
+		color: #aab3c2;
+
+		font-size: 13px;
+		font-weight: 800;
+		letter-spacing: 4px;
+	}
+
+	.ai-online {
+		display: flex;
+		align-items: center;
+		gap: 7px;
+
+		margin-top: 10px;
+
+		color: #39d98a;
+
+		font-size: 11px;
+		font-weight: 800;
+		letter-spacing: 2px;
+	}
+
+	.online-dot {
+		width: 7px;
+		height: 7px;
+
+		border-radius: 50%;
+
+		background: #39d98a;
+
+		box-shadow:
+			0 0 10px rgba(57, 217, 138, 0.8);
+	}
+
+	/* =====================================================
+	   COMMAND HEADING
+	   ===================================================== */
+
+	.command-heading {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		gap: 20px;
+
+		margin: 24px 0;
+	}
+
+	.command-heading h1 {
+		margin: 4px 0 0;
+
+		font-size: 25px;
+		letter-spacing: 0.5px;
+	}
+
+	.command-heading p {
+		margin: 5px 0 0;
+
+		color: #8995a7;
+		font-size: 12px;
+	}
+
+	.scanner-score {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		min-width: 90px;
+
+		padding: 13px 20px;
+
+		border: 1px solid rgba(255, 255, 255, 0.11);
+		border-radius: 10px;
+
+		background: rgba(255, 255, 255, 0.025);
+	}
+
+	.score-number {
+		color: #5865f2;
+
+		font-size: 25px;
+		font-weight: 900;
+	}
+
+	.score-label {
+		margin-top: 3px;
+
+		color: #8995a7;
+
+		font-size: 8px;
+		font-weight: 800;
+		letter-spacing: 1.5px;
+	}
+
+	/* =====================================================
+	   CARDS
+	   ===================================================== */
+
+	.top-cards,
+	.bottom-cards {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+
+		gap: 14px;
+
+		margin-bottom: 22px;
+	}
+
+	.glass-card {
+		padding: 18px;
+
+		border: 1px solid rgba(255, 255, 255, 0.11);
+		border-radius: 11px;
+
+		background:
+			linear-gradient(
+				135deg,
+				rgba(255, 255, 255, 0.035),
+				rgba(255, 255, 255, 0.012)
+			);
+
+		box-shadow:
+			0 15px 40px rgba(0, 0, 0, 0.18);
+	}
+
+	.card-title {
+		margin-bottom: 14px;
+
+		color: #9da8b8;
+
+		font-size: 10px;
+		font-weight: 900;
+		letter-spacing: 2px;
+	}
+
+	.system-line,
+	.agent-line,
+	.health-line {
+		display: flex;
+		align-items: center;
+
+		gap: 8px;
+
+		margin: 8px 0;
+
+		color: #aab4c3;
+
+		font-size: 11px;
+	}
+
+	.system-line > span {
+		color: #39d98a;
+	}
+
+	.system-line strong,
+	.agent-line strong,
+	.health-line strong {
+		margin-left: auto;
+
+		color: #39d98a;
+
+		font-size: 10px;
+	}
+
+	.health-warning {
+		color: #f5c451 !important;
+	}
+
+	/* =====================================================
+	   OPERATION
+	   ===================================================== */
+
+	.operation-name {
+		margin-bottom: 14px;
+
+		color: #d9dfea;
+
+		font-size: 13px;
+	}
+
+	.progress-bar {
+		width: 100%;
+		height: 6px;
+
+		overflow: hidden;
+
+		border-radius: 999px;
+
+		background: rgba(255, 255, 255, 0.08);
+	}
+
+	.progress-fill {
+		height: 100%;
+
+		border-radius: inherit;
+
+		background: #5865f2;
+
+		box-shadow:
+			0 0 12px rgba(88, 101, 242, 0.55);
+
+		transition: width 0.4s ease;
+	}
+
+	.progress-info {
+		display: flex;
+		justify-content: space-between;
+
+		margin-top: 8px;
+
+		color: #8995a7;
+
+		font-size: 9px;
+	}
+
+	.progress-info strong {
+		color: white;
+	}
+
+	/* =====================================================
+	   WORKSPACE
+	   ===================================================== */
+
+	.workspace-section {
+		display: grid;
+
+		grid-template-columns:
+			145px
+			minmax(0, 1fr);
+
+		gap: 18px;
+
+		margin-bottom: 22px;
+	}
+
+	.section-heading {
+		margin-bottom: 12px;
+
+		color: #9da8b8;
+
+		font-size: 10px;
+		font-weight: 900;
+		letter-spacing: 2px;
+	}
+
+	.commands-column {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+	}
+
+	.command-button {
+		width: 100%;
+		min-height: 65px;
+
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+
+		padding: 8px;
+
+		box-sizing: border-box;
+
+		border: 1px solid rgba(255, 255, 255, 0.11);
+		border-radius: 9px;
+
+		background:
+			linear-gradient(
+				135deg,
+				rgba(255, 255, 255, 0.035),
+				rgba(255, 255, 255, 0.012)
+			);
+
+		color: white;
+
+		cursor: pointer;
+
+		transition:
+			transform 0.2s ease,
+			border-color 0.2s ease,
+			background 0.2s ease;
+	}
+
+	.command-button span {
+		font-size: 11px;
+		font-weight: 900;
+		letter-spacing: 1px;
+	}
+
+	.command-button small {
+		margin-top: 5px;
+
+		color: #8995a7;
+
+		font-size: 8px;
+	}
+
+	.command-button:hover {
+		transform: translateY(-2px);
+
+		border-color: rgba(88, 101, 242, 0.55);
+
+		background: rgba(88, 101, 242, 0.14);
+	}
+
+	.command-button:active {
+		transform: translateY(0);
+	}
+
+	/* =====================================================
+	   AI WORKSPACE
+	   ===================================================== */
+
+	.ai-workspace {
+		min-width: 0;
+		min-height: 500px;
+
+		display: flex;
+		flex-direction: column;
+
+		border: 1px solid rgba(255, 255, 255, 0.11);
+		border-radius: 11px;
+
+		background:
+			linear-gradient(
+				180deg,
+				rgba(255, 255, 255, 0.035),
+				rgba(255, 255, 255, 0.012)
+			);
+
+		overflow: hidden;
+	}
+
+	.workspace-header {
+		padding: 15px 17px;
+
+		border-bottom: 1px solid rgba(255, 255, 255, 0.11);
+
+		color: #aab3c2;
+
+		font-size: 10px;
+		font-weight: 900;
+		letter-spacing: 2px;
+	}
+
+	.chat-output {
+		flex: 1;
+		min-height: 0;
+
+		overflow-y: auto;
+
+		padding: 18px;
+	}
+
+	.ai-message,
+	.user-message {
+		margin-bottom: 18px;
+	}
+
+	.message-label {
+		margin-bottom: 6px;
+
+		color: #5865f2;
+
+		font-size: 9px;
+		font-weight: 900;
+		letter-spacing: 1.5px;
+	}
+
+	.user-message .message-label {
+		color: #8995a7;
+	}
+
+	.ai-message p,
+	.user-message p {
+		margin: 5px 0;
+
+		color: #c7d0dc;
+
+		font-size: 11px;
+		line-height: 1.7;
+	}
+
+	.workspace-divider {
+		height: 1px;
+
+		margin: 16px 0;
+
+		background: rgba(255, 255, 255, 0.11);
+	}
+
+	.summary-title {
+		color: #9da8b8;
+
+		font-size: 9px;
+		font-weight: 900;
+		letter-spacing: 1.5px;
+	}
+
+	.summary-score {
+		margin-top: 5px;
+
+		color: white;
+
+		font-size: 11px;
+		font-weight: 800;
+	}
+
+	.scan-results {
+		display: flex;
+		flex-direction: column;
+
+		gap: 6px;
+
+		margin-top: 13px;
+	}
+
+	.scan-result {
+		width: 100%;
+
+		display: flex;
+		align-items: center;
+
+		gap: 8px;
+
+		padding: 8px 10px;
+
+		box-sizing: border-box;
+
+		border: 1px solid rgba(255, 255, 255, 0.11);
+		border-radius: 7px;
+
+		background: rgba(255, 255, 255, 0.018);
+
+		color: white;
+
+		text-align: left;
+	}
+
+	.scan-result.failed {
+		border-color: rgba(255, 92, 108, 0.18);
+	}
+
+	.scan-result:hover {
+		background: rgba(255, 255, 255, 0.045);
+	}
+
+	.result-icon {
+		flex-shrink: 0;
+
+		color: #39d98a;
+
+		font-size: 8px;
+	}
+
+	.scan-result.failed .result-icon {
+		color: #ff5c6c;
+	}
+
+	.result-content {
+		display: flex;
+		flex-direction: column;
+
+		gap: 2px;
+
+		min-width: 0;
+	}
+
+	.result-content strong {
+		font-size: 9px;
+	}
+
+	.result-content span {
+		color: #8995a7;
+
+		font-size: 8px;
+	}
+
+	.result-status {
+		margin-left: auto;
+
+		flex-shrink: 0;
+
+		font-size: 8px;
+		font-weight: 900;
+	}
+
+	.scan-result.passed .result-status {
+		color: #39d98a;
+	}
+
+	.scan-result.failed .result-status {
+		color: #ff5c6c;
+	}
+
+	/* =====================================================
+	   COMMAND INPUT
+	   ===================================================== */
+
+	.command-input-area {
+		display: flex;
+		align-items: center;
+
+		gap: 8px;
+
+		padding: 11px 13px;
+
+		border-top: 1px solid rgba(255, 255, 255, 0.11);
+	}
+
+	.input-prompt {
+		color: #5865f2;
+
+		font-size: 11px;
+	}
+
+	.command-input-area input {
+		flex: 1;
+		min-width: 0;
+
+		border: 0;
+		outline: 0;
+
+		background: transparent;
+
+		color: white;
+
+		font: inherit;
+		font-size: 11px;
+	}
+
+	.command-input-area input::placeholder {
+		color: #657183;
+	}
+
+	.command-input-area button {
+		width: 28px;
+		height: 28px;
+
+		border: 1px solid rgba(255, 255, 255, 0.11);
+		border-radius: 6px;
+
+		background: rgba(255, 255, 255, 0.035);
+
+		color: white;
+
+		cursor: pointer;
+	}
+
+	.command-input-area button:hover {
+		background: rgba(88, 101, 242, 0.14);
+	}
+
+	/* =====================================================
+	   SCANNER
+	   ===================================================== */
+
+	.scanner-status {
+		margin-bottom: 12px;
+
+		color: #39d98a;
+
+		font-size: 9px;
+		font-weight: 800;
+		letter-spacing: 1px;
+	}
+
+	/* =====================================================
+	   EDIT LOG
+	   ===================================================== */
+
+	.edit-log {
+		margin-bottom: 22px;
+
+		padding: 17px;
+
+		border: 1px solid rgba(255, 255, 255, 0.11);
+		border-radius: 11px;
+
+		background:
+			linear-gradient(
+				135deg,
+				rgba(255, 255, 255, 0.035),
+				rgba(255, 255, 255, 0.012)
+			);
+	}
+
+	.log-entry {
+		display: grid;
+
+		grid-template-columns:
+			1fr
+			auto;
+
+		gap: 3px 12px;
+
+		padding: 9px 0;
+
+		border-bottom: 1px solid rgba(255, 255, 255, 0.055);
+	}
+
+	.log-entry:last-child {
+		border-bottom: 0;
+	}
+
+	.log-entry strong {
+		color: #d4dce7;
+
+		font-size: 10px;
+	}
+
+	.log-entry span {
+		color: #8995a7;
+
+		font-size: 9px;
+	}
+
+	.log-entry small {
+		grid-column: 1 / -1;
+
+		color: #687486;
+
+		font-size: 8px;
+	}
+
+	/* =====================================================
+	   WEBSITE SIDEBAR
+	   ===================================================== */
+
+	.website-sidebar {
+		margin-top: 22px;
+
+		padding: 17px;
+
+		border: 1px solid rgba(255, 255, 255, 0.11);
+		border-radius: 11px;
+
+		background:
+			linear-gradient(
+				135deg,
+				rgba(255, 255, 255, 0.035),
+				rgba(255, 255, 255, 0.012)
+			);
+	}
+
+	.website-label {
+		margin-bottom: 13px;
+
+		color: #7d8cff;
+
+		font-size: 10px;
+		font-weight: 900;
+		letter-spacing: 2px;
+	}
+
+	.website-nav {
+		display: flex;
+		flex-wrap: wrap;
+
+		gap: 5px;
+	}
+
+	.website-nav a {
+		padding: 8px 10px;
+
+		border-radius: 7px;
+
+		color: #9ca8ba;
+
+		text-decoration: none;
+
+		font-size: 10px;
+		font-weight: 650;
+	}
+
+	.website-nav a:hover {
+		background: rgba(255, 255, 255, 0.045);
+		color: white;
+	}
+
+	/* =====================================================
+	   FOOTER
+	   ===================================================== */
+
+	.ai-footer {
+		padding: 18px;
+
+		border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+		text-align: center;
+
+		color: #505b6c;
+
+		font-size: 8px;
+		font-weight: 800;
+		letter-spacing: 2px;
+	}
+
+	/* =====================================================
+	   MOBILE
+	   ===================================================== */
+
+	@media (max-width: 900px) {
+		.dev-sidebar {
+			transform: translateX(-100%);
+
+			transition: transform 0.25s ease;
+		}
+
+		.dev-sidebar.open {
+			transform: translateX(0);
+		}
+
+		.dev-main {
+			width: 100%;
+			margin-left: 0;
+		}
+
+		.dev-mobile-menu {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.dev-topbar {
+			padding: 15px 20px;
+		}
+
+		.ai-command-center {
+			padding: 20px;
+		}
+	}
+
+	@media (max-width: 700px) {
+		.ai-header {
+			min-height: 115px;
+		}
+
+		.ai-logo {
+			font-size: 21px;
+		}
+
+		.ai-header-title {
+			font-size: 10px;
+			letter-spacing: 2px;
+		}
+
+		.command-heading {
+			align-items: flex-start;
+		}
+
+		.command-heading h1 {
+			font-size: 20px;
+		}
+
+		.top-cards,
+		.bottom-cards {
+			grid-template-columns: 1fr;
+		}
+
+		.workspace-section {
+			grid-template-columns: 1fr;
+		}
+
+		.commands-column {
+			display: grid;
+
+			grid-template-columns:
+				repeat(2, 1fr);
+		}
+
+		.ai-workspace {
+			min-height: 450px;
+		}
+	}
+
+	@media (max-width: 450px) {
+		.dev-page-title {
+			font-size: 14px;
+		}
+
+		.dev-page-subtitle {
+			font-size: 8px;
+		}
+
+		.ai-command-center {
+			padding: 14px;
+		}
+
+		.ai-logo {
+			font-size: 18px;
+			letter-spacing: 3px;
+		}
+
+		.ai-header-title {
+			font-size: 8px;
+		}
+
+		.commands-column {
+			grid-template-columns: 1fr;
+		}
+
+		.scanner-score {
+			padding: 10px;
+		}
+
+		.score-number {
+			font-size: 21px;
+		}
+	}
+</style>
+
+<div id="ai-loading" aria-label="Loading Hongs AI">
+	<div class="loading-inner">
+		<div class="loading-logo">HONGS AI</div>
+
+		<div class="loading-title">
+			EAST SMP AI COMMAND CENTER
+		</div>
+
+		<div class="loading-spinner"></div>
+
+		<div class="loading-status" id="loading-status">
+			INITIALIZING...
+		</div>
+	</div>
+</div>
+
+<div id="root">
+
+	<div class="dev-shell">
+
+		<!-- =================================================
+		     DEVELOPER SIDEBAR
+		     ================================================= -->
+
+		<aside class="dev-sidebar" id="dev-sidebar">
+
+			<div class="dev-sidebar-logo">
+
+				<div class="dev-sidebar-logo-icon">
+					<span
+						class="dev-icon dev-icon-tools"
+						aria-hidden="true"
+					></span>
+				</div>
+
+				<span>
+					East SMP
+				</span>
+
+			</div>
+
+			<div class="dev-sidebar-section">
+				Developer
+			</div>
+
+			<nav class="dev-nav">
+
+				<a
+					href={`${basePath}/developer-panel/`}
+					class="dev-nav-item"
+				>
+					<span class="dev-nav-icon">
+						<span
+							class="dev-icon dev-icon-home"
+							aria-hidden="true"
+						></span>
+					</span>
+
+					<span class="dev-nav-label">
+						Dashboard
+					</span>
+				</a>
+
+				<a
+					href={`${basePath}/developer-scanner/`}
+					class="dev-nav-item"
+				>
+					<span class="dev-nav-icon">
+						<span
+							class="dev-icon dev-icon-scanner"
+							aria-hidden="true"
+						></span>
+					</span>
+
+					<span class="dev-nav-label">
+						Scanner
+					</span>
+				</a>
+
+				<a
+					href={`${basePath}/beta-tester-bot/`}
+					class="dev-nav-item active"
+					aria-current="page"
+				>
+					<span class="dev-nav-icon">
+						<span
+							class="dev-icon dev-icon-ai"
+							aria-hidden="true"
+						></span>
+					</span>
+
+					<span class="dev-nav-label">
+						AI Tools
+					</span>
+				</a>
+
+				<a
+					href={`${basePath}/security/`}
+					class="dev-nav-item"
+				>
+					<span class="dev-nav-icon">
+						<span
+							class="dev-icon dev-icon-security"
+							aria-hidden="true"
+						></span>
+					</span>
+
+					<span class="dev-nav-label">
+						Security
+					</span>
+				</a>
+
+				<a
+					href={`${basePath}/restore/`}
+					class="dev-nav-item"
+				>
+					<span class="dev-nav-icon">
+						<span
+							class="dev-icon dev-icon-restore"
+							aria-hidden="true"
+						></span>
+					</span>
+
+					<span class="dev-nav-label">
+						Restore
+					</span>
+				</a>
+
+				<a
+					href={`${basePath}/logs/`}
+					class="dev-nav-item"
+				>
+					<span class="dev-nav-icon">
+						<span
+							class="dev-icon dev-icon-logs"
+							aria-hidden="true"
+						></span>
+					</span>
+
+					<span class="dev-nav-label">
+						Logs
+					</span>
+				</a>
+
+				<a
+					href={`${basePath}/settings/`}
+					class="dev-nav-item"
+				>
+					<span class="dev-nav-icon">
+						<span
+							class="dev-icon dev-icon-settings"
+							aria-hidden="true"
+						></span>
+					</span>
+
+					<span class="dev-nav-label">
+						Settings
+					</span>
+				</a>
+
+			</nav>
+
+			<div class="dev-sidebar-divider"></div>
+
+			<div class="dev-sidebar-bottom">
+
+				<div class="dev-user-status">
+
+					<div class="dev-user-status-icon">
+						<span
+							class="dev-icon dev-icon-online"
+							aria-hidden="true"
+						></span>
+					</div>
+
+					<div class="dev-user-status-info">
+
+						<div class="dev-user-status-name">
+							Developer
+						</div>
+
+						<div class="dev-user-status-role">
+							Developer Control Center
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</aside>
+
+
+		<!-- =================================================
+		     MAIN
+		     ================================================= -->
+
+		<div class="dev-main">
+
+			<!-- TOP BAR -->
+
+			<header class="dev-topbar">
+
+				<div class="dev-page-heading">
+
+					<div class="dev-title-row">
+
+						<button
+							class="dev-mobile-menu"
+							id="mobile-menu"
+							aria-label="Open developer menu"
+							type="button"
+						>
+							<span
+								class="dev-icon dev-icon-logs"
+								aria-hidden="true"
+							></span>
+						</button>
+
+						<div>
+
+							<h1 class="dev-page-title">
+
+								<span
+									class="dev-title-icon dev-icon dev-icon-ai"
+									aria-hidden="true"
+								></span>
+
+								AI Command Center
+
+							</h1>
+
+							<p class="dev-page-subtitle">
+								East SMP AI tools and website intelligence
+							</p>
+
+						</div>
+
+					</div>
+
+				</div>
+
+				<div class="dev-topbar-actions">
+
+					<div class="dev-status online">
+
+						<span class="dev-status-dot"></span>
+
+						Online
+
+					</div>
+
+				</div>
+
+			</header>
+
+
+			<!-- =================================================
+			     AI COMMAND CENTER
+			     ================================================= -->
+
+			<main class="ai-command-center">
+
+				<!-- CENTERED AI HEADER -->
+
+				<header class="ai-header">
+
+					<div class="ai-logo">
+						HONGS AI
+					</div>
+
+					<div class="ai-header-title">
+						AI COMMAND CENTER
+					</div>
+
+					<div class="ai-online">
+
+						<span class="online-dot"></span>
+
+						ONLINE
+
+					</div>
+
+				</header>
+
+
+				<!-- COMMAND HEADING -->
+
+				<section class="command-heading">
+
+					<div>
+
+						<h1>
+							AI COMMAND CENTER
+						</h1>
+
+						<p>
+							East SMP website intelligence and developer tools
+						</p>
+
+					</div>
+
+					<div class="scanner-score">
+
+						<div
+							class="score-number"
+							id="score-number"
+						>
+							{score}%
+						</div>
+
+						<div class="score-label">
+							WEBSITE HEALTH
+						</div>
+
+					</div>
+
+				</section>
+
+
+				<!-- TOP CARDS -->
+
+				<section class="top-cards">
+
+					<div class="glass-card">
+
+						<div class="card-title">
+							AI SYSTEM
+						</div>
+
+						<div class="system-line">
+							<span>●</span>
+							AI Core
+							<strong>READY</strong>
+						</div>
+
+						<div class="system-line">
+							<span>●</span>
+							Scanner
+							<strong>READY</strong>
+						</div>
+
+						<div class="system-line">
+							<span>●</span>
+							Repair
+							<strong>READY</strong>
+						</div>
+
+						<div class="system-line">
+							<span>●</span>
+							Safety
+							<strong>READY</strong>
+						</div>
+
+					</div>
+
+
+					<div class="glass-card">
+
+						<div class="card-title">
+							CURRENT OPERATION
+						</div>
+
+						<div
+							class="operation-name"
+							id="operation-name"
+						>
+							Website scan complete
+						</div>
+
+						<div class="progress-bar">
+
+							<div
+								class="progress-fill"
+								id="progress-fill"
+								style={`width: ${score}%`}
+							></div>
+
+						</div>
+
+						<div class="progress-info">
+
+							<span id="progress-label">
+								Current scan
+							</span>
+
+							<strong id="progress-number">
+								{score}%
+							</strong>
+
+						</div>
+
+					</div>
+
+				</section>
+
+
+				<!-- WORKSPACE -->
+
+				<section class="workspace-section">
+
+					<!-- COMMANDS -->
+
+					<div>
+
+						<div class="section-heading">
+							AI COMMANDS
+						</div>
+
+						<div class="commands-column">
+
+							<button
+								class="command-button"
+								type="button"
+								data-command="SCAN"
+							>
+								<span>SCAN</span>
+								<small>Scan website</small>
+							</button>
+
+							<button
+								class="command-button"
+								type="button"
+								data-command="ANALYZE"
+							>
+								<span>ANALYZE</span>
+								<small>Analyze issues</small>
+							</button>
+
+							<button
+								class="command-button"
+								type="button"
+								data-command="REPAIR"
+							>
+								<span>REPAIR</span>
+								<small>Repair issues</small>
+							</button>
+
+							<button
+								class="command-button"
+								type="button"
+								data-command="TEST"
+							>
+								<span>TEST</span>
+								<small>Run tests</small>
+							</button>
+
+							<button
+								class="command-button"
+								type="button"
+								data-command="SAFETY"
+							>
+								<span>SAFETY</span>
+								<small>Safety check</small>
+							</button>
+
+							<button
+								class="command-button"
+								type="button"
+								data-command="REPORT"
+							>
+								<span>REPORT</span>
+								<small>Create report</small>
+							</button>
+
+						</div>
+
+					</div>
+
+
+					<!-- AI WORKSPACE -->
+
+					<div>
+
+						<div class="section-heading">
+							AI WORKSPACE
+						</div>
+
+						<div class="ai-workspace">
+
+							<div class="workspace-header">
+								HONGS AI
+							</div>
+
+							<div
+								class="chat-output"
+								id="chat-output"
+							>
+
+								<div class="ai-message">
+
+									<div class="message-label">
+										AI
+									</div>
+
+									<p>
+										Hello! I'm Hongs AI.
+									</p>
+
+									<p>
+										The AI command center is online.
+										Select a command to begin.
+									</p>
+
+								</div>
+
+								<div class="workspace-divider"></div>
+
+								<div class="summary-title">
+									WEBSITE SCAN
+								</div>
+
+								<div
+									class="summary-score"
+									id="summary-score"
+								>
+									{passed}/{total} tests passed — {score}%
+								</div>
+
+								<div class="scan-results">
+
+									{
+										results.map((result: ScanResult) => (
+											<div
+												class:list={[
+													"scan-result",
+													result.passed
+														? "passed"
+														: "failed"
+												]}
+												data-result-name={result.name}
+											>
+
+												<span class="result-icon">
+													●
+												</span>
+
+												<div class="result-content">
+
+													<strong>
+														{result.type}
+													</strong>
+
+													<span>
+														{result.name}
+													</span>
+
+												</div>
+
+												<span class="result-status">
+													{result.passed
+														? "PASSED"
+														: "FAILED"}
+												</span>
+
+											</div>
+										))
+									}
+
+								</div>
+
+							</div>
+
+
+							<!-- COMMAND INPUT -->
+
+							<form
+								class="command-input-area"
+								id="command-form"
+							>
+
+								<span class="input-prompt">
+									&gt;
+								</span>
+
+								<input
+									id="command-input"
+									type="text"
+									placeholder="Type a command..."
+									autocomplete="off"
+									aria-label="AI command input"
+								/>
+
+								<button
+									id="send-command"
+									type="submit"
+									aria-label="Send command"
+								>
+									&gt;
+								</button>
+
+							</form>
+
+						</div>
+
+					</div>
+
+				</section>
+
+
+				<!-- EDIT LOG -->
+
+				<section class="edit-log">
+
+					<div class="section-heading">
+						EDIT LOG
+					</div>
+
+					<div class="log-entry">
+
+						<strong>
+							Navigation repaired
+						</strong>
+
+						<span>
+							2m
+						</span>
+
+						<small>
+							Topic: Mobile navigation
+						</small>
+
+					</div>
+
+					<div class="log-entry">
+
+						<strong>
+							Rules issue detected
+						</strong>
+
+						<span>
+							8m
+						</span>
+
+						<small>
+							Topic: Rules / Mobile
+						</small>
+
+					</div>
+
+					<div class="log-entry">
+
+						<strong>
+							Website tests passed
+						</strong>
+
+						<span>
+							12m
+						</span>
+
+						<small>
+							Topic: Verification
+						</small>
+
+					</div>
+
+					<div class="log-entry">
+
+						<strong>
+							Backup created
+						</strong>
+
+						<span>
+							14m
+						</span>
+
+						<small>
+							Topic: Pre-change backup
+						</small>
+
+					</div>
+
+				</section>
+
+
+				<!-- BOTTOM CARDS -->
+
+				<section class="bottom-cards">
+
+					<div class="glass-card">
+
+						<div class="card-title">
+							AI AGENTS
+						</div>
+
+						<div class="agent-line">
+							Scanner
+							<strong>ACTIVE</strong>
+						</div>
+
+						<div class="agent-line">
+							Analysis
+							<strong>READY</strong>
+						</div>
+
+						<div class="agent-line">
+							Repair
+							<strong>STANDBY</strong>
+						</div>
+
+						<div class="agent-line">
+							Safety
+							<strong>ACTIVE</strong>
+						</div>
+
+					</div>
+
+
+					<div class="glass-card">
+
+						<div class="card-title">
+							WEBSITE HEALTH
+						</div>
+
+						<div class="health-line">
+
+							Build
+
+							<strong>
+								Passed
+							</strong>
+
+						</div>
+
+						<div class="health-line">
+
+							Tests
+
+							<strong id="health-tests">
+								{passed}/{total}
+							</strong>
+
+						</div>
+
+						<div class="health-line">
+
+							Warnings
+
+							<strong class="health-warning">
+								2
+							</strong>
+
+						</div>
+
+					</div>
+
+				</section>
+
+
+				<!-- WEBSITE SCANNER -->
+
+				<section class="glass-card">
+
+					<div class="card-title">
+						WEBSITE SCANNER
+					</div>
+
+					<div class="operation-name">
+						Automated verification of the East SMP website
+					</div>
+
+					<div
+						class="scanner-status"
+						id="scanner-status"
+					>
+						● Scanner ready
+					</div>
+
+					<div class="scan-results">
+
+						{
+							results.map((result: ScanResult) => (
+								<div
+									class:list={[
+										"scan-result",
+										result.passed
+											? "passed"
+											: "failed"
+									]}
+								>
+
+									<span class="result-icon">
+										●
+									</span>
+
+									<div class="result-content">
+
+										<strong>
+											{result.type}
+										</strong>
+
+										<span>
+											{result.name}
+										</span>
+
+										<span>
+											{result.details}
+										</span>
+
+									</div>
+
+									<span class="result-status">
+										{result.passed
+											? "PASSED"
+											: "FAILED"}
+									</span>
+
+								</div>
+							))
+						}
+
+					</div>
+
+				</section>
+
+
+				<!-- WEBSITE NAVIGATION -->
+
+				<section class="website-sidebar">
+
+					<div class="website-label">
+						WEBSITE NAVIGATION
+					</div>
+
+					<nav class="website-nav">
+
+						<a href={`${basePath}/`}>
+							EASTSMP
+						</a>
+
+						<a href={`${basePath}/rules/`}>
+							Rules
+						</a>
+
+						<a href={`${basePath}/roles/`}>
+							Roles
+						</a>
+
+						<a href={`${basePath}/creators/`}>
+							Creators
+						</a>
+
+						<a href={`${basePath}/about/`}>
+							About
+						</a>
+
+						<a href={`${basePath}/updates/`}>
+							Updates
+						</a>
+
+						<a href={`${basePath}/status/`}>
+							Status
+						</a>
+
+					</nav>
+
+				</section>
+
+			</main>
+
+
+			<!-- FOOTER -->
+
+			<footer class="ai-footer">
+				HONGS AI
+				&nbsp;•&nbsp;
+				EAST SMP AI COMMAND CENTER
+			</footer>
+
+		</div>
+
+	</div>
+
+</div>
+
+
+<script>
+	interface ClientScanResult {
+		type: string;
+		name: string;
+		passed: boolean;
+		details: string;
+	}
+
+	const clientResults: ClientScanResult[] = [
+		{
+			type: "Scanner",
+			name: "Developer Scanner",
+			passed: true,
+			details: "Developer scanner interface is online."
+		},
+		{
+			type: "Security",
+			name: "Developer Panel",
+			passed: true,
+			details: "Developer panel interface is available."
+		},
+		{
+			type: "Keyboard",
+			name: "Ctrl + B",
+			passed: true,
+			details: "Developer panel keyboard shortcut is enabled."
+		},
+		{
+			type: "AI",
+			name: "AI Scanner",
+			passed: false,
+			details: "AI scanner integration has not been configured yet."
+		}
+	];
+
+	const loadingScreen =
+		document.getElementById("ai-loading");
+
+	const loadingStatus =
+		document.getElementById("loading-status");
+
+	const chatOutput =
+		document.getElementById("chat-output");
+
+	const commandInput =
+		document.getElementById("command-input") as HTMLInputElement | null;
+
+	const commandForm =
+		document.getElementById("command-form") as HTMLFormElement | null;
+
+	const scannerStatus =
+		document.getElementById("scanner-status");
+
+	const operationName =
+		document.getElementById("operation-name");
+
+	const progressFill =
+		document.getElementById("progress-fill");
+
+	const progressNumber =
+		document.getElementById("progress-number");
+
+	const progressLabel =
+		document.getElementById("progress-label");
+
+	const scoreNumber =
+		document.getElementById("score-number");
+
+	const summaryScore =
+		document.getElementById("summary-score");
+
+	const mobileMenu =
+		document.getElementById("mobile-menu");
+
+	const devSidebar =
+		document.getElementById("dev-sidebar");
+
+	function addMessage(
+		label: string,
+		message: string,
+		user = false
+	): void {
+		if (!chatOutput) return;
+
+		const wrapper =
+			document.createElement("div");
+
+		wrapper.className = user
+			? "user-message"
+			: "ai-message";
+
+		const labelElement =
+			document.createElement("div");
+
+		labelElement.className =
+			"message-label";
+
+		labelElement.textContent =
+			label;
+
+		const messageElement =
+			document.createElement("p");
+
+		messageElement.textContent =
+			message;
+
+		wrapper.appendChild(
+			labelElement
+		);
+
+		wrapper.appendChild(
+			messageElement
+		);
+
+		chatOutput.appendChild(
+			wrapper
+		);
+
+		chatOutput.scrollTop =
+			chatOutput.scrollHeight;
+	}
+
+	function updateStatus(
+		message: string,
+		percentage: number
+	): void {
+		const safePercentage =
+			Math.max(
+				0,
+				Math.min(
+					100,
+					percentage
+				)
+			);
+
+		if (scannerStatus) {
+			scannerStatus.textContent =
+				`● ${message}`;
+		}
+
+		if (operationName) {
+			operationName.textContent =
+				message;
+		}
+
+		if (progressFill) {
+			progressFill.style.width =
+				`${safePercentage}%`;
+		}
+
+		if (progressNumber) {
+			progressNumber.textContent =
+				`${safePercentage}%`;
+		}
+
+		if (scoreNumber) {
+			scoreNumber.textContent =
+				`${safePercentage}%`;
+		}
+
+		if (progressLabel) {
+			progressLabel.textContent =
+				"Current operation";
+		}
+	}
+
+	function runCommand(
+		command: string
+	): void {
+		const normalizedCommand =
+			command.trim().toUpperCase();
+
+		if (!normalizedCommand) return;
+
+		addMessage(
+			"YOU",
+			normalizedCommand,
+			true
+		);
+
+		switch (normalizedCommand) {
+
+			case "SCAN":
+
+				updateStatus(
+					"Scanning website...",
+					25
+				);
+
+				addMessage(
+					"AI",
+					"Website scan started."
+				);
+
+				window.setTimeout(() => {
+
+					updateStatus(
+						"Website scan complete",
+						75
+					);
+
+					const passedCount =
+						clientResults.filter(
+							(item) =>
+								item.passed
+						).length;
+
+					addMessage(
+						"AI",
+						`Scan complete. ${passedCount}/${clientResults.length} tests passed.`
+					);
+
+				}, 700);
+
+				break;
+
+
+			case "ANALYZE":
+
+				updateStatus(
+					"Analyzing scan results...",
+					80
+				);
+
+				addMessage(
+					"AI",
+					"Analysis complete. One AI Scanner integration issue was detected."
+				);
+
+				break;
+
+
+			case "REPAIR":
+
+				updateStatus(
+					"Repair system ready",
+					85
+				);
+
+				addMessage(
+					"AI",
+					"Repair system is ready. No automatic changes were applied."
+				);
+
+				break;
+
+
+			case "TEST":
+
+				updateStatus(
+					"Running verification tests...",
+					90
+				);
+
+				addMessage(
+					"AI",
+					"Verification tests completed successfully."
+				);
+
+				break;
+
+
+			case "SAFETY":
+
+				updateStatus(
+					"Safety check complete",
+					100
+				);
+
+				addMessage(
+					"AI",
+					"Safety check passed. No changes were applied."
+				);
+
+				break;
+
+
+			case "REPORT": {
+
+				const passedCount =
+					clientResults.filter(
+						(item) =>
+							item.passed
+					).length;
+
+				const reportScore =
+					Math.round(
+						(
+							passedCount /
+							clientResults.length
+						) * 100
+					);
+
+				addMessage(
+					"AI",
+					`Report generated: ${passedCount}/${clientResults.length} tests passed (${reportScore}%).`
+				);
+
+				break;
+			}
+
+
+			case "BACKUPS":
+
+				addMessage(
+					"AI",
+					"Backup manager opened. No backup action was performed."
+				);
+
+				break;
+
+
+			case "RESTORE":
+
+				addMessage(
+					"AI",
+					"Restore is protected. Authorization is required before any restore action."
+				);
+
+				break;
+
+
+			case "LOGS":
+
+				addMessage(
+					"AI",
+					"Developer logs are available in the Logs panel."
+				);
+
+				break;
+
+
+			case "SETTINGS":
+
+				addMessage(
+					"AI",
+					"Developer settings panel selected."
+				);
+
+				break;
+
+
+			case "DANGER":
+
+				addMessage(
+					"AI",
+					"Danger Zone selected. Destructive actions remain locked."
+				);
+
+				break;
+
+
+			default:
+
+				addMessage(
+					"AI",
+					`Unknown command "${normalizedCommand}". Try SCAN, ANALYZE, REPAIR, TEST, SAFETY, or REPORT.`
+				);
+
+				break;
+		}
+	}
+
+
+	/* =====================================================
+	   AI COMMAND BUTTONS
+	   ===================================================== */
+
+	const commandButtons =
+		document.querySelectorAll<HTMLButtonElement>(
+			"[data-command]"
+		);
+
+	commandButtons.forEach(
+		(button: HTMLButtonElement) => {
+
+			button.addEventListener(
+				"click",
+				() => {
+
+					const command =
+						button.dataset.command;
+
+					if (command) {
+						runCommand(command);
+					}
+
+				}
+			);
+
+		}
+	);
+
+
+	/* =====================================================
+	   COMMAND FORM
+	   ===================================================== */
+
+	if (
+		commandForm &&
+		commandInput
+	) {
+
+		commandForm.addEventListener(
+			"submit",
+			(event: SubmitEvent) => {
+
+				event.preventDefault();
+
+				const value =
+					commandInput.value.trim();
+
+				if (!value) return;
+
+				runCommand(value);
+
+				commandInput.value = "";
+
+			}
+		);
+
+	}
+
+
+	/* =====================================================
+	   CTRL + B
+	   ===================================================== */
+
+	document.addEventListener(
+		"keydown",
+		(event: KeyboardEvent) => {
+
+			if (
+				event.ctrlKey &&
+				event.key.toLowerCase() === "b"
+			) {
+
+				event.preventDefault();
+
+				commandInput?.focus();
+
+				addMessage(
+					"AI",
+					"Developer command input focused with Ctrl + B."
+				);
+
+			}
+
+		}
+	);
+
+
+	/* =====================================================
+	   MOBILE SIDEBAR
+	   ===================================================== */
+
+	mobileMenu?.addEventListener(
+		"click",
+		() => {
+
+			devSidebar?.classList.toggle(
+				"open"
+			);
+
+		}
+	);
+
+
+	/* =====================================================
+	   LOADING SEQUENCE
+	   ===================================================== */
+
+	function finishLoading(): void {
+
+		if (loadingStatus) {
+			loadingStatus.textContent =
+				"LOADING DASHBOARD...";
+		}
+
+		window.setTimeout(
+			() => {
+
+				if (loadingStatus) {
+					loadingStatus.textContent =
+						"READY";
+				}
+
+				window.setTimeout(
+					() => {
+
+						loadingScreen?.classList.add(
+							"hidden"
+						);
+
+					},
+					250
+				);
+
+			},
+			650
+		);
+	}
+
+
+	window.addEventListener(
+		"load",
+		finishLoading,
+		{ once: true }
+	);
+
+
+	/*
+	 * Safety fallback.
+	 * This guarantees the loading screen cannot
+	 * remain permanently stuck.
+	 */
+
+	window.setTimeout(
+		() => {
+
+			loadingScreen?.classList.add(
+				"hidden"
+			);
+
+		},
+		2500
+	);
+</script>

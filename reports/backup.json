@@ -1,0 +1,13 @@
+{
+  "backup_successful": true,
+  "timestamp": "2026-08-08_10-10-12",
+  "backup_directory": "C:\\Users\\Hongs\\OneDrive\\Documents\\coding\\east smp website 2.0\\East-smp\\backups\\2026-08-08_10-10-12",
+  "files_copied": 69,
+  "directories_copied": 16,
+  "verified": true,
+  "important_files_verified": [
+    "package.json",
+    "astro.config.mjs"
+  ],
+  "missing_important_files": []
+}

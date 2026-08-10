@@ -1,0 +1,241 @@
+---
+import Layout from "../layouts/layout.astro";
+import { updates } from "../data/updates.js";
+import { siteInfo } from "../data/siteInfo.js";
+---
+
+<Layout title="East SMP Update Logger">
+
+
+<div class="page-content main-content">
+
+
+
+<div class="rule-box">
+
+
+<h1>
+	East SMP Update Logger
+</h1>
+
+
+<p>
+	Website and server changelog.
+</p>
+
+
+
+<div class="page-info">
+
+<p>
+	Website Version:
+	<b>{siteInfo.version}</b>
+	<br>
+
+	Last Updated:
+	{siteInfo.lastUpdated}
+</p>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+{
+
+updates.map((update) => (
+
+<section class="rule-box update-card">
+
+
+
+<h2>
+	Version {update.version} - {update.title}
+</h2>
+
+
+
+<p>
+	{update.description}
+</p>
+
+
+
+<p>
+	<b>Date:</b> {update.date}
+</p>
+
+
+
+
+
+
+
+{
+
+update.added &&
+update.added.length > 0 && (
+
+<>
+
+<h3>
+	🟢 Added
+</h3>
+
+
+<ul>
+
+{
+
+update.added.map((item) => (
+
+<li>
+	{item}
+</li>
+
+))
+
+}
+
+</ul>
+
+
+</>
+
+)
+
+}
+
+
+
+
+
+
+
+{
+
+update.changed &&
+update.changed.length > 0 && (
+
+<>
+
+<h3>
+	🔵 Changed
+</h3>
+
+
+<ul>
+
+{
+
+update.changed.map((item) => (
+
+<li>
+	{item}
+</li>
+
+))
+
+}
+
+</ul>
+
+
+</>
+
+)
+
+}
+
+
+
+
+
+
+
+{
+
+update.fixed &&
+update.fixed.length > 0 && (
+
+<>
+
+<h3>
+	🔴 Fixed
+</h3>
+
+
+<ul>
+
+{
+
+update.fixed.map((item) => (
+
+<li>
+	{item}
+</li>
+
+))
+
+}
+
+</ul>
+
+
+</>
+
+)
+
+}
+
+{
+update.removed &&
+update.removed.length > 0 && (
+
+<>
+
+<h3>
+	⚫ Removed
+</h3>
+
+<ul>
+
+{
+update.removed.map((item) => (
+
+<li>
+	{item}
+</li>
+
+))
+}
+
+</ul>
+
+</>
+
+)
+}
+
+
+
+
+</section>
+
+
+))
+
+}
+
+
+
+</div>
+
+
+</Layout>

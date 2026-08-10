@@ -1,0 +1,61 @@
+---
+const base = import.meta.env.BASE_URL;
+---
+
+<main class="container">
+
+	<a
+		class="back-button"
+		href={base}
+	>
+		← Back to East SMP
+	</a>
+
+	<h1>East SMP Beta Tester Bot</h1>
+
+	<p class="subtitle">
+		Test the East SMP AI system and report problems.
+	</p>
+
+	<section class="chat-box">
+
+		<div
+			class="messages"
+			id="messages"
+			aria-live="polite"
+		>
+			<div class="message bot">
+				Hello! I'm the East SMP Beta Tester Bot.
+				Ask me something to begin testing.
+			</div>
+		</div>
+
+		<div class="input-row">
+
+			<input
+				id="chat-input"
+				class="chat-input"
+				type="text"
+				placeholder="Type a message..."
+				autocomplete="off"
+			/>
+
+			<button
+				id="send-button"
+				class="send-button"
+				type="button"
+			>
+				Send
+			</button>
+
+		</div>
+
+		<div
+			id="status"
+			class="status"
+			aria-live="polite"
+		></div>
+
+	</section>
+
+</main>

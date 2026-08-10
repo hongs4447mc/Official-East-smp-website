@@ -1,0 +1,13 @@
+{
+  "mode": "ROLLBACK_PREVIEW",
+  "automatic_rollback": false,
+  "rollback_required": false,
+  "verification_status": "PASSED",
+  "backup_report_verified": true,
+  "available_backups": 2,
+  "latest_verified_backup": "C:\\Users\\Hongs\\OneDrive\\Documents\\coding\\east smp website 2.0\\East-smp\\backups\\2026-08-08_10-04-15",
+  "files_restored": [],
+  "files_deleted": [],
+  "files_modified": [],
+  "execution_status": "PREVIEW_ONLY"
+}

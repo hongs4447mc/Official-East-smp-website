@@ -1,0 +1,2588 @@
+{
+  "project_files_scanned": 165,
+  "references": {
+    "package-lock.json": [],
+    "package.json": [],
+    "tsconfig.json": [],
+    ".vscode/extensions.json": [],
+    ".vscode/launch.json": [],
+    "ai/analyzer.py": [],
+    "ai/backup.py": [],
+    "ai/dependency.py": [],
+    "ai/dependent_impact.py": [],
+    "ai/history.py": [],
+    "ai/impact.py": [],
+    "ai/orchestrator.py": [],
+    "ai/prefix.py": [],
+    "ai/repair.py": [],
+    "ai/repair_engine.py": [],
+    "ai/rollback.py": [],
+    "ai/safety.py": [],
+    "ai/scanner.py": [],
+    "ai/verify.py": [],
+    "reports/ai-history.json": [],
+    "reports/backup.json": [],
+    "reports/dependencies.json": [],
+    "reports/dependent-impact.json": [],
+    "reports/impact.json": [],
+    "reports/orchestrator.json": [],
+    "reports/prefix.json": [],
+    "reports/repair-engine.json": [],
+    "reports/repair-plan.json": [],
+    "reports/rollback.json": [],
+    "reports/safety.json": [],
+    "reports/scanner.json": [],
+    "reports/verification.json": [],
+    "src/404.html": [],
+    "tools/ProjectScanner.js": [
+      "fs",
+      "playwright"
+    ],
+    "src/components/beta.astro": [],
+    "src/components/Footer.astro": [],
+    "src/components/Navbar.astro": [],
+    "src/components/Status.astro": [],
+    "src/components/Suggestions.astro": [],
+    "src/components/Version.astro": [],
+    "src/data/siteInfo.js": [],
+    "src/data/updates.js": [],
+    "src/layouts/layout.astro": [
+      "astro:transitions",
+      "../components/Navbar.astro",
+      "../components/Footer.astro",
+      "../components/Suggestions.astro",
+      "../components/Status.astro"
+    ],
+    "src/pages/applications.astro": [
+      "../layouts/layout.astro",
+      "../data/siteInfo.js"
+    ],
+    "src/pages/creators.astro": [
+      "../layouts/layout.astro",
+      "../data/siteInfo.js"
+    ],
+    "src/pages/developer-scanner.astro": [
+      "../layouts/layout.astro",
+      "fs"
+    ],
+    "src/pages/index.astro": [
+      "../layouts/layout.astro",
+      "../data/siteInfo.js"
+    ],
+    "src/pages/information.astro": [
+      "../layouts/layout.astro",
+      "../data/siteInfo.js"
+    ],
+    "src/pages/roles.astro": [
+      "../layouts/layout.astro",
+      "../data/siteInfo.js"
+    ],
+    "src/pages/rules.astro": [
+      "../layouts/layout.astro",
+      "../data/siteInfo.js"
+    ],
+    "src/pages/story.astro": [
+      "../layouts/layout.astro",
+      "../data/siteInfo.js"
+    ],
+    "src/pages/updates.astro": [
+      "../layouts/layout.astro",
+      "../data/updates.js",
+      "../data/siteInfo.js"
+    ],
+    "src/scripts/beta-tester-bot.ts": [],
+    "src/scripts/dropdowns.js": [],
+    "src/scripts/eastsmp.js": [],
+    "src/scripts/Testerbot.js": [],
+    "src/scripts/websiteTester.js": [],
+    "src/styles/styles.css": [],
+    "src/pages/api/scan.js": [
+      "child_process",
+      "util"
+    ],
+    "src/pages/beta-tester-bot/index.astro": [],
+    "backups/2026-08-08_09-42-58/package-lock.json": [],
+    "backups/2026-08-08_09-42-58/package.json": [],
+    "backups/2026-08-08_09-42-58/tsconfig.json": [],
+    "backups/2026-08-08_10-04-15/package-lock.json": [],
+    "backups/2026-08-08_10-04-15/package.json": [],
+    "backups/2026-08-08_10-04-15/tsconfig.json": [],
+    "backups/2026-08-08_10-04-15/.vscode/extensions.json": [],
+    "backups/2026-08-08_10-04-15/.vscode/launch.json": [],
+    "backups/2026-08-08_10-04-15/ai/analyzer.py": [],
+    "backups/2026-08-08_10-04-15/ai/backup.py": [],
+    "backups/2026-08-08_10-04-15/ai/dependency.py": [],
+    "backups/2026-08-08_10-04-15/ai/history.py": [],
+    "backups/2026-08-08_10-04-15/ai/impact.py": [],
+    "backups/2026-08-08_10-04-15/ai/orchestrator.py": [],
+    "backups/2026-08-08_10-04-15/ai/prefix.py": [],
+    "backups/2026-08-08_10-04-15/ai/repair.py": [],
+    "backups/2026-08-08_10-04-15/ai/repair_engine.py": [],
+    "backups/2026-08-08_10-04-15/ai/rollback.py": [],
+    "backups/2026-08-08_10-04-15/ai/safety.py": [],
+    "backups/2026-08-08_10-04-15/ai/scanner.py": [],
+    "backups/2026-08-08_10-04-15/ai/verify.py": [],
+    "backups/2026-08-08_10-04-15/reports/ai-history.json": [],
+    "backups/2026-08-08_10-04-15/reports/backup.json": [],
+    "backups/2026-08-08_10-04-15/reports/dependencies.json": [],
+    "backups/2026-08-08_10-04-15/reports/impact.json": [],
+    "backups/2026-08-08_10-04-15/reports/prefix.json": [],
+    "backups/2026-08-08_10-04-15/reports/repair-engine.json": [],
+    "backups/2026-08-08_10-04-15/reports/repair-plan.json": [],
+    "backups/2026-08-08_10-04-15/reports/rollback.json": [],
+    "backups/2026-08-08_10-04-15/reports/safety.json": [],
+    "backups/2026-08-08_10-04-15/reports/scanner.json": [],
+    "backups/2026-08-08_10-04-15/reports/verification.json": [],
+    "backups/2026-08-08_10-04-15/src/404.html": [],
+    "backups/2026-08-08_10-04-15/tools/ProjectScanner.js": [
+      "fs",
+      "playwright"
+    ],
+    "backups/2026-08-08_10-04-15/src/components/beta.astro": [],
+    "backups/2026-08-08_10-04-15/src/components/Footer.astro": [],
+    "backups/2026-08-08_10-04-15/src/components/Navbar.astro": [],
+    "backups/2026-08-08_10-04-15/src/components/Status.astro": [],
+    "backups/2026-08-08_10-04-15/src/components/Suggestions.astro": [],
+    "backups/2026-08-08_10-04-15/src/components/Version.astro": [],
+    "backups/2026-08-08_10-04-15/src/data/siteInfo.js": [],
+    "backups/2026-08-08_10-04-15/src/data/updates.js": [],
+    "backups/2026-08-08_10-04-15/src/layouts/layout.astro": [
+      "astro:transitions",
+      "../components/Navbar.astro",
+      "../components/Footer.astro",
+      "../components/Suggestions.astro",
+      "../components/Status.astro"
+    ],
+    "backups/2026-08-08_10-04-15/src/pages/applications.astro": [
+      "../layouts/layout.astro",
+      "../data/siteInfo.js"
+    ],
+    "backups/2026-08-08_10-04-15/src/pages/creators.astro": [
+      "../layouts/layout.astro",
+      "../data/siteInfo.js"
+    ],
+    "backups/2026-08-08_10-04-15/src/pages/developer-scanner.astro": [
+      "../layouts/layout.astro",
+      "fs"
+    ],
+    "backups/2026-08-08_10-04-15/src/pages/index.astro": [
+      "../layouts/layout.astro",
+      "../data/siteInfo.js"
+    ],
+    "backups/2026-08-08_10-04-15/src/pages/information.astro": [
+      "../layouts/layout.astro",
+      "../data/siteInfo.js"
+    ],
+    "backups/2026-08-08_10-04-15/src/pages/roles.astro": [
+      "../layouts/layout.astro",
+      "../data/siteInfo.js"
+    ],
+    "backups/2026-08-08_10-04-15/src/pages/rules.astro": [
+      "../layouts/layout.astro",
+      "../data/siteInfo.js"
+    ],
+    "backups/2026-08-08_10-04-15/src/pages/story.astro": [
+      "../layouts/layout.astro",
+      "../data/siteInfo.js"
+    ],
+    "backups/2026-08-08_10-04-15/src/pages/updates.astro": [
+      "../layouts/layout.astro",
+      "../data/updates.js",
+      "../data/siteInfo.js"
+    ],
+    "backups/2026-08-08_10-04-15/src/scripts/beta-tester-bot.ts": [],
+    "backups/2026-08-08_10-04-15/src/scripts/dropdowns.js": [],
+    "backups/2026-08-08_10-04-15/src/scripts/eastsmp.js": [],
+    "backups/2026-08-08_10-04-15/src/scripts/Testerbot.js": [],
+    "backups/2026-08-08_10-04-15/src/scripts/websiteTester.js": [],
+    "backups/2026-08-08_10-04-15/src/styles/styles.css": [],
+    "backups/2026-08-08_10-04-15/src/pages/api/scan.js": [
+      "child_process",
+      "util"
+    ],
+    "backups/2026-08-08_10-04-15/src/pages/beta-tester-bot/index.astro": [],
+    "backups/2026-08-08_09-42-58/.vscode/extensions.json": [],
+    "backups/2026-08-08_09-42-58/.vscode/launch.json": [],
+    "backups/2026-08-08_09-42-58/ai/analyzer.py": [],
+    "backups/2026-08-08_09-42-58/ai/backup.py": [],
+    "backups/2026-08-08_09-42-58/ai/dependency.py": [],
+    "backups/2026-08-08_09-42-58/ai/impact.py": [],
+    "backups/2026-08-08_09-42-58/ai/repair.py": [],
+    "backups/2026-08-08_09-42-58/ai/safety.py": [],
+    "backups/2026-08-08_09-42-58/ai/scanner.py": [],
+    "backups/2026-08-08_09-42-58/reports/dependencies.json": [],
+    "backups/2026-08-08_09-42-58/reports/impact.json": [],
+    "backups/2026-08-08_09-42-58/reports/repair-plan.json": [],
+    "backups/2026-08-08_09-42-58/reports/safety.json": [],
+    "backups/2026-08-08_09-42-58/reports/scanner.json": [],
+    "backups/2026-08-08_09-42-58/src/404.html": [],
+    "backups/2026-08-08_09-42-58/tools/ProjectScanner.js": [
+      "fs",
+      "playwright"
+    ],
+    "backups/2026-08-08_09-42-58/src/components/beta.astro": [],
+    "backups/2026-08-08_09-42-58/src/components/Footer.astro": [],
+    "backups/2026-08-08_09-42-58/src/components/Navbar.astro": [],
+    "backups/2026-08-08_09-42-58/src/components/Status.astro": [],
+    "backups/2026-08-08_09-42-58/src/components/Suggestions.astro": [],
+    "backups/2026-08-08_09-42-58/src/components/Version.astro": [],
+    "backups/2026-08-08_09-42-58/src/data/siteInfo.js": [],
+    "backups/2026-08-08_09-42-58/src/data/updates.js": [],
+    "backups/2026-08-08_09-42-58/src/layouts/layout.astro": [
+      "astro:transitions",
+      "../components/Navbar.astro",
+      "../components/Footer.astro",
+      "../components/Suggestions.astro",
+      "../components/Status.astro"
+    ],
+    "backups/2026-08-08_09-42-58/src/pages/applications.astro": [
+      "../layouts/layout.astro",
+      "../data/siteInfo.js"
+    ],
+    "backups/2026-08-08_09-42-58/src/pages/creators.astro": [
+      "../layouts/layout.astro",
+      "../data/siteInfo.js"
+    ],
+    "backups/2026-08-08_09-42-58/src/pages/developer-scanner.astro": [
+      "../layouts/layout.astro",
+      "fs"
+    ],
+    "backups/2026-08-08_09-42-58/src/pages/index.astro": [
+      "../layouts/layout.astro",
+      "../data/siteInfo.js"
+    ],
+    "backups/2026-08-08_09-42-58/src/pages/information.astro": [
+      "../layouts/layout.astro",
+      "../data/siteInfo.js"
+    ],
+    "backups/2026-08-08_09-42-58/src/pages/roles.astro": [
+      "../layouts/layout.astro",
+      "../data/siteInfo.js"
+    ],
+    "backups/2026-08-08_09-42-58/src/pages/rules.astro": [
+      "../layouts/layout.astro",
+      "../data/siteInfo.js"
+    ],
+    "backups/2026-08-08_09-42-58/src/pages/story.astro": [
+      "../layouts/layout.astro",
+      "../data/siteInfo.js"
+    ],
+    "backups/2026-08-08_09-42-58/src/pages/updates.astro": [
+      "../layouts/layout.astro",
+      "../data/updates.js",
+      "../data/siteInfo.js"
+    ],
+    "backups/2026-08-08_09-42-58/src/scripts/beta-tester-bot.ts": [],
+    "backups/2026-08-08_09-42-58/src/scripts/dropdowns.js": [],
+    "backups/2026-08-08_09-42-58/src/scripts/eastsmp.js": [],
+    "backups/2026-08-08_09-42-58/src/scripts/Testerbot.js": [],
+    "backups/2026-08-08_09-42-58/src/scripts/websiteTester.js": [],
+    "backups/2026-08-08_09-42-58/src/styles/styles.css": [],
+    "backups/2026-08-08_09-42-58/src/pages/api/scan.js": [
+      "child_process",
+      "util"
+    ],
+    "backups/2026-08-08_09-42-58/src/pages/beta-tester-bot/index.astro": []
+  },
+  "dependents": {
+    "package-lock.json": [
+      "reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json"
+    ],
+    "package.json": [
+      "ai/backup.py",
+      "reports/backup.json",
+      "reports/dependencies.json",
+      "reports/scanner.json",
+      "tools/ProjectScanner.js",
+      "backups/2026-08-08_10-04-15/ai/backup.py",
+      "backups/2026-08-08_10-04-15/reports/backup.json",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/reports/scanner.json",
+      "backups/2026-08-08_10-04-15/tools/ProjectScanner.js",
+      "backups/2026-08-08_09-42-58/ai/backup.py",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/reports/scanner.json",
+      "backups/2026-08-08_09-42-58/tools/ProjectScanner.js"
+    ],
+    "tsconfig.json": [
+      "reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json"
+    ],
+    ".vscode/extensions.json": [
+      "reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json"
+    ],
+    ".vscode/launch.json": [
+      "reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json"
+    ],
+    "ai/analyzer.py": [
+      "reports/dependencies.json",
+      "reports/orchestrator.json",
+      "backups/2026-08-08_10-04-15/ai/orchestrator.py",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json"
+    ],
+    "ai/backup.py": [
+      "ai/orchestrator.py",
+      "reports/dependencies.json",
+      "reports/orchestrator.json",
+      "backups/2026-08-08_10-04-15/ai/orchestrator.py",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json"
+    ],
+    "ai/dependency.py": [
+      "ai/orchestrator.py",
+      "reports/dependencies.json",
+      "reports/orchestrator.json",
+      "backups/2026-08-08_10-04-15/ai/orchestrator.py",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json"
+    ],
+    "ai/dependent_impact.py": [
+      "ai/orchestrator.py"
+    ],
+    "ai/history.py": [
+      "ai/orchestrator.py",
+      "reports/dependencies.json",
+      "reports/orchestrator.json",
+      "backups/2026-08-08_10-04-15/ai/orchestrator.py",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json"
+    ],
+    "ai/impact.py": [
+      "ai/orchestrator.py",
+      "reports/dependencies.json",
+      "reports/orchestrator.json",
+      "backups/2026-08-08_10-04-15/ai/orchestrator.py",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json"
+    ],
+    "ai/orchestrator.py": [
+      "reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json"
+    ],
+    "ai/prefix.py": [
+      "ai/orchestrator.py",
+      "reports/dependencies.json",
+      "reports/orchestrator.json",
+      "backups/2026-08-08_10-04-15/ai/orchestrator.py",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json"
+    ],
+    "ai/repair.py": [
+      "ai/orchestrator.py",
+      "reports/dependencies.json",
+      "reports/orchestrator.json",
+      "backups/2026-08-08_10-04-15/ai/orchestrator.py",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json"
+    ],
+    "ai/repair_engine.py": [
+      "ai/orchestrator.py",
+      "reports/dependencies.json",
+      "reports/orchestrator.json",
+      "backups/2026-08-08_10-04-15/ai/orchestrator.py",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json"
+    ],
+    "ai/rollback.py": [
+      "ai/orchestrator.py",
+      "reports/dependencies.json",
+      "reports/orchestrator.json",
+      "backups/2026-08-08_10-04-15/ai/orchestrator.py",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json"
+    ],
+    "ai/safety.py": [
+      "ai/orchestrator.py",
+      "reports/dependencies.json",
+      "reports/orchestrator.json",
+      "backups/2026-08-08_10-04-15/ai/orchestrator.py",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json"
+    ],
+    "ai/scanner.py": [
+      "ai/orchestrator.py",
+      "reports/dependencies.json",
+      "reports/orchestrator.json",
+      "backups/2026-08-08_10-04-15/ai/orchestrator.py",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json"
+    ],
+    "ai/verify.py": [
+      "ai/orchestrator.py",
+      "reports/dependencies.json",
+      "reports/orchestrator.json",
+      "backups/2026-08-08_10-04-15/ai/orchestrator.py",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json"
+    ],
+    "reports/ai-history.json": [
+      "ai/history.py",
+      "reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/ai/history.py",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json"
+    ],
+    "reports/backup.json": [
+      "ai/backup.py",
+      "ai/history.py",
+      "ai/orchestrator.py",
+      "ai/rollback.py",
+      "reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/ai/backup.py",
+      "backups/2026-08-08_10-04-15/ai/history.py",
+      "backups/2026-08-08_10-04-15/ai/rollback.py",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/ai/backup.py"
+    ],
+    "reports/dependencies.json": [
+      "ai/dependency.py",
+      "ai/dependent_impact.py",
+      "ai/orchestrator.py",
+      "ai/prefix.py",
+      "ai/repair_engine.py",
+      "ai/safety.py",
+      "backups/2026-08-08_10-04-15/ai/dependency.py",
+      "backups/2026-08-08_10-04-15/ai/prefix.py",
+      "backups/2026-08-08_10-04-15/ai/repair_engine.py",
+      "backups/2026-08-08_10-04-15/ai/safety.py",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/ai/dependency.py",
+      "backups/2026-08-08_09-42-58/ai/safety.py"
+    ],
+    "reports/dependent-impact.json": [
+      "ai/dependent_impact.py",
+      "ai/orchestrator.py"
+    ],
+    "reports/impact.json": [
+      "ai/dependency.py",
+      "ai/dependent_impact.py",
+      "ai/impact.py",
+      "ai/orchestrator.py",
+      "ai/prefix.py",
+      "ai/repair.py",
+      "reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/ai/dependency.py",
+      "backups/2026-08-08_10-04-15/ai/impact.py",
+      "backups/2026-08-08_10-04-15/ai/prefix.py",
+      "backups/2026-08-08_10-04-15/ai/repair.py",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/ai/dependency.py",
+      "backups/2026-08-08_09-42-58/ai/impact.py",
+      "backups/2026-08-08_09-42-58/ai/repair.py",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json"
+    ],
+    "reports/orchestrator.json": [
+      "ai/orchestrator.py",
+      "backups/2026-08-08_10-04-15/ai/orchestrator.py"
+    ],
+    "reports/prefix.json": [
+      "ai/orchestrator.py",
+      "ai/prefix.py",
+      "ai/repair_engine.py",
+      "reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/ai/prefix.py",
+      "backups/2026-08-08_10-04-15/ai/repair_engine.py",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json"
+    ],
+    "reports/repair-engine.json": [
+      "ai/history.py",
+      "ai/repair_engine.py",
+      "reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/ai/history.py",
+      "backups/2026-08-08_10-04-15/ai/repair_engine.py",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json"
+    ],
+    "reports/repair-plan.json": [
+      "ai/dependent_impact.py",
+      "ai/orchestrator.py",
+      "ai/prefix.py",
+      "ai/repair.py",
+      "ai/repair_engine.py",
+      "ai/safety.py",
+      "reports/dependencies.json",
+      "reports/prefix.json",
+      "backups/2026-08-08_10-04-15/ai/prefix.py",
+      "backups/2026-08-08_10-04-15/ai/repair.py",
+      "backups/2026-08-08_10-04-15/ai/repair_engine.py",
+      "backups/2026-08-08_10-04-15/ai/safety.py",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/reports/prefix.json",
+      "backups/2026-08-08_09-42-58/ai/repair.py",
+      "backups/2026-08-08_09-42-58/ai/safety.py",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json"
+    ],
+    "reports/report.json": [
+      "reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json"
+    ],
+    "reports/rollback.json": [
+      "ai/rollback.py",
+      "reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/ai/rollback.py",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json"
+    ],
+    "reports/safety.json": [
+      "ai/history.py",
+      "ai/orchestrator.py",
+      "ai/repair_engine.py",
+      "ai/safety.py",
+      "reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/ai/history.py",
+      "backups/2026-08-08_10-04-15/ai/orchestrator.py",
+      "backups/2026-08-08_10-04-15/ai/repair_engine.py",
+      "backups/2026-08-08_10-04-15/ai/safety.py",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/ai/safety.py"
+    ],
+    "reports/scanner.json": [
+      "ai/analyzer.py",
+      "ai/history.py",
+      "ai/impact.py",
+      "ai/repair.py",
+      "ai/scanner.py",
+      "ai/verify.py",
+      "reports/dependencies.json",
+      "tools/ProjectScanner.js",
+      "src/pages/developer-scanner.astro",
+      "backups/2026-08-08_10-04-15/ai/analyzer.py",
+      "backups/2026-08-08_10-04-15/ai/history.py",
+      "backups/2026-08-08_10-04-15/ai/impact.py",
+      "backups/2026-08-08_10-04-15/ai/repair.py",
+      "backups/2026-08-08_10-04-15/ai/scanner.py",
+      "backups/2026-08-08_10-04-15/ai/verify.py",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/tools/ProjectScanner.js",
+      "backups/2026-08-08_10-04-15/src/pages/developer-scanner.astro",
+      "backups/2026-08-08_09-42-58/ai/analyzer.py",
+      "backups/2026-08-08_09-42-58/ai/impact.py",
+      "backups/2026-08-08_09-42-58/ai/scanner.py",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/tools/ProjectScanner.js",
+      "backups/2026-08-08_09-42-58/src/pages/developer-scanner.astro"
+    ],
+    "reports/verification.json": [
+      "ai/history.py",
+      "ai/rollback.py",
+      "ai/verify.py",
+      "reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/ai/history.py",
+      "backups/2026-08-08_10-04-15/ai/orchestrator.py",
+      "backups/2026-08-08_10-04-15/ai/rollback.py",
+      "backups/2026-08-08_10-04-15/ai/verify.py",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json"
+    ],
+    "src/404.html": [
+      "reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json"
+    ],
+    "tools/ProjectScanner.js": [
+      "package.json",
+      "ai/verify.py",
+      "reports/dependencies.json",
+      "src/pages/api/scan.js",
+      "backups/2026-08-08_09-42-58/package.json",
+      "backups/2026-08-08_10-04-15/package.json",
+      "backups/2026-08-08_10-04-15/ai/verify.py",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/tools/ProjectScanner.js",
+      "backups/2026-08-08_10-04-15/src/pages/api/scan.js",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/tools/ProjectScanner.js",
+      "backups/2026-08-08_09-42-58/src/pages/api/scan.js"
+    ],
+    "src/components/beta.astro": [
+      "reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json"
+    ],
+    "src/components/Footer.astro": [
+      "reports/dependencies.json",
+      "src/layouts/layout.astro",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/src/layouts/layout.astro",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/src/layouts/layout.astro"
+    ],
+    "src/components/Navbar.astro": [
+      "reports/dependencies.json",
+      "src/layouts/layout.astro",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/src/layouts/layout.astro",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/src/layouts/layout.astro"
+    ],
+    "src/components/Status.astro": [
+      "reports/dependencies.json",
+      "src/layouts/layout.astro",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/src/layouts/layout.astro",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/src/layouts/layout.astro"
+    ],
+    "src/components/Suggestions.astro": [
+      "reports/dependencies.json",
+      "src/layouts/layout.astro",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/src/layouts/layout.astro",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/src/layouts/layout.astro"
+    ],
+    "src/components/Version.astro": [
+      "reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json"
+    ],
+    "src/data/siteInfo.js": [
+      "ai/prefix.py",
+      "reports/dependencies.json",
+      "src/pages/applications.astro",
+      "src/pages/creators.astro",
+      "src/pages/index.astro",
+      "src/pages/information.astro",
+      "src/pages/roles.astro",
+      "src/pages/rules.astro",
+      "src/pages/story.astro",
+      "src/pages/updates.astro",
+      "backups/2026-08-08_10-04-15/ai/prefix.py",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/src/pages/applications.astro",
+      "backups/2026-08-08_10-04-15/src/pages/creators.astro",
+      "backups/2026-08-08_10-04-15/src/pages/index.astro",
+      "backups/2026-08-08_10-04-15/src/pages/information.astro",
+      "backups/2026-08-08_10-04-15/src/pages/roles.astro",
+      "backups/2026-08-08_10-04-15/src/pages/rules.astro",
+      "backups/2026-08-08_10-04-15/src/pages/story.astro",
+      "backups/2026-08-08_10-04-15/src/pages/updates.astro",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/src/pages/applications.astro",
+      "backups/2026-08-08_09-42-58/src/pages/creators.astro",
+      "backups/2026-08-08_09-42-58/src/pages/index.astro",
+      "backups/2026-08-08_09-42-58/src/pages/information.astro",
+      "backups/2026-08-08_09-42-58/src/pages/roles.astro",
+      "backups/2026-08-08_09-42-58/src/pages/rules.astro",
+      "backups/2026-08-08_09-42-58/src/pages/story.astro",
+      "backups/2026-08-08_09-42-58/src/pages/updates.astro"
+    ],
+    "src/data/updates.js": [
+      "reports/dependencies.json",
+      "src/pages/updates.astro",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/src/pages/updates.astro",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/src/pages/updates.astro"
+    ],
+    "src/layouts/layout.astro": [
+      "ai/prefix.py",
+      "reports/dependencies.json",
+      "reports/scanner.json",
+      "tools/ProjectScanner.js",
+      "src/pages/applications.astro",
+      "src/pages/creators.astro",
+      "src/pages/developer-scanner.astro",
+      "src/pages/index.astro",
+      "src/pages/information.astro",
+      "src/pages/roles.astro",
+      "src/pages/rules.astro",
+      "src/pages/story.astro",
+      "src/pages/updates.astro",
+      "backups/2026-08-08_10-04-15/ai/prefix.py",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/reports/scanner.json",
+      "backups/2026-08-08_10-04-15/tools/ProjectScanner.js",
+      "backups/2026-08-08_10-04-15/src/pages/applications.astro",
+      "backups/2026-08-08_10-04-15/src/pages/creators.astro",
+      "backups/2026-08-08_10-04-15/src/pages/developer-scanner.astro",
+      "backups/2026-08-08_10-04-15/src/pages/index.astro",
+      "backups/2026-08-08_10-04-15/src/pages/information.astro",
+      "backups/2026-08-08_10-04-15/src/pages/roles.astro",
+      "backups/2026-08-08_10-04-15/src/pages/rules.astro",
+      "backups/2026-08-08_10-04-15/src/pages/story.astro",
+      "backups/2026-08-08_10-04-15/src/pages/updates.astro",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/reports/scanner.json",
+      "backups/2026-08-08_09-42-58/tools/ProjectScanner.js",
+      "backups/2026-08-08_09-42-58/src/pages/applications.astro",
+      "backups/2026-08-08_09-42-58/src/pages/creators.astro",
+      "backups/2026-08-08_09-42-58/src/pages/developer-scanner.astro",
+      "backups/2026-08-08_09-42-58/src/pages/index.astro",
+      "backups/2026-08-08_09-42-58/src/pages/information.astro",
+      "backups/2026-08-08_09-42-58/src/pages/roles.astro",
+      "backups/2026-08-08_09-42-58/src/pages/rules.astro",
+      "backups/2026-08-08_09-42-58/src/pages/story.astro",
+      "backups/2026-08-08_09-42-58/src/pages/updates.astro"
+    ],
+    "src/pages/applications.astro": [
+      "reports/dependencies.json",
+      "reports/scanner.json",
+      "tools/ProjectScanner.js",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/reports/scanner.json",
+      "backups/2026-08-08_10-04-15/tools/ProjectScanner.js",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/reports/scanner.json",
+      "backups/2026-08-08_09-42-58/tools/ProjectScanner.js"
+    ],
+    "src/pages/creators.astro": [
+      "reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json"
+    ],
+    "src/pages/developer-scanner.astro": [
+      "reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json"
+    ],
+    "src/pages/index.astro": [
+      "ai/repair_engine.py",
+      "reports/dependencies.json",
+      "reports/scanner.json",
+      "tools/ProjectScanner.js",
+      "backups/2026-08-08_10-04-15/ai/repair_engine.py",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/reports/scanner.json",
+      "backups/2026-08-08_10-04-15/tools/ProjectScanner.js",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/reports/scanner.json",
+      "backups/2026-08-08_09-42-58/tools/ProjectScanner.js"
+    ],
+    "src/pages/information.astro": [
+      "reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json"
+    ],
+    "src/pages/roles.astro": [
+      "reports/dependencies.json",
+      "reports/scanner.json",
+      "tools/ProjectScanner.js",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/reports/scanner.json",
+      "backups/2026-08-08_10-04-15/tools/ProjectScanner.js",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/reports/scanner.json",
+      "backups/2026-08-08_09-42-58/tools/ProjectScanner.js"
+    ],
+    "src/pages/rules.astro": [
+      "reports/dependencies.json",
+      "reports/scanner.json",
+      "tools/ProjectScanner.js",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/reports/scanner.json",
+      "backups/2026-08-08_10-04-15/tools/ProjectScanner.js",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/reports/scanner.json",
+      "backups/2026-08-08_09-42-58/tools/ProjectScanner.js"
+    ],
+    "src/pages/story.astro": [
+      "reports/dependencies.json",
+      "reports/scanner.json",
+      "tools/ProjectScanner.js",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/reports/scanner.json",
+      "backups/2026-08-08_10-04-15/tools/ProjectScanner.js",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/reports/scanner.json",
+      "backups/2026-08-08_09-42-58/tools/ProjectScanner.js"
+    ],
+    "src/pages/updates.astro": [
+      "reports/dependencies.json",
+      "reports/scanner.json",
+      "tools/ProjectScanner.js",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/reports/scanner.json",
+      "backups/2026-08-08_10-04-15/tools/ProjectScanner.js",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/reports/scanner.json",
+      "backups/2026-08-08_09-42-58/tools/ProjectScanner.js"
+    ],
+    "src/scripts/beta-tester-bot.ts": [
+      "reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json"
+    ],
+    "src/scripts/dropdowns.js": [
+      "reports/dependencies.json",
+      "src/layouts/layout.astro",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/src/layouts/layout.astro",
+      "backups/2026-08-08_10-04-15/src/scripts/dropdowns.js",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/src/layouts/layout.astro",
+      "backups/2026-08-08_09-42-58/src/scripts/dropdowns.js"
+    ],
+    "src/scripts/eastsmp.js": [
+      "reports/dependencies.json",
+      "src/404.html",
+      "src/layouts/layout.astro",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/src/404.html",
+      "backups/2026-08-08_10-04-15/src/layouts/layout.astro",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/src/404.html",
+      "backups/2026-08-08_09-42-58/src/layouts/layout.astro"
+    ],
+    "src/scripts/Testerbot.js": [
+      "reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/src/scripts/Testerbot.js",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/src/scripts/Testerbot.js"
+    ],
+    "src/scripts/websiteTester.js": [
+      "reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json"
+    ],
+    "src/styles/styles.css": [
+      "ai/prefix.py",
+      "reports/dependencies.json",
+      "reports/scanner.json",
+      "tools/ProjectScanner.js",
+      "src/layouts/layout.astro",
+      "backups/2026-08-08_10-04-15/ai/prefix.py",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/reports/scanner.json",
+      "backups/2026-08-08_10-04-15/tools/ProjectScanner.js",
+      "backups/2026-08-08_10-04-15/src/layouts/layout.astro",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/reports/scanner.json",
+      "backups/2026-08-08_09-42-58/tools/ProjectScanner.js",
+      "backups/2026-08-08_09-42-58/src/layouts/layout.astro"
+    ],
+    "src/pages/api/scan.js": [
+      "reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json"
+    ],
+    "src/pages/beta-tester-bot/index.astro": [
+      "ai/repair_engine.py",
+      "reports/dependencies.json",
+      "reports/scanner.json",
+      "tools/ProjectScanner.js",
+      "backups/2026-08-08_10-04-15/ai/repair_engine.py",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/reports/scanner.json",
+      "backups/2026-08-08_10-04-15/tools/ProjectScanner.js",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/reports/scanner.json",
+      "backups/2026-08-08_09-42-58/tools/ProjectScanner.js"
+    ],
+    "backups/2026-08-08_09-42-58/package-lock.json": [
+      "reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json"
+    ],
+    "backups/2026-08-08_09-42-58/package.json": [
+      "ai/backup.py",
+      "reports/backup.json",
+      "reports/dependencies.json",
+      "reports/scanner.json",
+      "tools/ProjectScanner.js",
+      "backups/2026-08-08_10-04-15/ai/backup.py",
+      "backups/2026-08-08_10-04-15/reports/backup.json",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/reports/scanner.json",
+      "backups/2026-08-08_10-04-15/tools/ProjectScanner.js",
+      "backups/2026-08-08_09-42-58/ai/backup.py",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/reports/scanner.json",
+      "backups/2026-08-08_09-42-58/tools/ProjectScanner.js"
+    ],
+    "backups/2026-08-08_09-42-58/tsconfig.json": [
+      "reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json"
+    ],
+    "backups/2026-08-08_10-04-15/package-lock.json": [
+      "reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json"
+    ],
+    "backups/2026-08-08_10-04-15/package.json": [
+      "ai/backup.py",
+      "reports/backup.json",
+      "reports/dependencies.json",
+      "reports/scanner.json",
+      "tools/ProjectScanner.js",
+      "backups/2026-08-08_10-04-15/ai/backup.py",
+      "backups/2026-08-08_10-04-15/reports/backup.json",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/reports/scanner.json",
+      "backups/2026-08-08_10-04-15/tools/ProjectScanner.js",
+      "backups/2026-08-08_09-42-58/ai/backup.py",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/reports/scanner.json",
+      "backups/2026-08-08_09-42-58/tools/ProjectScanner.js"
+    ],
+    "backups/2026-08-08_10-04-15/tsconfig.json": [
+      "reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json"
+    ],
+    "backups/2026-08-08_10-04-15/.vscode/extensions.json": [
+      "reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json"
+    ],
+    "backups/2026-08-08_10-04-15/.vscode/launch.json": [
+      "reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json"
+    ],
+    "backups/2026-08-08_10-04-15/ai/analyzer.py": [
+      "reports/dependencies.json",
+      "reports/orchestrator.json",
+      "backups/2026-08-08_10-04-15/ai/orchestrator.py",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json"
+    ],
+    "backups/2026-08-08_10-04-15/ai/backup.py": [
+      "ai/orchestrator.py",
+      "reports/dependencies.json",
+      "reports/orchestrator.json",
+      "backups/2026-08-08_10-04-15/ai/orchestrator.py",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json"
+    ],
+    "backups/2026-08-08_10-04-15/ai/dependency.py": [
+      "ai/orchestrator.py",
+      "reports/dependencies.json",
+      "reports/orchestrator.json",
+      "backups/2026-08-08_10-04-15/ai/orchestrator.py",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json"
+    ],
+    "backups/2026-08-08_10-04-15/ai/history.py": [
+      "ai/orchestrator.py",
+      "reports/dependencies.json",
+      "reports/orchestrator.json",
+      "backups/2026-08-08_10-04-15/ai/orchestrator.py",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json"
+    ],
+    "backups/2026-08-08_10-04-15/ai/impact.py": [
+      "ai/orchestrator.py",
+      "reports/dependencies.json",
+      "reports/orchestrator.json",
+      "backups/2026-08-08_10-04-15/ai/orchestrator.py",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json"
+    ],
+    "backups/2026-08-08_10-04-15/ai/orchestrator.py": [
+      "reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json"
+    ],
+    "backups/2026-08-08_10-04-15/ai/prefix.py": [
+      "ai/orchestrator.py",
+      "reports/dependencies.json",
+      "reports/orchestrator.json",
+      "backups/2026-08-08_10-04-15/ai/orchestrator.py",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json"
+    ],
+    "backups/2026-08-08_10-04-15/ai/repair.py": [
+      "ai/orchestrator.py",
+      "reports/dependencies.json",
+      "reports/orchestrator.json",
+      "backups/2026-08-08_10-04-15/ai/orchestrator.py",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json"
+    ],
+    "backups/2026-08-08_10-04-15/ai/repair_engine.py": [
+      "ai/orchestrator.py",
+      "reports/dependencies.json",
+      "reports/orchestrator.json",
+      "backups/2026-08-08_10-04-15/ai/orchestrator.py",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json"
+    ],
+    "backups/2026-08-08_10-04-15/ai/rollback.py": [
+      "ai/orchestrator.py",
+      "reports/dependencies.json",
+      "reports/orchestrator.json",
+      "backups/2026-08-08_10-04-15/ai/orchestrator.py",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json"
+    ],
+    "backups/2026-08-08_10-04-15/ai/safety.py": [
+      "ai/orchestrator.py",
+      "reports/dependencies.json",
+      "reports/orchestrator.json",
+      "backups/2026-08-08_10-04-15/ai/orchestrator.py",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json"
+    ],
+    "backups/2026-08-08_10-04-15/ai/scanner.py": [
+      "ai/orchestrator.py",
+      "reports/dependencies.json",
+      "reports/orchestrator.json",
+      "backups/2026-08-08_10-04-15/ai/orchestrator.py",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json"
+    ],
+    "backups/2026-08-08_10-04-15/ai/verify.py": [
+      "ai/orchestrator.py",
+      "reports/dependencies.json",
+      "reports/orchestrator.json",
+      "backups/2026-08-08_10-04-15/ai/orchestrator.py",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json"
+    ],
+    "backups/2026-08-08_10-04-15/reports/ai-history.json": [
+      "ai/history.py",
+      "reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/ai/history.py",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json"
+    ],
+    "backups/2026-08-08_10-04-15/reports/backup.json": [
+      "ai/backup.py",
+      "ai/history.py",
+      "ai/orchestrator.py",
+      "ai/rollback.py",
+      "reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/ai/backup.py",
+      "backups/2026-08-08_10-04-15/ai/history.py",
+      "backups/2026-08-08_10-04-15/ai/rollback.py",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/ai/backup.py"
+    ],
+    "backups/2026-08-08_10-04-15/reports/dependencies.json": [
+      "ai/dependency.py",
+      "ai/dependent_impact.py",
+      "ai/orchestrator.py",
+      "ai/prefix.py",
+      "ai/repair_engine.py",
+      "ai/safety.py",
+      "reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/ai/dependency.py",
+      "backups/2026-08-08_10-04-15/ai/prefix.py",
+      "backups/2026-08-08_10-04-15/ai/repair_engine.py",
+      "backups/2026-08-08_10-04-15/ai/safety.py",
+      "backups/2026-08-08_09-42-58/ai/dependency.py",
+      "backups/2026-08-08_09-42-58/ai/safety.py"
+    ],
+    "backups/2026-08-08_10-04-15/reports/impact.json": [
+      "ai/dependency.py",
+      "ai/dependent_impact.py",
+      "ai/impact.py",
+      "ai/orchestrator.py",
+      "ai/prefix.py",
+      "ai/repair.py",
+      "reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/ai/dependency.py",
+      "backups/2026-08-08_10-04-15/ai/impact.py",
+      "backups/2026-08-08_10-04-15/ai/prefix.py",
+      "backups/2026-08-08_10-04-15/ai/repair.py",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/ai/dependency.py",
+      "backups/2026-08-08_09-42-58/ai/impact.py",
+      "backups/2026-08-08_09-42-58/ai/repair.py",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json"
+    ],
+    "backups/2026-08-08_10-04-15/reports/prefix.json": [
+      "ai/orchestrator.py",
+      "ai/prefix.py",
+      "ai/repair_engine.py",
+      "reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/ai/prefix.py",
+      "backups/2026-08-08_10-04-15/ai/repair_engine.py",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json"
+    ],
+    "backups/2026-08-08_10-04-15/reports/repair-engine.json": [
+      "ai/history.py",
+      "ai/repair_engine.py",
+      "reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/ai/history.py",
+      "backups/2026-08-08_10-04-15/ai/repair_engine.py",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json"
+    ],
+    "backups/2026-08-08_10-04-15/reports/repair-plan.json": [
+      "ai/dependent_impact.py",
+      "ai/orchestrator.py",
+      "ai/prefix.py",
+      "ai/repair.py",
+      "ai/repair_engine.py",
+      "ai/safety.py",
+      "reports/dependencies.json",
+      "reports/prefix.json",
+      "backups/2026-08-08_10-04-15/ai/prefix.py",
+      "backups/2026-08-08_10-04-15/ai/repair.py",
+      "backups/2026-08-08_10-04-15/ai/repair_engine.py",
+      "backups/2026-08-08_10-04-15/ai/safety.py",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/reports/prefix.json",
+      "backups/2026-08-08_09-42-58/ai/repair.py",
+      "backups/2026-08-08_09-42-58/ai/safety.py",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json"
+    ],
+    "backups/2026-08-08_10-04-15/reports/report.json": [
+      "reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json"
+    ],
+    "backups/2026-08-08_10-04-15/reports/rollback.json": [
+      "ai/rollback.py",
+      "reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/ai/rollback.py",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json"
+    ],
+    "backups/2026-08-08_10-04-15/reports/safety.json": [
+      "ai/history.py",
+      "ai/orchestrator.py",
+      "ai/repair_engine.py",
+      "ai/safety.py",
+      "reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/ai/history.py",
+      "backups/2026-08-08_10-04-15/ai/orchestrator.py",
+      "backups/2026-08-08_10-04-15/ai/repair_engine.py",
+      "backups/2026-08-08_10-04-15/ai/safety.py",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/ai/safety.py"
+    ],
+    "backups/2026-08-08_10-04-15/reports/scanner.json": [
+      "ai/analyzer.py",
+      "ai/history.py",
+      "ai/impact.py",
+      "ai/repair.py",
+      "ai/scanner.py",
+      "ai/verify.py",
+      "reports/dependencies.json",
+      "tools/ProjectScanner.js",
+      "src/pages/developer-scanner.astro",
+      "backups/2026-08-08_10-04-15/ai/analyzer.py",
+      "backups/2026-08-08_10-04-15/ai/history.py",
+      "backups/2026-08-08_10-04-15/ai/impact.py",
+      "backups/2026-08-08_10-04-15/ai/repair.py",
+      "backups/2026-08-08_10-04-15/ai/scanner.py",
+      "backups/2026-08-08_10-04-15/ai/verify.py",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/tools/ProjectScanner.js",
+      "backups/2026-08-08_10-04-15/src/pages/developer-scanner.astro",
+      "backups/2026-08-08_09-42-58/ai/analyzer.py",
+      "backups/2026-08-08_09-42-58/ai/impact.py",
+      "backups/2026-08-08_09-42-58/ai/scanner.py",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/tools/ProjectScanner.js",
+      "backups/2026-08-08_09-42-58/src/pages/developer-scanner.astro"
+    ],
+    "backups/2026-08-08_10-04-15/reports/verification.json": [
+      "ai/history.py",
+      "ai/rollback.py",
+      "ai/verify.py",
+      "reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/ai/history.py",
+      "backups/2026-08-08_10-04-15/ai/orchestrator.py",
+      "backups/2026-08-08_10-04-15/ai/rollback.py",
+      "backups/2026-08-08_10-04-15/ai/verify.py",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json"
+    ],
+    "backups/2026-08-08_10-04-15/src/404.html": [
+      "reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json"
+    ],
+    "backups/2026-08-08_10-04-15/tools/ProjectScanner.js": [
+      "package.json",
+      "ai/verify.py",
+      "reports/dependencies.json",
+      "tools/ProjectScanner.js",
+      "src/pages/api/scan.js",
+      "backups/2026-08-08_09-42-58/package.json",
+      "backups/2026-08-08_10-04-15/package.json",
+      "backups/2026-08-08_10-04-15/ai/verify.py",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/src/pages/api/scan.js",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/tools/ProjectScanner.js",
+      "backups/2026-08-08_09-42-58/src/pages/api/scan.js"
+    ],
+    "backups/2026-08-08_10-04-15/src/components/beta.astro": [
+      "reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json"
+    ],
+    "backups/2026-08-08_10-04-15/src/components/Footer.astro": [
+      "reports/dependencies.json",
+      "src/layouts/layout.astro",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/src/layouts/layout.astro",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/src/layouts/layout.astro"
+    ],
+    "backups/2026-08-08_10-04-15/src/components/Navbar.astro": [
+      "reports/dependencies.json",
+      "src/layouts/layout.astro",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/src/layouts/layout.astro",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/src/layouts/layout.astro"
+    ],
+    "backups/2026-08-08_10-04-15/src/components/Status.astro": [
+      "reports/dependencies.json",
+      "src/layouts/layout.astro",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/src/layouts/layout.astro",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/src/layouts/layout.astro"
+    ],
+    "backups/2026-08-08_10-04-15/src/components/Suggestions.astro": [
+      "reports/dependencies.json",
+      "src/layouts/layout.astro",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/src/layouts/layout.astro",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/src/layouts/layout.astro"
+    ],
+    "backups/2026-08-08_10-04-15/src/components/Version.astro": [
+      "reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json"
+    ],
+    "backups/2026-08-08_10-04-15/src/data/siteInfo.js": [
+      "ai/prefix.py",
+      "reports/dependencies.json",
+      "src/pages/applications.astro",
+      "src/pages/creators.astro",
+      "src/pages/index.astro",
+      "src/pages/information.astro",
+      "src/pages/roles.astro",
+      "src/pages/rules.astro",
+      "src/pages/story.astro",
+      "src/pages/updates.astro",
+      "backups/2026-08-08_10-04-15/ai/prefix.py",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/src/pages/applications.astro",
+      "backups/2026-08-08_10-04-15/src/pages/creators.astro",
+      "backups/2026-08-08_10-04-15/src/pages/index.astro",
+      "backups/2026-08-08_10-04-15/src/pages/information.astro",
+      "backups/2026-08-08_10-04-15/src/pages/roles.astro",
+      "backups/2026-08-08_10-04-15/src/pages/rules.astro",
+      "backups/2026-08-08_10-04-15/src/pages/story.astro",
+      "backups/2026-08-08_10-04-15/src/pages/updates.astro",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/src/pages/applications.astro",
+      "backups/2026-08-08_09-42-58/src/pages/creators.astro",
+      "backups/2026-08-08_09-42-58/src/pages/index.astro",
+      "backups/2026-08-08_09-42-58/src/pages/information.astro",
+      "backups/2026-08-08_09-42-58/src/pages/roles.astro",
+      "backups/2026-08-08_09-42-58/src/pages/rules.astro",
+      "backups/2026-08-08_09-42-58/src/pages/story.astro",
+      "backups/2026-08-08_09-42-58/src/pages/updates.astro"
+    ],
+    "backups/2026-08-08_10-04-15/src/data/updates.js": [
+      "reports/dependencies.json",
+      "src/pages/updates.astro",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/src/pages/updates.astro",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/src/pages/updates.astro"
+    ],
+    "backups/2026-08-08_10-04-15/src/layouts/layout.astro": [
+      "ai/prefix.py",
+      "reports/dependencies.json",
+      "reports/scanner.json",
+      "tools/ProjectScanner.js",
+      "src/pages/applications.astro",
+      "src/pages/creators.astro",
+      "src/pages/developer-scanner.astro",
+      "src/pages/index.astro",
+      "src/pages/information.astro",
+      "src/pages/roles.astro",
+      "src/pages/rules.astro",
+      "src/pages/story.astro",
+      "src/pages/updates.astro",
+      "backups/2026-08-08_10-04-15/ai/prefix.py",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/reports/scanner.json",
+      "backups/2026-08-08_10-04-15/tools/ProjectScanner.js",
+      "backups/2026-08-08_10-04-15/src/pages/applications.astro",
+      "backups/2026-08-08_10-04-15/src/pages/creators.astro",
+      "backups/2026-08-08_10-04-15/src/pages/developer-scanner.astro",
+      "backups/2026-08-08_10-04-15/src/pages/index.astro",
+      "backups/2026-08-08_10-04-15/src/pages/information.astro",
+      "backups/2026-08-08_10-04-15/src/pages/roles.astro",
+      "backups/2026-08-08_10-04-15/src/pages/rules.astro",
+      "backups/2026-08-08_10-04-15/src/pages/story.astro",
+      "backups/2026-08-08_10-04-15/src/pages/updates.astro",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/reports/scanner.json",
+      "backups/2026-08-08_09-42-58/tools/ProjectScanner.js",
+      "backups/2026-08-08_09-42-58/src/pages/applications.astro",
+      "backups/2026-08-08_09-42-58/src/pages/creators.astro",
+      "backups/2026-08-08_09-42-58/src/pages/developer-scanner.astro",
+      "backups/2026-08-08_09-42-58/src/pages/index.astro",
+      "backups/2026-08-08_09-42-58/src/pages/information.astro",
+      "backups/2026-08-08_09-42-58/src/pages/roles.astro",
+      "backups/2026-08-08_09-42-58/src/pages/rules.astro",
+      "backups/2026-08-08_09-42-58/src/pages/story.astro",
+      "backups/2026-08-08_09-42-58/src/pages/updates.astro"
+    ],
+    "backups/2026-08-08_10-04-15/src/pages/applications.astro": [
+      "reports/dependencies.json",
+      "reports/scanner.json",
+      "tools/ProjectScanner.js",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/reports/scanner.json",
+      "backups/2026-08-08_10-04-15/tools/ProjectScanner.js",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/reports/scanner.json",
+      "backups/2026-08-08_09-42-58/tools/ProjectScanner.js"
+    ],
+    "backups/2026-08-08_10-04-15/src/pages/creators.astro": [
+      "reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json"
+    ],
+    "backups/2026-08-08_10-04-15/src/pages/developer-scanner.astro": [
+      "reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json"
+    ],
+    "backups/2026-08-08_10-04-15/src/pages/index.astro": [
+      "ai/repair_engine.py",
+      "reports/dependencies.json",
+      "reports/scanner.json",
+      "tools/ProjectScanner.js",
+      "backups/2026-08-08_10-04-15/ai/repair_engine.py",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/reports/scanner.json",
+      "backups/2026-08-08_10-04-15/tools/ProjectScanner.js",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/reports/scanner.json",
+      "backups/2026-08-08_09-42-58/tools/ProjectScanner.js"
+    ],
+    "backups/2026-08-08_10-04-15/src/pages/information.astro": [
+      "reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json"
+    ],
+    "backups/2026-08-08_10-04-15/src/pages/roles.astro": [
+      "reports/dependencies.json",
+      "reports/scanner.json",
+      "tools/ProjectScanner.js",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/reports/scanner.json",
+      "backups/2026-08-08_10-04-15/tools/ProjectScanner.js",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/reports/scanner.json",
+      "backups/2026-08-08_09-42-58/tools/ProjectScanner.js"
+    ],
+    "backups/2026-08-08_10-04-15/src/pages/rules.astro": [
+      "reports/dependencies.json",
+      "reports/scanner.json",
+      "tools/ProjectScanner.js",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/reports/scanner.json",
+      "backups/2026-08-08_10-04-15/tools/ProjectScanner.js",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/reports/scanner.json",
+      "backups/2026-08-08_09-42-58/tools/ProjectScanner.js"
+    ],
+    "backups/2026-08-08_10-04-15/src/pages/story.astro": [
+      "reports/dependencies.json",
+      "reports/scanner.json",
+      "tools/ProjectScanner.js",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/reports/scanner.json",
+      "backups/2026-08-08_10-04-15/tools/ProjectScanner.js",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/reports/scanner.json",
+      "backups/2026-08-08_09-42-58/tools/ProjectScanner.js"
+    ],
+    "backups/2026-08-08_10-04-15/src/pages/updates.astro": [
+      "reports/dependencies.json",
+      "reports/scanner.json",
+      "tools/ProjectScanner.js",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/reports/scanner.json",
+      "backups/2026-08-08_10-04-15/tools/ProjectScanner.js",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/reports/scanner.json",
+      "backups/2026-08-08_09-42-58/tools/ProjectScanner.js"
+    ],
+    "backups/2026-08-08_10-04-15/src/scripts/beta-tester-bot.ts": [
+      "reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json"
+    ],
+    "backups/2026-08-08_10-04-15/src/scripts/dropdowns.js": [
+      "reports/dependencies.json",
+      "src/layouts/layout.astro",
+      "src/scripts/dropdowns.js",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/src/layouts/layout.astro",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/src/layouts/layout.astro",
+      "backups/2026-08-08_09-42-58/src/scripts/dropdowns.js"
+    ],
+    "backups/2026-08-08_10-04-15/src/scripts/eastsmp.js": [
+      "reports/dependencies.json",
+      "src/404.html",
+      "src/layouts/layout.astro",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/src/404.html",
+      "backups/2026-08-08_10-04-15/src/layouts/layout.astro",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/src/404.html",
+      "backups/2026-08-08_09-42-58/src/layouts/layout.astro"
+    ],
+    "backups/2026-08-08_10-04-15/src/scripts/Testerbot.js": [
+      "reports/dependencies.json",
+      "src/scripts/Testerbot.js",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/src/scripts/Testerbot.js"
+    ],
+    "backups/2026-08-08_10-04-15/src/scripts/websiteTester.js": [
+      "reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json"
+    ],
+    "backups/2026-08-08_10-04-15/src/styles/styles.css": [
+      "ai/prefix.py",
+      "reports/dependencies.json",
+      "reports/scanner.json",
+      "tools/ProjectScanner.js",
+      "src/layouts/layout.astro",
+      "backups/2026-08-08_10-04-15/ai/prefix.py",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/reports/scanner.json",
+      "backups/2026-08-08_10-04-15/tools/ProjectScanner.js",
+      "backups/2026-08-08_10-04-15/src/layouts/layout.astro",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/reports/scanner.json",
+      "backups/2026-08-08_09-42-58/tools/ProjectScanner.js",
+      "backups/2026-08-08_09-42-58/src/layouts/layout.astro"
+    ],
+    "backups/2026-08-08_10-04-15/src/pages/api/scan.js": [
+      "reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json"
+    ],
+    "backups/2026-08-08_10-04-15/src/pages/beta-tester-bot/index.astro": [
+      "ai/repair_engine.py",
+      "reports/dependencies.json",
+      "reports/scanner.json",
+      "tools/ProjectScanner.js",
+      "backups/2026-08-08_10-04-15/ai/repair_engine.py",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/reports/scanner.json",
+      "backups/2026-08-08_10-04-15/tools/ProjectScanner.js",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/reports/scanner.json",
+      "backups/2026-08-08_09-42-58/tools/ProjectScanner.js"
+    ],
+    "backups/2026-08-08_09-42-58/.vscode/extensions.json": [
+      "reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json"
+    ],
+    "backups/2026-08-08_09-42-58/.vscode/launch.json": [
+      "reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json"
+    ],
+    "backups/2026-08-08_09-42-58/ai/analyzer.py": [
+      "reports/dependencies.json",
+      "reports/orchestrator.json",
+      "backups/2026-08-08_10-04-15/ai/orchestrator.py",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json"
+    ],
+    "backups/2026-08-08_09-42-58/ai/backup.py": [
+      "ai/orchestrator.py",
+      "reports/dependencies.json",
+      "reports/orchestrator.json",
+      "backups/2026-08-08_10-04-15/ai/orchestrator.py",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json"
+    ],
+    "backups/2026-08-08_09-42-58/ai/dependency.py": [
+      "ai/orchestrator.py",
+      "reports/dependencies.json",
+      "reports/orchestrator.json",
+      "backups/2026-08-08_10-04-15/ai/orchestrator.py",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json"
+    ],
+    "backups/2026-08-08_09-42-58/ai/impact.py": [
+      "ai/orchestrator.py",
+      "reports/dependencies.json",
+      "reports/orchestrator.json",
+      "backups/2026-08-08_10-04-15/ai/orchestrator.py",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json"
+    ],
+    "backups/2026-08-08_09-42-58/ai/repair.py": [
+      "ai/orchestrator.py",
+      "reports/dependencies.json",
+      "reports/orchestrator.json",
+      "backups/2026-08-08_10-04-15/ai/orchestrator.py",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json"
+    ],
+    "backups/2026-08-08_09-42-58/ai/safety.py": [
+      "ai/orchestrator.py",
+      "reports/dependencies.json",
+      "reports/orchestrator.json",
+      "backups/2026-08-08_10-04-15/ai/orchestrator.py",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json"
+    ],
+    "backups/2026-08-08_09-42-58/ai/scanner.py": [
+      "ai/orchestrator.py",
+      "reports/dependencies.json",
+      "reports/orchestrator.json",
+      "backups/2026-08-08_10-04-15/ai/orchestrator.py",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json"
+    ],
+    "backups/2026-08-08_09-42-58/reports/dependencies.json": [
+      "ai/dependency.py",
+      "ai/dependent_impact.py",
+      "ai/orchestrator.py",
+      "ai/prefix.py",
+      "ai/repair_engine.py",
+      "ai/safety.py",
+      "reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/ai/dependency.py",
+      "backups/2026-08-08_10-04-15/ai/prefix.py",
+      "backups/2026-08-08_10-04-15/ai/repair_engine.py",
+      "backups/2026-08-08_10-04-15/ai/safety.py",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/ai/dependency.py",
+      "backups/2026-08-08_09-42-58/ai/safety.py"
+    ],
+    "backups/2026-08-08_09-42-58/reports/impact.json": [
+      "ai/dependency.py",
+      "ai/dependent_impact.py",
+      "ai/impact.py",
+      "ai/orchestrator.py",
+      "ai/prefix.py",
+      "ai/repair.py",
+      "reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/ai/dependency.py",
+      "backups/2026-08-08_10-04-15/ai/impact.py",
+      "backups/2026-08-08_10-04-15/ai/prefix.py",
+      "backups/2026-08-08_10-04-15/ai/repair.py",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/ai/dependency.py",
+      "backups/2026-08-08_09-42-58/ai/impact.py",
+      "backups/2026-08-08_09-42-58/ai/repair.py",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json"
+    ],
+    "backups/2026-08-08_09-42-58/reports/repair-plan.json": [
+      "ai/dependent_impact.py",
+      "ai/orchestrator.py",
+      "ai/prefix.py",
+      "ai/repair.py",
+      "ai/repair_engine.py",
+      "ai/safety.py",
+      "reports/dependencies.json",
+      "reports/prefix.json",
+      "backups/2026-08-08_10-04-15/ai/prefix.py",
+      "backups/2026-08-08_10-04-15/ai/repair.py",
+      "backups/2026-08-08_10-04-15/ai/repair_engine.py",
+      "backups/2026-08-08_10-04-15/ai/safety.py",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/reports/prefix.json",
+      "backups/2026-08-08_09-42-58/ai/repair.py",
+      "backups/2026-08-08_09-42-58/ai/safety.py",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json"
+    ],
+    "backups/2026-08-08_09-42-58/reports/report.json": [
+      "reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json"
+    ],
+    "backups/2026-08-08_09-42-58/reports/safety.json": [
+      "ai/history.py",
+      "ai/orchestrator.py",
+      "ai/repair_engine.py",
+      "ai/safety.py",
+      "reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/ai/history.py",
+      "backups/2026-08-08_10-04-15/ai/orchestrator.py",
+      "backups/2026-08-08_10-04-15/ai/repair_engine.py",
+      "backups/2026-08-08_10-04-15/ai/safety.py",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/ai/safety.py"
+    ],
+    "backups/2026-08-08_09-42-58/reports/scanner.json": [
+      "ai/analyzer.py",
+      "ai/history.py",
+      "ai/impact.py",
+      "ai/repair.py",
+      "ai/scanner.py",
+      "ai/verify.py",
+      "reports/dependencies.json",
+      "tools/ProjectScanner.js",
+      "src/pages/developer-scanner.astro",
+      "backups/2026-08-08_10-04-15/ai/analyzer.py",
+      "backups/2026-08-08_10-04-15/ai/history.py",
+      "backups/2026-08-08_10-04-15/ai/impact.py",
+      "backups/2026-08-08_10-04-15/ai/repair.py",
+      "backups/2026-08-08_10-04-15/ai/scanner.py",
+      "backups/2026-08-08_10-04-15/ai/verify.py",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/tools/ProjectScanner.js",
+      "backups/2026-08-08_10-04-15/src/pages/developer-scanner.astro",
+      "backups/2026-08-08_09-42-58/ai/analyzer.py",
+      "backups/2026-08-08_09-42-58/ai/impact.py",
+      "backups/2026-08-08_09-42-58/ai/scanner.py",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/tools/ProjectScanner.js",
+      "backups/2026-08-08_09-42-58/src/pages/developer-scanner.astro"
+    ],
+    "backups/2026-08-08_09-42-58/src/404.html": [
+      "reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json"
+    ],
+    "backups/2026-08-08_09-42-58/tools/ProjectScanner.js": [
+      "package.json",
+      "ai/verify.py",
+      "reports/dependencies.json",
+      "tools/ProjectScanner.js",
+      "src/pages/api/scan.js",
+      "backups/2026-08-08_09-42-58/package.json",
+      "backups/2026-08-08_10-04-15/package.json",
+      "backups/2026-08-08_10-04-15/ai/verify.py",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/tools/ProjectScanner.js",
+      "backups/2026-08-08_10-04-15/src/pages/api/scan.js",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/src/pages/api/scan.js"
+    ],
+    "backups/2026-08-08_09-42-58/src/components/beta.astro": [
+      "reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json"
+    ],
+    "backups/2026-08-08_09-42-58/src/components/Footer.astro": [
+      "reports/dependencies.json",
+      "src/layouts/layout.astro",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/src/layouts/layout.astro",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/src/layouts/layout.astro"
+    ],
+    "backups/2026-08-08_09-42-58/src/components/Navbar.astro": [
+      "reports/dependencies.json",
+      "src/layouts/layout.astro",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/src/layouts/layout.astro",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/src/layouts/layout.astro"
+    ],
+    "backups/2026-08-08_09-42-58/src/components/Status.astro": [
+      "reports/dependencies.json",
+      "src/layouts/layout.astro",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/src/layouts/layout.astro",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/src/layouts/layout.astro"
+    ],
+    "backups/2026-08-08_09-42-58/src/components/Suggestions.astro": [
+      "reports/dependencies.json",
+      "src/layouts/layout.astro",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/src/layouts/layout.astro",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/src/layouts/layout.astro"
+    ],
+    "backups/2026-08-08_09-42-58/src/components/Version.astro": [
+      "reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json"
+    ],
+    "backups/2026-08-08_09-42-58/src/data/siteInfo.js": [
+      "ai/prefix.py",
+      "reports/dependencies.json",
+      "src/pages/applications.astro",
+      "src/pages/creators.astro",
+      "src/pages/index.astro",
+      "src/pages/information.astro",
+      "src/pages/roles.astro",
+      "src/pages/rules.astro",
+      "src/pages/story.astro",
+      "src/pages/updates.astro",
+      "backups/2026-08-08_10-04-15/ai/prefix.py",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/src/pages/applications.astro",
+      "backups/2026-08-08_10-04-15/src/pages/creators.astro",
+      "backups/2026-08-08_10-04-15/src/pages/index.astro",
+      "backups/2026-08-08_10-04-15/src/pages/information.astro",
+      "backups/2026-08-08_10-04-15/src/pages/roles.astro",
+      "backups/2026-08-08_10-04-15/src/pages/rules.astro",
+      "backups/2026-08-08_10-04-15/src/pages/story.astro",
+      "backups/2026-08-08_10-04-15/src/pages/updates.astro",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/src/pages/applications.astro",
+      "backups/2026-08-08_09-42-58/src/pages/creators.astro",
+      "backups/2026-08-08_09-42-58/src/pages/index.astro",
+      "backups/2026-08-08_09-42-58/src/pages/information.astro",
+      "backups/2026-08-08_09-42-58/src/pages/roles.astro",
+      "backups/2026-08-08_09-42-58/src/pages/rules.astro",
+      "backups/2026-08-08_09-42-58/src/pages/story.astro",
+      "backups/2026-08-08_09-42-58/src/pages/updates.astro"
+    ],
+    "backups/2026-08-08_09-42-58/src/data/updates.js": [
+      "reports/dependencies.json",
+      "src/pages/updates.astro",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/src/pages/updates.astro",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/src/pages/updates.astro"
+    ],
+    "backups/2026-08-08_09-42-58/src/layouts/layout.astro": [
+      "ai/prefix.py",
+      "reports/dependencies.json",
+      "reports/scanner.json",
+      "tools/ProjectScanner.js",
+      "src/pages/applications.astro",
+      "src/pages/creators.astro",
+      "src/pages/developer-scanner.astro",
+      "src/pages/index.astro",
+      "src/pages/information.astro",
+      "src/pages/roles.astro",
+      "src/pages/rules.astro",
+      "src/pages/story.astro",
+      "src/pages/updates.astro",
+      "backups/2026-08-08_10-04-15/ai/prefix.py",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/reports/scanner.json",
+      "backups/2026-08-08_10-04-15/tools/ProjectScanner.js",
+      "backups/2026-08-08_10-04-15/src/pages/applications.astro",
+      "backups/2026-08-08_10-04-15/src/pages/creators.astro",
+      "backups/2026-08-08_10-04-15/src/pages/developer-scanner.astro",
+      "backups/2026-08-08_10-04-15/src/pages/index.astro",
+      "backups/2026-08-08_10-04-15/src/pages/information.astro",
+      "backups/2026-08-08_10-04-15/src/pages/roles.astro",
+      "backups/2026-08-08_10-04-15/src/pages/rules.astro",
+      "backups/2026-08-08_10-04-15/src/pages/story.astro",
+      "backups/2026-08-08_10-04-15/src/pages/updates.astro",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/reports/scanner.json",
+      "backups/2026-08-08_09-42-58/tools/ProjectScanner.js",
+      "backups/2026-08-08_09-42-58/src/pages/applications.astro",
+      "backups/2026-08-08_09-42-58/src/pages/creators.astro",
+      "backups/2026-08-08_09-42-58/src/pages/developer-scanner.astro",
+      "backups/2026-08-08_09-42-58/src/pages/index.astro",
+      "backups/2026-08-08_09-42-58/src/pages/information.astro",
+      "backups/2026-08-08_09-42-58/src/pages/roles.astro",
+      "backups/2026-08-08_09-42-58/src/pages/rules.astro",
+      "backups/2026-08-08_09-42-58/src/pages/story.astro",
+      "backups/2026-08-08_09-42-58/src/pages/updates.astro"
+    ],
+    "backups/2026-08-08_09-42-58/src/pages/applications.astro": [
+      "reports/dependencies.json",
+      "reports/scanner.json",
+      "tools/ProjectScanner.js",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/reports/scanner.json",
+      "backups/2026-08-08_10-04-15/tools/ProjectScanner.js",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/reports/scanner.json",
+      "backups/2026-08-08_09-42-58/tools/ProjectScanner.js"
+    ],
+    "backups/2026-08-08_09-42-58/src/pages/creators.astro": [
+      "reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json"
+    ],
+    "backups/2026-08-08_09-42-58/src/pages/developer-scanner.astro": [
+      "reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json"
+    ],
+    "backups/2026-08-08_09-42-58/src/pages/index.astro": [
+      "ai/repair_engine.py",
+      "reports/dependencies.json",
+      "reports/scanner.json",
+      "tools/ProjectScanner.js",
+      "backups/2026-08-08_10-04-15/ai/repair_engine.py",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/reports/scanner.json",
+      "backups/2026-08-08_10-04-15/tools/ProjectScanner.js",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/reports/scanner.json",
+      "backups/2026-08-08_09-42-58/tools/ProjectScanner.js"
+    ],
+    "backups/2026-08-08_09-42-58/src/pages/information.astro": [
+      "reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json"
+    ],
+    "backups/2026-08-08_09-42-58/src/pages/roles.astro": [
+      "reports/dependencies.json",
+      "reports/scanner.json",
+      "tools/ProjectScanner.js",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/reports/scanner.json",
+      "backups/2026-08-08_10-04-15/tools/ProjectScanner.js",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/reports/scanner.json",
+      "backups/2026-08-08_09-42-58/tools/ProjectScanner.js"
+    ],
+    "backups/2026-08-08_09-42-58/src/pages/rules.astro": [
+      "reports/dependencies.json",
+      "reports/scanner.json",
+      "tools/ProjectScanner.js",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/reports/scanner.json",
+      "backups/2026-08-08_10-04-15/tools/ProjectScanner.js",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/reports/scanner.json",
+      "backups/2026-08-08_09-42-58/tools/ProjectScanner.js"
+    ],
+    "backups/2026-08-08_09-42-58/src/pages/story.astro": [
+      "reports/dependencies.json",
+      "reports/scanner.json",
+      "tools/ProjectScanner.js",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/reports/scanner.json",
+      "backups/2026-08-08_10-04-15/tools/ProjectScanner.js",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/reports/scanner.json",
+      "backups/2026-08-08_09-42-58/tools/ProjectScanner.js"
+    ],
+    "backups/2026-08-08_09-42-58/src/pages/updates.astro": [
+      "reports/dependencies.json",
+      "reports/scanner.json",
+      "tools/ProjectScanner.js",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/reports/scanner.json",
+      "backups/2026-08-08_10-04-15/tools/ProjectScanner.js",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/reports/scanner.json",
+      "backups/2026-08-08_09-42-58/tools/ProjectScanner.js"
+    ],
+    "backups/2026-08-08_09-42-58/src/scripts/beta-tester-bot.ts": [
+      "reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json"
+    ],
+    "backups/2026-08-08_09-42-58/src/scripts/dropdowns.js": [
+      "reports/dependencies.json",
+      "src/layouts/layout.astro",
+      "src/scripts/dropdowns.js",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/src/layouts/layout.astro",
+      "backups/2026-08-08_10-04-15/src/scripts/dropdowns.js",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/src/layouts/layout.astro"
+    ],
+    "backups/2026-08-08_09-42-58/src/scripts/eastsmp.js": [
+      "reports/dependencies.json",
+      "src/404.html",
+      "src/layouts/layout.astro",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/src/404.html",
+      "backups/2026-08-08_10-04-15/src/layouts/layout.astro",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/src/404.html",
+      "backups/2026-08-08_09-42-58/src/layouts/layout.astro"
+    ],
+    "backups/2026-08-08_09-42-58/src/scripts/Testerbot.js": [
+      "reports/dependencies.json",
+      "src/scripts/Testerbot.js",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/src/scripts/Testerbot.js",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json"
+    ],
+    "backups/2026-08-08_09-42-58/src/scripts/websiteTester.js": [
+      "reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json"
+    ],
+    "backups/2026-08-08_09-42-58/src/styles/styles.css": [
+      "ai/prefix.py",
+      "reports/dependencies.json",
+      "reports/scanner.json",
+      "tools/ProjectScanner.js",
+      "src/layouts/layout.astro",
+      "backups/2026-08-08_10-04-15/ai/prefix.py",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/reports/scanner.json",
+      "backups/2026-08-08_10-04-15/tools/ProjectScanner.js",
+      "backups/2026-08-08_10-04-15/src/layouts/layout.astro",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/reports/scanner.json",
+      "backups/2026-08-08_09-42-58/tools/ProjectScanner.js",
+      "backups/2026-08-08_09-42-58/src/layouts/layout.astro"
+    ],
+    "backups/2026-08-08_09-42-58/src/pages/api/scan.js": [
+      "reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json"
+    ],
+    "backups/2026-08-08_09-42-58/src/pages/beta-tester-bot/index.astro": [
+      "ai/repair_engine.py",
+      "reports/dependencies.json",
+      "reports/scanner.json",
+      "tools/ProjectScanner.js",
+      "backups/2026-08-08_10-04-15/ai/repair_engine.py",
+      "backups/2026-08-08_10-04-15/reports/dependencies.json",
+      "backups/2026-08-08_10-04-15/reports/scanner.json",
+      "backups/2026-08-08_10-04-15/tools/ProjectScanner.js",
+      "backups/2026-08-08_09-42-58/reports/dependencies.json",
+      "backups/2026-08-08_09-42-58/reports/scanner.json",
+      "backups/2026-08-08_09-42-58/tools/ProjectScanner.js"
+    ]
+  },
+  "risks": {
+    "package-lock.json": {
+      "level": "MEDIUM",
+      "reason": "3 dependent file(s) detected."
+    },
+    "package.json": {
+      "level": "HIGH",
+      "reason": "14 dependent files detected."
+    },
+    "tsconfig.json": {
+      "level": "MEDIUM",
+      "reason": "3 dependent file(s) detected."
+    },
+    ".vscode/extensions.json": {
+      "level": "MEDIUM",
+      "reason": "3 dependent file(s) detected."
+    },
+    ".vscode/launch.json": {
+      "level": "MEDIUM",
+      "reason": "3 dependent file(s) detected."
+    },
+    "ai/analyzer.py": {
+      "level": "HIGH",
+      "reason": "5 dependent files detected."
+    },
+    "ai/backup.py": {
+      "level": "HIGH",
+      "reason": "5 dependent files detected."
+    },
+    "ai/dependency.py": {
+      "level": "HIGH",
+      "reason": "6 dependent files detected."
+    },
+    "ai/dependent_impact.py": {
+      "level": "MEDIUM",
+      "reason": "1 dependent file(s) detected."
+    },
+    "ai/history.py": {
+      "level": "HIGH",
+      "reason": "5 dependent files detected."
+    },
+    "ai/impact.py": {
+      "level": "HIGH",
+      "reason": "6 dependent files detected."
+    },
+    "ai/orchestrator.py": {
+      "level": "MEDIUM",
+      "reason": "2 dependent file(s) detected."
+    },
+    "ai/prefix.py": {
+      "level": "HIGH",
+      "reason": "5 dependent files detected."
+    },
+    "ai/repair.py": {
+      "level": "HIGH",
+      "reason": "6 dependent files detected."
+    },
+    "ai/repair_engine.py": {
+      "level": "HIGH",
+      "reason": "5 dependent files detected."
+    },
+    "ai/rollback.py": {
+      "level": "HIGH",
+      "reason": "5 dependent files detected."
+    },
+    "ai/safety.py": {
+      "level": "HIGH",
+      "reason": "5 dependent files detected."
+    },
+    "ai/scanner.py": {
+      "level": "HIGH",
+      "reason": "6 dependent files detected."
+    },
+    "ai/verify.py": {
+      "level": "HIGH",
+      "reason": "5 dependent files detected."
+    },
+    "reports/ai-history.json": {
+      "level": "HIGH",
+      "reason": "4 dependent files detected."
+    },
+    "reports/backup.json": {
+      "level": "HIGH",
+      "reason": "10 dependent files detected."
+    },
+    "reports/dependencies.json": {
+      "level": "HIGH",
+      "reason": "13 dependent files detected."
+    },
+    "reports/dependent-impact.json": {
+      "level": "MEDIUM",
+      "reason": "2 dependent file(s) detected."
+    },
+    "reports/impact.json": {
+      "level": "HIGH",
+      "reason": "16 dependent files detected."
+    },
+    "reports/orchestrator.json": {
+      "level": "MEDIUM",
+      "reason": "2 dependent file(s) detected."
+    },
+    "reports/prefix.json": {
+      "level": "HIGH",
+      "reason": "7 dependent files detected."
+    },
+    "reports/repair-engine.json": {
+      "level": "HIGH",
+      "reason": "6 dependent files detected."
+    },
+    "reports/repair-plan.json": {
+      "level": "HIGH",
+      "reason": "17 dependent files detected."
+    },
+    "reports/report.json": {
+      "level": "MEDIUM",
+      "reason": "3 dependent file(s) detected."
+    },
+    "reports/rollback.json": {
+      "level": "HIGH",
+      "reason": "4 dependent files detected."
+    },
+    "reports/safety.json": {
+      "level": "HIGH",
+      "reason": "11 dependent files detected."
+    },
+    "reports/scanner.json": {
+      "level": "HIGH",
+      "reason": "24 dependent files detected."
+    },
+    "reports/verification.json": {
+      "level": "HIGH",
+      "reason": "9 dependent files detected."
+    },
+    "src/404.html": {
+      "level": "MEDIUM",
+      "reason": "3 dependent file(s) detected."
+    },
+    "tools/ProjectScanner.js": {
+      "level": "HIGH",
+      "reason": "13 dependent files detected."
+    },
+    "src/components/beta.astro": {
+      "level": "MEDIUM",
+      "reason": "3 dependent file(s) detected."
+    },
+    "src/components/Footer.astro": {
+      "level": "HIGH",
+      "reason": "6 dependent files detected."
+    },
+    "src/components/Navbar.astro": {
+      "level": "HIGH",
+      "reason": "6 dependent files detected."
+    },
+    "src/components/Status.astro": {
+      "level": "HIGH",
+      "reason": "6 dependent files detected."
+    },
+    "src/components/Suggestions.astro": {
+      "level": "HIGH",
+      "reason": "6 dependent files detected."
+    },
+    "src/components/Version.astro": {
+      "level": "MEDIUM",
+      "reason": "3 dependent file(s) detected."
+    },
+    "src/data/siteInfo.js": {
+      "level": "HIGH",
+      "reason": "29 dependent files detected."
+    },
+    "src/data/updates.js": {
+      "level": "HIGH",
+      "reason": "6 dependent files detected."
+    },
+    "src/layouts/layout.astro": {
+      "level": "HIGH",
+      "reason": "38 dependent files detected."
+    },
+    "src/pages/applications.astro": {
+      "level": "HIGH",
+      "reason": "9 dependent files detected."
+    },
+    "src/pages/creators.astro": {
+      "level": "MEDIUM",
+      "reason": "3 dependent file(s) detected."
+    },
+    "src/pages/developer-scanner.astro": {
+      "level": "MEDIUM",
+      "reason": "3 dependent file(s) detected."
+    },
+    "src/pages/index.astro": {
+      "level": "HIGH",
+      "reason": "11 dependent files detected."
+    },
+    "src/pages/information.astro": {
+      "level": "MEDIUM",
+      "reason": "3 dependent file(s) detected."
+    },
+    "src/pages/roles.astro": {
+      "level": "HIGH",
+      "reason": "9 dependent files detected."
+    },
+    "src/pages/rules.astro": {
+      "level": "HIGH",
+      "reason": "9 dependent files detected."
+    },
+    "src/pages/story.astro": {
+      "level": "HIGH",
+      "reason": "9 dependent files detected."
+    },
+    "src/pages/updates.astro": {
+      "level": "HIGH",
+      "reason": "9 dependent files detected."
+    },
+    "src/scripts/beta-tester-bot.ts": {
+      "level": "MEDIUM",
+      "reason": "3 dependent file(s) detected."
+    },
+    "src/scripts/dropdowns.js": {
+      "level": "HIGH",
+      "reason": "8 dependent files detected."
+    },
+    "src/scripts/eastsmp.js": {
+      "level": "HIGH",
+      "reason": "9 dependent files detected."
+    },
+    "src/scripts/Testerbot.js": {
+      "level": "HIGH",
+      "reason": "5 dependent files detected."
+    },
+    "src/scripts/websiteTester.js": {
+      "level": "MEDIUM",
+      "reason": "3 dependent file(s) detected."
+    },
+    "src/styles/styles.css": {
+      "level": "HIGH",
+      "reason": "14 dependent files detected."
+    },
+    "src/pages/api/scan.js": {
+      "level": "MEDIUM",
+      "reason": "3 dependent file(s) detected."
+    },
+    "src/pages/beta-tester-bot/index.astro": {
+      "level": "HIGH",
+      "reason": "11 dependent files detected."
+    },
+    "backups/2026-08-08_09-42-58/package-lock.json": {
+      "level": "MEDIUM",
+      "reason": "3 dependent file(s) detected."
+    },
+    "backups/2026-08-08_09-42-58/package.json": {
+      "level": "HIGH",
+      "reason": "14 dependent files detected."
+    },
+    "backups/2026-08-08_09-42-58/tsconfig.json": {
+      "level": "MEDIUM",
+      "reason": "3 dependent file(s) detected."
+    },
+    "backups/2026-08-08_10-04-15/package-lock.json": {
+      "level": "MEDIUM",
+      "reason": "3 dependent file(s) detected."
+    },
+    "backups/2026-08-08_10-04-15/package.json": {
+      "level": "HIGH",
+      "reason": "14 dependent files detected."
+    },
+    "backups/2026-08-08_10-04-15/tsconfig.json": {
+      "level": "MEDIUM",
+      "reason": "3 dependent file(s) detected."
+    },
+    "backups/2026-08-08_10-04-15/.vscode/extensions.json": {
+      "level": "MEDIUM",
+      "reason": "3 dependent file(s) detected."
+    },
+    "backups/2026-08-08_10-04-15/.vscode/launch.json": {
+      "level": "MEDIUM",
+      "reason": "3 dependent file(s) detected."
+    },
+    "backups/2026-08-08_10-04-15/ai/analyzer.py": {
+      "level": "HIGH",
+      "reason": "5 dependent files detected."
+    },
+    "backups/2026-08-08_10-04-15/ai/backup.py": {
+      "level": "HIGH",
+      "reason": "5 dependent files detected."
+    },
+    "backups/2026-08-08_10-04-15/ai/dependency.py": {
+      "level": "HIGH",
+      "reason": "6 dependent files detected."
+    },
+    "backups/2026-08-08_10-04-15/ai/history.py": {
+      "level": "HIGH",
+      "reason": "5 dependent files detected."
+    },
+    "backups/2026-08-08_10-04-15/ai/impact.py": {
+      "level": "HIGH",
+      "reason": "6 dependent files detected."
+    },
+    "backups/2026-08-08_10-04-15/ai/orchestrator.py": {
+      "level": "MEDIUM",
+      "reason": "2 dependent file(s) detected."
+    },
+    "backups/2026-08-08_10-04-15/ai/prefix.py": {
+      "level": "HIGH",
+      "reason": "5 dependent files detected."
+    },
+    "backups/2026-08-08_10-04-15/ai/repair.py": {
+      "level": "HIGH",
+      "reason": "6 dependent files detected."
+    },
+    "backups/2026-08-08_10-04-15/ai/repair_engine.py": {
+      "level": "HIGH",
+      "reason": "5 dependent files detected."
+    },
+    "backups/2026-08-08_10-04-15/ai/rollback.py": {
+      "level": "HIGH",
+      "reason": "5 dependent files detected."
+    },
+    "backups/2026-08-08_10-04-15/ai/safety.py": {
+      "level": "HIGH",
+      "reason": "5 dependent files detected."
+    },
+    "backups/2026-08-08_10-04-15/ai/scanner.py": {
+      "level": "HIGH",
+      "reason": "6 dependent files detected."
+    },
+    "backups/2026-08-08_10-04-15/ai/verify.py": {
+      "level": "HIGH",
+      "reason": "5 dependent files detected."
+    },
+    "backups/2026-08-08_10-04-15/reports/ai-history.json": {
+      "level": "HIGH",
+      "reason": "4 dependent files detected."
+    },
+    "backups/2026-08-08_10-04-15/reports/backup.json": {
+      "level": "HIGH",
+      "reason": "10 dependent files detected."
+    },
+    "backups/2026-08-08_10-04-15/reports/dependencies.json": {
+      "level": "HIGH",
+      "reason": "13 dependent files detected."
+    },
+    "backups/2026-08-08_10-04-15/reports/impact.json": {
+      "level": "HIGH",
+      "reason": "16 dependent files detected."
+    },
+    "backups/2026-08-08_10-04-15/reports/prefix.json": {
+      "level": "HIGH",
+      "reason": "7 dependent files detected."
+    },
+    "backups/2026-08-08_10-04-15/reports/repair-engine.json": {
+      "level": "HIGH",
+      "reason": "6 dependent files detected."
+    },
+    "backups/2026-08-08_10-04-15/reports/repair-plan.json": {
+      "level": "HIGH",
+      "reason": "17 dependent files detected."
+    },
+    "backups/2026-08-08_10-04-15/reports/report.json": {
+      "level": "MEDIUM",
+      "reason": "3 dependent file(s) detected."
+    },
+    "backups/2026-08-08_10-04-15/reports/rollback.json": {
+      "level": "HIGH",
+      "reason": "4 dependent files detected."
+    },
+    "backups/2026-08-08_10-04-15/reports/safety.json": {
+      "level": "HIGH",
+      "reason": "11 dependent files detected."
+    },
+    "backups/2026-08-08_10-04-15/reports/scanner.json": {
+      "level": "HIGH",
+      "reason": "24 dependent files detected."
+    },
+    "backups/2026-08-08_10-04-15/reports/verification.json": {
+      "level": "HIGH",
+      "reason": "9 dependent files detected."
+    },
+    "backups/2026-08-08_10-04-15/src/404.html": {
+      "level": "MEDIUM",
+      "reason": "3 dependent file(s) detected."
+    },
+    "backups/2026-08-08_10-04-15/tools/ProjectScanner.js": {
+      "level": "HIGH",
+      "reason": "13 dependent files detected."
+    },
+    "backups/2026-08-08_10-04-15/src/components/beta.astro": {
+      "level": "MEDIUM",
+      "reason": "3 dependent file(s) detected."
+    },
+    "backups/2026-08-08_10-04-15/src/components/Footer.astro": {
+      "level": "HIGH",
+      "reason": "6 dependent files detected."
+    },
+    "backups/2026-08-08_10-04-15/src/components/Navbar.astro": {
+      "level": "HIGH",
+      "reason": "6 dependent files detected."
+    },
+    "backups/2026-08-08_10-04-15/src/components/Status.astro": {
+      "level": "HIGH",
+      "reason": "6 dependent files detected."
+    },
+    "backups/2026-08-08_10-04-15/src/components/Suggestions.astro": {
+      "level": "HIGH",
+      "reason": "6 dependent files detected."
+    },
+    "backups/2026-08-08_10-04-15/src/components/Version.astro": {
+      "level": "MEDIUM",
+      "reason": "3 dependent file(s) detected."
+    },
+    "backups/2026-08-08_10-04-15/src/data/siteInfo.js": {
+      "level": "HIGH",
+      "reason": "29 dependent files detected."
+    },
+    "backups/2026-08-08_10-04-15/src/data/updates.js": {
+      "level": "HIGH",
+      "reason": "6 dependent files detected."
+    },
+    "backups/2026-08-08_10-04-15/src/layouts/layout.astro": {
+      "level": "HIGH",
+      "reason": "38 dependent files detected."
+    },
+    "backups/2026-08-08_10-04-15/src/pages/applications.astro": {
+      "level": "HIGH",
+      "reason": "9 dependent files detected."
+    },
+    "backups/2026-08-08_10-04-15/src/pages/creators.astro": {
+      "level": "MEDIUM",
+      "reason": "3 dependent file(s) detected."
+    },
+    "backups/2026-08-08_10-04-15/src/pages/developer-scanner.astro": {
+      "level": "MEDIUM",
+      "reason": "3 dependent file(s) detected."
+    },
+    "backups/2026-08-08_10-04-15/src/pages/index.astro": {
+      "level": "HIGH",
+      "reason": "11 dependent files detected."
+    },
+    "backups/2026-08-08_10-04-15/src/pages/information.astro": {
+      "level": "MEDIUM",
+      "reason": "3 dependent file(s) detected."
+    },
+    "backups/2026-08-08_10-04-15/src/pages/roles.astro": {
+      "level": "HIGH",
+      "reason": "9 dependent files detected."
+    },
+    "backups/2026-08-08_10-04-15/src/pages/rules.astro": {
+      "level": "HIGH",
+      "reason": "9 dependent files detected."
+    },
+    "backups/2026-08-08_10-04-15/src/pages/story.astro": {
+      "level": "HIGH",
+      "reason": "9 dependent files detected."
+    },
+    "backups/2026-08-08_10-04-15/src/pages/updates.astro": {
+      "level": "HIGH",
+      "reason": "9 dependent files detected."
+    },
+    "backups/2026-08-08_10-04-15/src/scripts/beta-tester-bot.ts": {
+      "level": "MEDIUM",
+      "reason": "3 dependent file(s) detected."
+    },
+    "backups/2026-08-08_10-04-15/src/scripts/dropdowns.js": {
+      "level": "HIGH",
+      "reason": "8 dependent files detected."
+    },
+    "backups/2026-08-08_10-04-15/src/scripts/eastsmp.js": {
+      "level": "HIGH",
+      "reason": "9 dependent files detected."
+    },
+    "backups/2026-08-08_10-04-15/src/scripts/Testerbot.js": {
+      "level": "HIGH",
+      "reason": "5 dependent files detected."
+    },
+    "backups/2026-08-08_10-04-15/src/scripts/websiteTester.js": {
+      "level": "MEDIUM",
+      "reason": "3 dependent file(s) detected."
+    },
+    "backups/2026-08-08_10-04-15/src/styles/styles.css": {
+      "level": "HIGH",
+      "reason": "14 dependent files detected."
+    },
+    "backups/2026-08-08_10-04-15/src/pages/api/scan.js": {
+      "level": "MEDIUM",
+      "reason": "3 dependent file(s) detected."
+    },
+    "backups/2026-08-08_10-04-15/src/pages/beta-tester-bot/index.astro": {
+      "level": "HIGH",
+      "reason": "11 dependent files detected."
+    },
+    "backups/2026-08-08_09-42-58/.vscode/extensions.json": {
+      "level": "MEDIUM",
+      "reason": "3 dependent file(s) detected."
+    },
+    "backups/2026-08-08_09-42-58/.vscode/launch.json": {
+      "level": "MEDIUM",
+      "reason": "3 dependent file(s) detected."
+    },
+    "backups/2026-08-08_09-42-58/ai/analyzer.py": {
+      "level": "HIGH",
+      "reason": "5 dependent files detected."
+    },
+    "backups/2026-08-08_09-42-58/ai/backup.py": {
+      "level": "HIGH",
+      "reason": "5 dependent files detected."
+    },
+    "backups/2026-08-08_09-42-58/ai/dependency.py": {
+      "level": "HIGH",
+      "reason": "6 dependent files detected."
+    },
+    "backups/2026-08-08_09-42-58/ai/impact.py": {
+      "level": "HIGH",
+      "reason": "6 dependent files detected."
+    },
+    "backups/2026-08-08_09-42-58/ai/repair.py": {
+      "level": "HIGH",
+      "reason": "6 dependent files detected."
+    },
+    "backups/2026-08-08_09-42-58/ai/safety.py": {
+      "level": "HIGH",
+      "reason": "5 dependent files detected."
+    },
+    "backups/2026-08-08_09-42-58/ai/scanner.py": {
+      "level": "HIGH",
+      "reason": "6 dependent files detected."
+    },
+    "backups/2026-08-08_09-42-58/reports/dependencies.json": {
+      "level": "HIGH",
+      "reason": "14 dependent files detected."
+    },
+    "backups/2026-08-08_09-42-58/reports/impact.json": {
+      "level": "HIGH",
+      "reason": "16 dependent files detected."
+    },
+    "backups/2026-08-08_09-42-58/reports/repair-plan.json": {
+      "level": "HIGH",
+      "reason": "17 dependent files detected."
+    },
+    "backups/2026-08-08_09-42-58/reports/report.json": {
+      "level": "MEDIUM",
+      "reason": "3 dependent file(s) detected."
+    },
+    "backups/2026-08-08_09-42-58/reports/safety.json": {
+      "level": "HIGH",
+      "reason": "11 dependent files detected."
+    },
+    "backups/2026-08-08_09-42-58/reports/scanner.json": {
+      "level": "HIGH",
+      "reason": "24 dependent files detected."
+    },
+    "backups/2026-08-08_09-42-58/src/404.html": {
+      "level": "MEDIUM",
+      "reason": "3 dependent file(s) detected."
+    },
+    "backups/2026-08-08_09-42-58/tools/ProjectScanner.js": {
+      "level": "HIGH",
+      "reason": "13 dependent files detected."
+    },
+    "backups/2026-08-08_09-42-58/src/components/beta.astro": {
+      "level": "MEDIUM",
+      "reason": "3 dependent file(s) detected."
+    },
+    "backups/2026-08-08_09-42-58/src/components/Footer.astro": {
+      "level": "HIGH",
+      "reason": "6 dependent files detected."
+    },
+    "backups/2026-08-08_09-42-58/src/components/Navbar.astro": {
+      "level": "HIGH",
+      "reason": "6 dependent files detected."
+    },
+    "backups/2026-08-08_09-42-58/src/components/Status.astro": {
+      "level": "HIGH",
+      "reason": "6 dependent files detected."
+    },
+    "backups/2026-08-08_09-42-58/src/components/Suggestions.astro": {
+      "level": "HIGH",
+      "reason": "6 dependent files detected."
+    },
+    "backups/2026-08-08_09-42-58/src/components/Version.astro": {
+      "level": "MEDIUM",
+      "reason": "3 dependent file(s) detected."
+    },
+    "backups/2026-08-08_09-42-58/src/data/siteInfo.js": {
+      "level": "HIGH",
+      "reason": "29 dependent files detected."
+    },
+    "backups/2026-08-08_09-42-58/src/data/updates.js": {
+      "level": "HIGH",
+      "reason": "6 dependent files detected."
+    },
+    "backups/2026-08-08_09-42-58/src/layouts/layout.astro": {
+      "level": "HIGH",
+      "reason": "38 dependent files detected."
+    },
+    "backups/2026-08-08_09-42-58/src/pages/applications.astro": {
+      "level": "HIGH",
+      "reason": "9 dependent files detected."
+    },
+    "backups/2026-08-08_09-42-58/src/pages/creators.astro": {
+      "level": "MEDIUM",
+      "reason": "3 dependent file(s) detected."
+    },
+    "backups/2026-08-08_09-42-58/src/pages/developer-scanner.astro": {
+      "level": "MEDIUM",
+      "reason": "3 dependent file(s) detected."
+    },
+    "backups/2026-08-08_09-42-58/src/pages/index.astro": {
+      "level": "HIGH",
+      "reason": "11 dependent files detected."
+    },
+    "backups/2026-08-08_09-42-58/src/pages/information.astro": {
+      "level": "MEDIUM",
+      "reason": "3 dependent file(s) detected."
+    },
+    "backups/2026-08-08_09-42-58/src/pages/roles.astro": {
+      "level": "HIGH",
+      "reason": "9 dependent files detected."
+    },
+    "backups/2026-08-08_09-42-58/src/pages/rules.astro": {
+      "level": "HIGH",
+      "reason": "9 dependent files detected."
+    },
+    "backups/2026-08-08_09-42-58/src/pages/story.astro": {
+      "level": "HIGH",
+      "reason": "9 dependent files detected."
+    },
+    "backups/2026-08-08_09-42-58/src/pages/updates.astro": {
+      "level": "HIGH",
+      "reason": "9 dependent files detected."
+    },
+    "backups/2026-08-08_09-42-58/src/scripts/beta-tester-bot.ts": {
+      "level": "MEDIUM",
+      "reason": "3 dependent file(s) detected."
+    },
+    "backups/2026-08-08_09-42-58/src/scripts/dropdowns.js": {
+      "level": "HIGH",
+      "reason": "8 dependent files detected."
+    },
+    "backups/2026-08-08_09-42-58/src/scripts/eastsmp.js": {
+      "level": "HIGH",
+      "reason": "9 dependent files detected."
+    },
+    "backups/2026-08-08_09-42-58/src/scripts/Testerbot.js": {
+      "level": "HIGH",
+      "reason": "5 dependent files detected."
+    },
+    "backups/2026-08-08_09-42-58/src/scripts/websiteTester.js": {
+      "level": "MEDIUM",
+      "reason": "3 dependent file(s) detected."
+    },
+    "backups/2026-08-08_09-42-58/src/styles/styles.css": {
+      "level": "HIGH",
+      "reason": "14 dependent files detected."
+    },
+    "backups/2026-08-08_09-42-58/src/pages/api/scan.js": {
+      "level": "MEDIUM",
+      "reason": "3 dependent file(s) detected."
+    },
+    "backups/2026-08-08_09-42-58/src/pages/beta-tester-bot/index.astro": {
+      "level": "HIGH",
+      "reason": "11 dependent files detected."
+    }
+  }
+}

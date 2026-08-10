@@ -1,0 +1,38 @@
+{
+  "automatic_modification_allowed": false,
+  "overall_safe_to_continue": false,
+  "repairs_analyzed": 2,
+  "repairs_blocked": 2,
+  "results": [
+    {
+      "issue": "Console Error Detector",
+      "priority": "HIGH",
+      "status": "BLOCKED",
+      "safe_to_continue": false,
+      "directly_affected_files": [],
+      "dependent_files": [],
+      "complete_fix_set": [],
+      "risk": "UNKNOWN",
+      "related_issues": [],
+      "reasons": [
+        "No verified affected files were provided.",
+        "The complete dependent fix set cannot be determined."
+      ]
+    },
+    {
+      "issue": "Load Speed Rating",
+      "priority": "LOW",
+      "status": "BLOCKED",
+      "safe_to_continue": false,
+      "directly_affected_files": [],
+      "dependent_files": [],
+      "complete_fix_set": [],
+      "risk": "UNKNOWN",
+      "related_issues": [],
+      "reasons": [
+        "No verified affected files were provided.",
+        "The complete dependent fix set cannot be determined."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,441 @@
+{
+  "project_files_scanned": 48,
+  "excluded_directories": [
+    ".astro",
+    ".git",
+    ".pytest_cache",
+    "__pycache__",
+    "backups",
+    "dist",
+    "node_modules",
+    "reports"
+  ],
+  "references": {
+    "package-lock.json": [],
+    "package.json": [],
+    "tsconfig.json": [],
+    ".vscode/extensions.json": [],
+    ".vscode/launch.json": [],
+    "ai/analyzer.py": [],
+    "ai/backup.py": [],
+    "ai/dependency.py": [],
+    "ai/dependent_impact.py": [],
+    "ai/history.py": [],
+    "ai/impact.py": [],
+    "ai/orchestrator.py": [],
+    "ai/prefix.py": [],
+    "ai/repair.py": [],
+    "ai/repair_engine.py": [],
+    "ai/rollback.py": [],
+    "ai/safety.py": [],
+    "ai/scanner.py": [],
+    "ai/verify.py": [],
+    "src/404.html": [],
+    "tools/ProjectScanner.js": [
+      "fs",
+      "playwright"
+    ],
+    "src/components/beta.astro": [],
+    "src/components/Footer.astro": [],
+    "src/components/Navbar.astro": [],
+    "src/components/Status.astro": [],
+    "src/components/Suggestions.astro": [],
+    "src/components/Version.astro": [],
+    "src/data/siteInfo.js": [],
+    "src/data/updates.js": [],
+    "src/layouts/layout.astro": [
+      "astro:transitions",
+      "../components/Navbar.astro",
+      "../components/Footer.astro",
+      "../components/Suggestions.astro",
+      "../components/Status.astro",
+      "../styles/styles.css",
+      "../scripts/eastsmp.js"
+    ],
+    "src/pages/applications.astro": [
+      "../layouts/layout.astro",
+      "../data/siteInfo.js"
+    ],
+    "src/pages/creators.astro": [
+      "../layouts/layout.astro",
+      "../data/siteInfo.js"
+    ],
+    "src/pages/developer-scanner.astro": [
+      "../layouts/layout.astro",
+      "fs"
+    ],
+    "src/pages/index.astro": [
+      "../layouts/layout.astro",
+      "../data/siteInfo.js"
+    ],
+    "src/pages/information.astro": [
+      "../layouts/layout.astro",
+      "../data/siteInfo.js"
+    ],
+    "src/pages/roles.astro": [
+      "../layouts/layout.astro",
+      "../data/siteInfo.js"
+    ],
+    "src/pages/rules.astro": [
+      "../layouts/layout.astro",
+      "../data/siteInfo.js"
+    ],
+    "src/pages/story.astro": [
+      "../layouts/layout.astro",
+      "../data/siteInfo.js"
+    ],
+    "src/pages/updates.astro": [
+      "../layouts/layout.astro",
+      "../data/updates.js",
+      "../data/siteInfo.js"
+    ],
+    "src/scripts/beta-tester-bot.ts": [],
+    "src/scripts/dropdowns.js": [],
+    "src/scripts/eastsmp.js": [],
+    "src/scripts/Testerbot.js": [],
+    "src/scripts/websiteTester.js": [],
+    "src/styles/dashboard.css": [],
+    "src/styles/styles.css": [],
+    "src/pages/api/scan.js": [
+      "child_process",
+      "util"
+    ],
+    "src/pages/beta-tester-bot/index.astro": [
+      "../../styles/dashboard.css"
+    ]
+  },
+  "dependents": {
+    "package-lock.json": [],
+    "package.json": [
+      "ai/backup.py",
+      "tools/ProjectScanner.js"
+    ],
+    "tsconfig.json": [],
+    ".vscode/extensions.json": [],
+    ".vscode/launch.json": [],
+    "ai/analyzer.py": [],
+    "ai/backup.py": [
+      "ai/orchestrator.py"
+    ],
+    "ai/dependency.py": [
+      "ai/orchestrator.py"
+    ],
+    "ai/dependent_impact.py": [
+      "ai/orchestrator.py"
+    ],
+    "ai/history.py": [],
+    "ai/impact.py": [
+      "ai/orchestrator.py"
+    ],
+    "ai/orchestrator.py": [],
+    "ai/prefix.py": [
+      "ai/orchestrator.py"
+    ],
+    "ai/repair.py": [
+      "ai/orchestrator.py"
+    ],
+    "ai/repair_engine.py": [
+      "ai/orchestrator.py"
+    ],
+    "ai/rollback.py": [
+      "ai/orchestrator.py"
+    ],
+    "ai/safety.py": [
+      "ai/orchestrator.py"
+    ],
+    "ai/scanner.py": [
+      "ai/orchestrator.py"
+    ],
+    "ai/verify.py": [
+      "ai/orchestrator.py"
+    ],
+    "src/404.html": [],
+    "tools/ProjectScanner.js": [
+      "package.json",
+      "ai/verify.py",
+      "src/pages/api/scan.js"
+    ],
+    "src/components/beta.astro": [],
+    "src/components/Footer.astro": [
+      "src/layouts/layout.astro"
+    ],
+    "src/components/Navbar.astro": [
+      "src/layouts/layout.astro"
+    ],
+    "src/components/Status.astro": [
+      "src/layouts/layout.astro"
+    ],
+    "src/components/Suggestions.astro": [
+      "src/layouts/layout.astro"
+    ],
+    "src/components/Version.astro": [],
+    "src/data/siteInfo.js": [
+      "ai/prefix.py",
+      "src/pages/applications.astro",
+      "src/pages/creators.astro",
+      "src/pages/index.astro",
+      "src/pages/information.astro",
+      "src/pages/roles.astro",
+      "src/pages/rules.astro",
+      "src/pages/story.astro",
+      "src/pages/updates.astro"
+    ],
+    "src/data/updates.js": [
+      "src/pages/updates.astro"
+    ],
+    "src/layouts/layout.astro": [
+      "ai/prefix.py",
+      "tools/ProjectScanner.js",
+      "src/pages/applications.astro",
+      "src/pages/creators.astro",
+      "src/pages/developer-scanner.astro",
+      "src/pages/index.astro",
+      "src/pages/information.astro",
+      "src/pages/roles.astro",
+      "src/pages/rules.astro",
+      "src/pages/story.astro",
+      "src/pages/updates.astro"
+    ],
+    "src/pages/applications.astro": [
+      "tools/ProjectScanner.js"
+    ],
+    "src/pages/creators.astro": [],
+    "src/pages/developer-scanner.astro": [],
+    "src/pages/index.astro": [
+      "ai/repair_engine.py",
+      "tools/ProjectScanner.js",
+      "src/styles/dashboard.css"
+    ],
+    "src/pages/information.astro": [],
+    "src/pages/roles.astro": [
+      "tools/ProjectScanner.js"
+    ],
+    "src/pages/rules.astro": [
+      "tools/ProjectScanner.js"
+    ],
+    "src/pages/story.astro": [
+      "tools/ProjectScanner.js"
+    ],
+    "src/pages/updates.astro": [
+      "tools/ProjectScanner.js"
+    ],
+    "src/scripts/beta-tester-bot.ts": [],
+    "src/scripts/dropdowns.js": [
+      "src/layouts/layout.astro"
+    ],
+    "src/scripts/eastsmp.js": [
+      "src/404.html",
+      "src/layouts/layout.astro"
+    ],
+    "src/scripts/Testerbot.js": [],
+    "src/scripts/websiteTester.js": [],
+    "src/styles/dashboard.css": [
+      "src/pages/beta-tester-bot/index.astro"
+    ],
+    "src/styles/styles.css": [
+      "ai/prefix.py",
+      "tools/ProjectScanner.js",
+      "src/layouts/layout.astro"
+    ],
+    "src/pages/api/scan.js": [],
+    "src/pages/beta-tester-bot/index.astro": [
+      "ai/repair_engine.py",
+      "tools/ProjectScanner.js",
+      "src/styles/dashboard.css"
+    ]
+  },
+  "risks": {
+    "package-lock.json": {
+      "level": "LOW",
+      "reason": "No direct file references detected."
+    },
+    "package.json": {
+      "level": "MEDIUM",
+      "reason": "2 dependent file(s) detected."
+    },
+    "tsconfig.json": {
+      "level": "LOW",
+      "reason": "No direct file references detected."
+    },
+    ".vscode/extensions.json": {
+      "level": "LOW",
+      "reason": "No direct file references detected."
+    },
+    ".vscode/launch.json": {
+      "level": "LOW",
+      "reason": "No direct file references detected."
+    },
+    "ai/analyzer.py": {
+      "level": "LOW",
+      "reason": "No direct file references detected."
+    },
+    "ai/backup.py": {
+      "level": "MEDIUM",
+      "reason": "1 dependent file(s) detected."
+    },
+    "ai/dependency.py": {
+      "level": "MEDIUM",
+      "reason": "1 dependent file(s) detected."
+    },
+    "ai/dependent_impact.py": {
+      "level": "MEDIUM",
+      "reason": "1 dependent file(s) detected."
+    },
+    "ai/history.py": {
+      "level": "LOW",
+      "reason": "No direct file references detected."
+    },
+    "ai/impact.py": {
+      "level": "MEDIUM",
+      "reason": "1 dependent file(s) detected."
+    },
+    "ai/orchestrator.py": {
+      "level": "LOW",
+      "reason": "No direct file references detected."
+    },
+    "ai/prefix.py": {
+      "level": "MEDIUM",
+      "reason": "1 dependent file(s) detected."
+    },
+    "ai/repair.py": {
+      "level": "MEDIUM",
+      "reason": "1 dependent file(s) detected."
+    },
+    "ai/repair_engine.py": {
+      "level": "MEDIUM",
+      "reason": "1 dependent file(s) detected."
+    },
+    "ai/rollback.py": {
+      "level": "MEDIUM",
+      "reason": "1 dependent file(s) detected."
+    },
+    "ai/safety.py": {
+      "level": "MEDIUM",
+      "reason": "1 dependent file(s) detected."
+    },
+    "ai/scanner.py": {
+      "level": "MEDIUM",
+      "reason": "1 dependent file(s) detected."
+    },
+    "ai/verify.py": {
+      "level": "MEDIUM",
+      "reason": "1 dependent file(s) detected."
+    },
+    "src/404.html": {
+      "level": "LOW",
+      "reason": "No direct file references detected."
+    },
+    "tools/ProjectScanner.js": {
+      "level": "MEDIUM",
+      "reason": "3 dependent file(s) detected."
+    },
+    "src/components/beta.astro": {
+      "level": "LOW",
+      "reason": "No direct file references detected."
+    },
+    "src/components/Footer.astro": {
+      "level": "MEDIUM",
+      "reason": "1 dependent file(s) detected."
+    },
+    "src/components/Navbar.astro": {
+      "level": "MEDIUM",
+      "reason": "1 dependent file(s) detected."
+    },
+    "src/components/Status.astro": {
+      "level": "MEDIUM",
+      "reason": "1 dependent file(s) detected."
+    },
+    "src/components/Suggestions.astro": {
+      "level": "MEDIUM",
+      "reason": "1 dependent file(s) detected."
+    },
+    "src/components/Version.astro": {
+      "level": "LOW",
+      "reason": "No direct file references detected."
+    },
+    "src/data/siteInfo.js": {
+      "level": "HIGH",
+      "reason": "9 dependent files detected."
+    },
+    "src/data/updates.js": {
+      "level": "MEDIUM",
+      "reason": "1 dependent file(s) detected."
+    },
+    "src/layouts/layout.astro": {
+      "level": "HIGH",
+      "reason": "11 dependent files detected."
+    },
+    "src/pages/applications.astro": {
+      "level": "MEDIUM",
+      "reason": "1 dependent file(s) detected."
+    },
+    "src/pages/creators.astro": {
+      "level": "LOW",
+      "reason": "No direct file references detected."
+    },
+    "src/pages/developer-scanner.astro": {
+      "level": "LOW",
+      "reason": "No direct file references detected."
+    },
+    "src/pages/index.astro": {
+      "level": "MEDIUM",
+      "reason": "3 dependent file(s) detected."
+    },
+    "src/pages/information.astro": {
+      "level": "LOW",
+      "reason": "No direct file references detected."
+    },
+    "src/pages/roles.astro": {
+      "level": "MEDIUM",
+      "reason": "1 dependent file(s) detected."
+    },
+    "src/pages/rules.astro": {
+      "level": "MEDIUM",
+      "reason": "1 dependent file(s) detected."
+    },
+    "src/pages/story.astro": {
+      "level": "MEDIUM",
+      "reason": "1 dependent file(s) detected."
+    },
+    "src/pages/updates.astro": {
+      "level": "MEDIUM",
+      "reason": "1 dependent file(s) detected."
+    },
+    "src/scripts/beta-tester-bot.ts": {
+      "level": "LOW",
+      "reason": "No direct file references detected."
+    },
+    "src/scripts/dropdowns.js": {
+      "level": "MEDIUM",
+      "reason": "1 dependent file(s) detected."
+    },
+    "src/scripts/eastsmp.js": {
+      "level": "MEDIUM",
+      "reason": "2 dependent file(s) detected."
+    },
+    "src/scripts/Testerbot.js": {
+      "level": "LOW",
+      "reason": "No direct file references detected."
+    },
+    "src/scripts/websiteTester.js": {
+      "level": "LOW",
+      "reason": "No direct file references detected."
+    },
+    "src/styles/dashboard.css": {
+      "level": "MEDIUM",
+      "reason": "1 dependent file(s) detected."
+    },
+    "src/styles/styles.css": {
+      "level": "MEDIUM",
+      "reason": "3 dependent file(s) detected."
+    },
+    "src/pages/api/scan.js": {
+      "level": "LOW",
+      "reason": "No direct file references detected."
+    },
+    "src/pages/beta-tester-bot/index.astro": {
+      "level": "MEDIUM",
+      "reason": "3 dependent file(s) detected."
+    }
+  }
+}

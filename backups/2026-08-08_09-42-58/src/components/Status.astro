@@ -1,0 +1,121 @@
+<div class="status-container">
+
+	<div class="status-box">
+
+
+		<h3>
+			Server Status
+		</h3>
+
+
+		<p id="server-status">
+			Checking...
+		</p>
+
+
+		<p>
+			Players:
+			<span id="player-count">
+				Loading...
+			</span>
+		</p>
+
+		<p id="last-checked">
+				Last Checked: Never
+		</p>
+
+
+		<hr>
+
+
+		<h3>
+			Discord
+		</h3>
+
+
+		<p>
+			Online Members: 
+			<span id="discord-online">
+				Loading...
+			</span>
+		</p>
+
+
+		<p>
+			Total Members: 
+			<span id="discord-members">
+				Loading...
+			</span>
+		</p>
+
+
+	</div>
+
+
+
+	<button type="button" class="status-arrow">
+
+		↓
+
+	</button>
+
+
+</div>
+
+
+
+
+
+<script is:inline>
+
+async function loadDiscordStats() {
+
+
+	try {
+
+
+		const response = await fetch(
+			"https://discord.com/api/v10/invites/uSeBnAh5Px?with_counts=true"
+		);
+
+
+
+		const data = await response.json();
+
+
+
+		document.getElementById("discord-online").textContent =
+			data.approximate_presence_count ?? "Unknown";
+
+
+
+		document.getElementById("discord-members").textContent =
+			data.approximate_member_count ?? "Unknown";
+
+
+
+	}
+
+	catch(error) {
+
+
+		document.getElementById("discord-online").textContent =
+			"Unavailable";
+
+
+		document.getElementById("discord-members").textContent =
+			"Unavailable";
+
+
+	}
+
+
+}
+
+
+
+loadDiscordStats();
+
+
+
+</script>

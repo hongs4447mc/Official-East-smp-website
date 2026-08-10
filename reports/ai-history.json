@@ -1,0 +1,95 @@
+[
+  {
+    "timestamp": "2026-08-08T10:01:11.453116",
+    "project": "East SMP",
+    "scanner": {
+      "available": true,
+      "passed": 26,
+      "failed": 0,
+      "total": 26,
+      "health_score": 100
+    },
+    "safety": {
+      "available": true,
+      "automatic_modification_allowed": false,
+      "final_decision": "UNKNOWN"
+    },
+    "backup": {
+      "available": true,
+      "verified": true
+    },
+    "repair_engine": {
+      "available": true,
+      "mode": "DRY_RUN",
+      "proposals": 0,
+      "files_modified": [],
+      "automatic_execution": false
+    },
+    "verification": {
+      "available": true,
+      "status": "PASSED"
+    }
+  },
+  {
+    "timestamp": "2026-08-08T10:04:42.443833",
+    "project": "East SMP",
+    "scanner": {
+      "available": true,
+      "passed": 26,
+      "failed": 0,
+      "total": 26,
+      "health_score": 100
+    },
+    "safety": {
+      "available": true,
+      "automatic_modification_allowed": false,
+      "final_decision": "UNKNOWN"
+    },
+    "backup": {
+      "available": true,
+      "verified": true
+    },
+    "repair_engine": {
+      "available": true,
+      "mode": "DRY_RUN",
+      "proposals": 0,
+      "files_modified": [],
+      "automatic_execution": false
+    },
+    "verification": {
+      "available": true,
+      "status": "PASSED"
+    }
+  },
+  {
+    "timestamp": "2026-08-08T10:10:37.586561",
+    "project": "East SMP",
+    "scanner": {
+      "available": true,
+      "passed": 26,
+      "failed": 0,
+      "total": 26,
+      "health_score": 100
+    },
+    "safety": {
+      "available": true,
+      "automatic_modification_allowed": false,
+      "final_decision": "UNKNOWN"
+    },
+    "backup": {
+      "available": true,
+      "verified": true
+    },
+    "repair_engine": {
+      "available": true,
+      "mode": "DRY_RUN",
+      "proposals": 0,
+      "files_modified": [],
+      "automatic_execution": false
+    },
+    "verification": {
+      "available": true,
+      "status": "FAILED"
+    }
+  }
+]
