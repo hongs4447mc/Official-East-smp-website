@@ -1,58 +1,66 @@
 export const updates = [
 
 	{
-		version: "2.0",
-		title: "Astro Migration & Website Rewrite",
-		date: "August 2026",
-		description: "Converted the East SMP website from HTML to Astro and rebuilt the website with a cleaner structure, reusable systems, and improved development workflow.",
+	version: "2.0 Beta-1",
+	title: "Release Beta-1",
+	date: "August 2026",
+	description: "Released the first public beta of the East SMP 2.0 website, introducing the new 2.0 foundation, redesigned interface, improved navigation, responsive layouts, and updated website systems.",
 
-		added: [
-			"Converted website pages from HTML to Astro",
-			"Added reusable Layout system",
-			"Added reusable Navbar component",
-			"Added reusable website components",
-			"Added improved page structure",
-			"Added new Astro project organization",
-			"Added improved update logger system",
-			"Added improved application page structure",
-			"Added improved website data system",
-			"Added better support for future updates",
-			"Added improved development workflow",
-			"Added Astro-based page system"
-		],
+	added: [
+		"Added East SMP Website 2.0 beta foundation",
+		"Added redesigned website interface",
+		"Added modern dark visual design",
+		"Added glass-inspired UI elements",
+		"Added improved card and panel designs",
+		"Added improved website navigation",
+		"Added improved responsive layouts",
+		"Added improved mobile website support",
+		"Added improved tablet website support",
+		"Added updated page layouts",
+		"Added improved website spacing and typography",
+		"Added updated buttons and navigation elements",
+		"Added improved website structure",
+		"Added improved loading behavior",
+		"Added foundation for future 2.0 features"
+	],
 
-		changed: [
-			"Reorganized entire website structure",
-			"Moved from single HTML files to Astro pages",
-			"Improved code readability",
-			"Improved HTML organization",
-			"Improved CSS organization",
-			"Improved JavaScript organization",
-			"Improved navbar loading system",
-			"Improved page consistency",
-			"Improved website maintenance",
-			"Improved page loading system",
-			"Updated website navigation structure",
-			"Updated website development process"
-		],
+	changed: [
+		"Updated website visual design",
+		"Updated website navigation",
+		"Updated page layouts",
+		"Updated website spacing",
+		"Updated typography",
+		"Updated buttons and interactive elements",
+		"Updated responsive behavior",
+		"Updated mobile layouts",
+		"Updated tablet layouts",
+		"Improved page consistency",
+		"Improved website organization",
+		"Improved website maintainability",
+		"Improved overall user experience",
+		"Improved website stability",
+		"Improved foundation for future updates"
+	],
 
-		fixed: [
-			"Fixed duplicate HTML code",
-			"Fixed repeated website sections",
-			"Fixed inconsistent layouts between pages",
-			"Fixed navigation problems",
-			"Fixed page loading problems",
-			"Fixed component organization problems",
-			"Fixed website structure issues",
-			"Improved website stability"
-		],
+	fixed: [
+		"Fixed various website layout issues",
+		"Fixed inconsistent spacing between website sections",
+		"Fixed responsive layout problems",
+		"Fixed mobile layout issues",
+		"Fixed navigation inconsistencies",
+		"Fixed visual inconsistencies between pages",
+		"Fixed various website stability issues",
+		"Fixed outdated website elements",
+		"Improved general website reliability"
+	],
 
-		removed: [
-			"Removed old repeated HTML structures",
-			"Removed unnecessary duplicate code",
-			"Removed outdated website organization methods",
-			"Removed some old manual page systems"
-		]
+	removed: [
+		"Removed outdated website design elements",
+		"Removed unnecessary repeated interface elements",
+		"Removed outdated layout structures",
+		"Removed unnecessary styling inconsistencies",
+		"Removed obsolete website elements from the previous design"
+	]
 	},
 
 

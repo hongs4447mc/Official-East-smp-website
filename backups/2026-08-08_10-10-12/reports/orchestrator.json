@@ -1,0 +1,88 @@
+{
+  "project": "East SMP",
+  "started": "2026-08-08T10:04:11.355604",
+  "finished": "2026-08-08T10:04:42.541162",
+  "pipeline_steps": 12,
+  "pipeline_total": 12,
+  "verification_passed": true,
+  "safety_passed": true,
+  "automatic_modification": false,
+  "repair_engine_mode": "DRY_RUN",
+  "rollback_mode": "PREVIEW_ONLY",
+  "files_modified": 0,
+  "final_status": "PASSED",
+  "steps": [
+    {
+      "name": "Project Scanner",
+      "file": "scanner.py",
+      "status": "PASSED",
+      "return_code": 0
+    },
+    {
+      "name": "AI Analyzer",
+      "file": "analyzer.py",
+      "status": "PASSED",
+      "return_code": 0
+    },
+    {
+      "name": "Dependency Analyzer",
+      "file": "dependency.py",
+      "status": "PASSED",
+      "return_code": 0
+    },
+    {
+      "name": "Impact Analyzer",
+      "file": "impact.py",
+      "status": "PASSED",
+      "return_code": 0
+    },
+    {
+      "name": "Repair Planner",
+      "file": "repair.py",
+      "status": "PASSED",
+      "return_code": 0
+    },
+    {
+      "name": "Pre-Fix Impact Analyzer",
+      "file": "prefix.py",
+      "status": "PASSED",
+      "return_code": 0
+    },
+    {
+      "name": "Safety Gate",
+      "file": "safety.py",
+      "status": "PASSED",
+      "return_code": 0
+    },
+    {
+      "name": "Backup System",
+      "file": "backup.py",
+      "status": "PASSED",
+      "return_code": 0
+    },
+    {
+      "name": "Repair Engine",
+      "file": "repair_engine.py",
+      "status": "PASSED",
+      "return_code": 0
+    },
+    {
+      "name": "Verification",
+      "file": "verify.py",
+      "status": "PASSED",
+      "return_code": 0
+    },
+    {
+      "name": "History Logger",
+      "file": "history.py",
+      "status": "PASSED",
+      "return_code": 0
+    },
+    {
+      "name": "Rollback Preview",
+      "file": "rollback.py",
+      "status": "PASSED",
+      "return_code": 0
+    }
+  ]
+}

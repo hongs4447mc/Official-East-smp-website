@@ -1,0 +1,268 @@
+---
+import Layout from "../../layouts/layout.astro";
+import "../../styles/developer-scanner.css";
+
+interface ScanResult {
+type: string;
+name: string;
+passed: boolean;
+details?: string;
+}
+
+const results: ScanResult[] = [
+{
+type: "Scanner",
+name: "Developer Scanner",
+passed: true,
+details: "Developer scanner interface is online."
+},
+{
+type: "Security",
+name: "Developer Panel",
+passed: true,
+details: "Developer panel interface is available."
+},
+{
+type: "Keyboard",
+name: "Ctrl + B",
+passed: true,
+details: "Developer panel keyboard shortcut is enabled."
+},
+{
+type: "AI",
+name: "AI Scanner",
+passed: false,
+details: "AI scanner integration has not been configured yet."
+}
+];
+
+const passed = results.filter(
+(result) => result.passed
+).length;
+
+const total = results.length;
+
+const score =
+total > 0
+? Math.round((passed / total) * 100)
+: 0;
+----
+
+<Layout>
+
+<div class="dev-panel">
+
+	<!-- HEADER -->
+
+	<div class="scanner-header">
+
+		<div>
+			<h1>🧪 Website Scanner</h1>
+
+			<p class="subtitle">
+				East SMP Developer Panel
+			</p>
+		</div>
+
+		<div class="scanner-buttons">
+
+			<button
+				id="refresh-report"
+				type="button"
+			>
+				🔄 Refresh
+			</button>
+
+			<button
+				id="new-report"
+				type="button"
+			>
+				📄 New Report
+			</button>
+
+		</div>
+
+	</div>
+
+
+	<!-- SCORE -->
+
+	<div class="score-box">
+
+		<h2>
+			Score: {score}%
+		</h2>
+
+		<p>
+			{passed}/{total} tests passed
+		</p>
+
+	</div>
+
+
+	<!-- STATUS -->
+
+	<div
+		id="scan-status"
+		class="scan-status"
+	></div>
+
+
+	<!-- RESULTS -->
+
+	<div class="results">
+
+		{
+			results.map((result) => (
+
+				<div
+					class:list={[
+						"scan-result",
+						result.passed
+							? "success"
+							: "failed"
+					]}
+				>
+
+					<button
+						class="result-header"
+						type="button"
+					>
+
+						<span>
+							{
+								result.passed
+									? "🟢"
+									: "🔴"
+							}
+						</span>
+
+						<strong>
+							{result.type}
+						</strong>
+
+						<span>-</span>
+
+						<span class="result-name">
+							{result.name}
+						</span>
+
+						<span class="arrow">
+							▼
+						</span>
+
+					</button>
+
+
+					<div class="details">
+
+						<small>
+							{
+								result.details ||
+								"No details"
+							}
+						</small>
+
+						<br />
+
+						<small>
+							Status:
+							{
+								result.passed
+									? " Passed"
+									: " Failed"
+							}
+						</small>
+
+					</div>
+
+				</div>
+
+			))
+		}
+
+	</div>
+
+</div>
+
+
+<script>
+
+	/* ========================= */
+	/* REFRESH */
+	/* ========================= */
+
+	const refreshButton =
+		document.getElementById(
+			"refresh-report"
+		);
+
+	refreshButton?.addEventListener(
+		"click",
+		() => {
+			location.reload();
+		}
+	);
+
+
+	/* ========================= */
+	/* NEW REPORT */
+	/* ========================= */
+
+	const newReportButton =
+		document.getElementById(
+			"new-report"
+		);
+
+	newReportButton?.addEventListener(
+		"click",
+		() => {
+
+			const status =
+				document.getElementById(
+					"scan-status"
+				);
+
+			if (status) {
+
+				status.textContent =
+					"📄 New report requested. Scanner integration will be connected later.";
+
+			}
+
+		}
+	);
+
+
+	/* ========================= */
+	/* RESULT EXPANSION */
+	/* ========================= */
+
+	const resultButtons =
+		document.querySelectorAll(
+			".result-header"
+		);
+
+	resultButtons.forEach(
+		(button) => {
+
+			button.addEventListener(
+				"click",
+				() => {
+
+					const card =
+						button.parentElement;
+
+					card?.classList.toggle(
+						"open"
+					);
+
+				}
+			);
+
+		}
+	);
+
+</script>
+
+</Layout>

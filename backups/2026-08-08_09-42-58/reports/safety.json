@@ -1,0 +1,32 @@
+{
+  "automatic_modification_allowed": false,
+  "overall_safe_to_modify": false,
+  "repairs_evaluated": 2,
+  "repairs_approved": 0,
+  "repairs_blocked": 2,
+  "results": [
+    {
+      "issue": "Console Error Detector",
+      "priority": "HIGH",
+      "safe_to_modify": false,
+      "automatic_modification_allowed": false,
+      "reasons": [
+        "Repair plan does not explicitly allow automatic modification.",
+        "Issue is HIGH priority and requires additional verification.",
+        "No verified affected files were provided.",
+        "Automatic modification is currently disabled by the project safety policy."
+      ]
+    },
+    {
+      "issue": "Load Speed Rating",
+      "priority": "LOW",
+      "safe_to_modify": false,
+      "automatic_modification_allowed": false,
+      "reasons": [
+        "Repair plan does not explicitly allow automatic modification.",
+        "No verified affected files were provided.",
+        "Automatic modification is currently disabled by the project safety policy."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "timestamp": "2026-08-08T10:10:37.515729",
+  "final_verification": "FAILED",
+  "scanner": {
+    "passed": false,
+    "tests": 26,
+    "passed_tests": 25,
+    "failed_tests": 1
+  },
+  "astro_build": {
+    "passed": true,
+    "error": null
+  },
+  "dist_verification": {
+    "passed": true
+  },
+  "automatic_rollback": false
+}

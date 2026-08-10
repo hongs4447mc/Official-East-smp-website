@@ -1,0 +1,3777 @@
+/* ========================= */
+/* EAST SMP WEBSITE CSS */
+/* FINAL ASTRO VERSION */
+/* PART 1/4 */
+/* ========================= */
+
+
+/* ========================= */
+/* COLORS */
+/* ========================= */
+
+:root {
+
+	--main-blue: #5865F2;
+	--hover-blue: #4752C4;
+	--section-blue: #3a49ee;
+	--menu-blue: #172554;
+	--background: #111827;
+	--status-blue: #2563eb;
+	--suggestion-blue: #2563eb;
+
+}
+
+
+
+/* ========================= */
+/* GENERAL */
+/* ========================= */
+
+body {
+
+	font-family: Arial, sans-serif;
+
+	margin: 0;
+
+	padding: 0;
+
+	background-color: var(--background);
+
+	color: white;
+
+	animation: fadeIn 0.8s ease-in-out;
+
+}
+
+
+.page-content {
+
+	padding: 10px;
+
+}
+
+
+
+h1,
+h2,
+h3 {
+
+	text-align: center;
+
+}
+
+
+
+button,
+a {
+
+	transition: 0.2s ease;
+
+}
+
+
+
+/* ========================= */
+/* DISCORD BUTTON */
+/* ========================= */
+
+/* ========================= */
+/* DISCORD BUTTON */
+/* ========================= */
+
+.discord-button {
+
+	position: fixed;
+
+	top:10px;
+
+	right: 10px;
+
+	background-color: var(--main-blue);
+
+	color: white;
+
+	padding: 10px 20px;
+
+	border-radius: 8px;
+
+	text-decoration: none;
+
+	font-size: 18px;
+
+	z-index: 9999;
+
+}
+
+
+
+.discord-button:hover {
+
+	background-color: var(--hover-blue);
+
+	transform: scale(1.05);
+
+}
+
+
+
+.discord-button:hover {
+
+	background-color: var(--hover-blue);
+
+	transform: scale(1.05);
+
+}
+
+
+
+/* ========================= */
+/* NAVIGATION */
+/* ========================= */
+
+nav {
+
+	text-align: center;
+
+	margin-top: 10px;
+
+}
+
+
+
+/* ========================= */
+/* HAMBURGER BUTTON */
+/* ========================= */
+
+.menu-button {
+
+	position: fixed; 
+
+	top: 10px;
+
+	left: 10px;
+
+	background-color: var(--main-blue);
+
+	color: white;
+
+	border: none;
+
+	border-radius: 8px;
+
+	font-size: 30px;
+
+	padding: 8px 15px;
+
+	cursor: pointer;
+
+	z-index: 10000;
+
+}
+
+
+
+.menu-button:hover {
+
+	background-color: var(--hover-blue);
+
+	transform: scale(1.05);
+
+}
+
+
+
+.menu-button:hover {
+
+	background-color: var(--hover-blue);
+
+	transform: scale(1.05);
+
+}
+
+
+
+/* ========================= */
+/* SIDE MENU */
+/* ========================= */
+
+.nav-links {
+
+	position: fixed;
+
+	top: 0;
+
+	left: -270px;
+
+	width: 250px;
+
+	height: 100vh;
+
+	background-color: var(--menu-blue);
+
+	padding-top: 70px;
+
+	display: flex;
+
+	flex-direction: column;
+
+	align-items: center;
+
+	transition: left 0.3s ease;
+
+	z-index: 9999;
+
+}
+
+
+
+.nav-links.active {
+
+	left: 0;
+
+	box-shadow: 5px 0 15px black;
+
+}
+
+
+
+.nav-links a {
+
+	background-color: var(--main-blue);
+
+	color: white;
+
+	width: 80%;
+
+	padding: 12px;
+
+	margin: 5px;
+
+	border-radius: 8px;
+
+	text-decoration: none;
+
+	text-align: center;
+
+	font-size: 18px;
+
+}
+
+
+
+.nav-links a:hover {
+
+	background-color: var(--hover-blue);
+
+	transform: scale(1.05);
+
+}
+
+
+
+/* ========================= */
+/* SECTIONS */
+/* ========================= */
+
+section {
+
+	margin: 40px auto;
+
+	width: 80%;
+
+	padding: 20px;
+
+	background-color: var(--section-blue);
+
+	color: white;
+
+	border-radius: 10px;
+
+	text-align: center;
+
+	animation: bounceIn 0.8s ease;
+
+}
+
+
+section h2 {
+
+	margin-top: 0;
+
+}
+
+
+
+/* ========================= */
+/* SERVER IP */
+/* ========================= */
+
+.server-ip {
+
+	display: flex;
+
+	align-items: center;
+
+	justify-content: center;
+
+	gap: 10px;
+
+}
+
+
+
+.copy-button {
+
+	background-color: var(--hover-blue);
+
+	color: white;
+
+	border: none;
+
+	padding: 8px 15px;
+
+	border-radius: 8px;
+
+	font-size: 15px;
+
+	cursor: pointer;
+
+}
+
+
+
+.copy-button:hover {
+
+	background-color: var(--main-blue);
+
+	transform: scale(1.05);
+
+}
+
+
+
+/* ========================= */
+/* CREATOR CARDS */
+/* ========================= */
+
+.creator-container {
+
+	display: flex;
+
+	justify-content: center;
+
+	gap: 20px;
+
+	flex-wrap: wrap;
+
+	margin-top: 50px;
+
+}
+
+
+
+.creator-card {
+
+	width: 250px;
+
+	background-color: var(--section-blue);
+
+	color: white;
+
+	border-radius: 10px;
+
+	padding: 15px;
+
+	text-align: center;
+
+	animation: bounceIn 0.8s ease;
+
+}
+
+
+
+.creator-card img {
+
+	width: 120px;
+
+	height: 120px;
+
+	border-radius: 10px;
+
+}
+
+
+
+.creator-card a {
+
+	color: white;
+
+	text-decoration: none;
+
+}
+
+
+
+.creator-card a:hover {
+
+	text-decoration: underline;
+
+}
+/* ========================= */
+/* EAST SMP WEBSITE CSS */
+/* FINAL ASTRO VERSION */
+/* PART 2/4 */
+/* ========================= */
+
+
+/* ========================= */
+/* YOUTUBE BUTTON */
+/* ========================= */
+
+.youtube-button {
+
+	background-color: #FF0000;
+
+	color: white;
+
+	padding: 10px 20px;
+
+	border-radius: 8px;
+
+	text-decoration: none;
+
+	display: inline-block;
+
+	margin-top: 10px;
+
+	font-size: 16px;
+
+}
+
+
+
+.youtube-button:hover {
+
+	background-color: #CC0000;
+
+	transform: scale(1.05);
+
+}
+
+
+
+/* ========================= */
+/* LINK BUTTON */
+/* ========================= */
+
+.link-button {
+
+	background-color: var(--main-blue);
+
+	color: white;
+
+	padding: 10px 20px;
+
+	border-radius: 8px;
+
+	text-decoration: none;
+
+	display: inline-block;
+
+	margin-top: 10px;
+
+	font-size: 18px;
+
+}
+
+
+
+.link-button:hover {
+
+	background-color: var(--hover-blue);
+
+	transform: scale(1.05);
+
+}
+
+
+
+/* ========================= */
+/* FOOTER */
+/* ========================= */
+
+footer {
+
+	text-align: center;
+
+	margin-top: 50px;
+
+	padding: 20px;
+
+	color: white;
+
+	font-size: 14px;
+
+}
+
+
+
+/* ========================= */
+/* DROPDOWN BUTTONS */
+/* ========================= */
+
+.status-arrow,
+.suggestion-arrow {
+
+	width: 40px;
+
+	height: 40px;
+
+	border-radius: 50%;
+
+	border: none;
+
+	cursor: pointer;
+
+	background-color: var(--status-blue);
+
+	color: white;
+
+	font-size: 20px;
+
+	display: flex;
+
+	align-items: center;
+
+	justify-content: center;
+
+	padding: 0;
+
+	line-height: 1;
+
+	font-family: Arial, sans-serif;
+
+}
+
+
+
+.status-arrow:hover,
+.suggestion-arrow:hover {
+
+	background-color: var(--hover-blue);
+
+	transform: scale(1.05);
+
+}
+
+
+
+/* ========================= */
+/* SERVER STATUS DROPDOWN */
+/* ========================= */
+
+/* ========================= */
+/* SERVER STATUS DROPDOWN FIX */
+/* ========================= */
+
+.page-content {
+
+	position: relative;
+
+	z-index: 1;
+
+}
+
+
+
+.status-container {
+
+	position: fixed !important;
+
+	right: 10px;
+
+	bottom: 10px;
+
+	z-index: 999999;
+
+}
+
+
+.status-arrow {
+
+	width: 40px;
+
+	height: 40px;
+
+	border-radius: 50%;
+
+	border: none;
+
+	cursor: pointer;
+
+	background-color: var(--status-blue);
+
+	color: white;
+
+	font-size: 20px;
+
+	display: flex;
+
+	align-items: center;
+
+	justify-content: center;
+
+	padding: 0;
+
+}
+
+
+
+.status-arrow:hover {
+
+	background-color: var(--hover-blue);
+
+	transform: scale(1.05);
+
+}
+
+
+
+.status-box {
+
+	display: none;
+
+	position: fixed;
+
+	right: 10px;
+
+	bottom: 70px;
+
+	width: 220px;
+
+	padding: 15px;
+
+	background-color: var(--status-blue);
+
+	color: white;
+
+	border-radius: 10px;
+
+	text-align: center;
+
+	z-index: 9999999;
+
+	box-shadow: 0 0 15px black;
+
+}
+
+
+
+.status-box.open {
+
+	display: block !important;
+
+}
+
+
+
+/* ========================= */
+/* SUGGESTIONS DROPDOWN */
+/* ========================= */
+
+.suggestion-container {
+
+	position: fixed; 
+
+	left: 2px;
+
+	bottom: 10px;
+
+	z-index: 99999;
+
+}
+
+
+
+.suggestion-box {
+
+	display: none;
+
+	position: fixed;
+
+	left: 2px;
+
+	bottom: 10px;
+
+	width: 220px;
+
+	padding: 15px;
+
+	background-color: var(--suggestion-blue);
+
+	color: white;
+
+	border-radius: 10px;
+
+	text-align: center;
+
+	z-index: 100000;
+
+}
+
+
+
+.suggestion-box.open {
+
+	display: block !important;
+
+}
+
+
+
+.suggestion-button {
+
+	background-color: var(--main-blue);
+
+	color: white;
+
+	padding: 10px;
+
+	border-radius: 8px;
+
+	text-decoration: none;
+
+	display: inline-block;
+
+}
+
+
+
+.suggestion-button:hover {
+
+	background-color: var(--hover-blue);
+
+}
+
+
+
+/* ========================= */
+/* PAGE INFO */
+/* ========================= */
+
+.page-info {
+
+	text-align: center;
+
+	margin-top: 20px;
+
+	color: white;
+
+	font-size: 16px;
+
+}
+
+
+
+/* ========================= */
+/* ANIMATIONS */
+/* ========================= */
+
+@keyframes fadeIn {
+
+	from {
+
+		opacity: 0;
+
+		transform: translateY(15px);
+
+	}
+
+
+	to {
+
+		opacity: 1;
+
+		transform: translateY(0);
+
+	}
+
+}
+
+
+
+@keyframes bounceIn {
+
+	0% {
+
+		opacity: 0;
+
+		transform: translateY(40px);
+
+	}
+
+
+	60% {
+
+		opacity: 1;
+
+		transform: translateY(-10px);
+
+	}
+
+
+	80% {
+
+		transform: translateY(5px);
+
+	}
+
+
+	100% {
+
+		transform: translateY(0);
+
+	}
+
+}
+
+
+
+/* ========================= */
+/* SMOOTH SCROLL */
+/* ========================= */
+
+html {
+
+	scroll-behavior: smooth;
+
+}
+
+
+
+/* ========================= */
+/* IMAGES */
+/* ========================= */
+
+img {
+
+	max-width: 100%;
+
+	height: auto;
+
+}
+
+
+
+/* ========================= */
+/* TEXT SELECT */
+/* ========================= */
+
+::selection {
+
+	background-color: var(--main-blue);
+
+	color: white;
+
+}
+/* ========================= */
+/* EAST SMP WEBSITE CSS */
+/* FINAL ASTRO VERSION */
+/* PART 3/4 */
+/* ========================= */
+
+
+/* ========================= */
+/* LOADING SCREEN */
+/* ========================= */
+
+#loading-screen {
+
+	position: fixed;
+
+	top: 0;
+
+	left: 0;
+
+	width: 100%;
+
+	height: 100vh;
+
+	background-color: var(--background);
+
+	color: white;
+
+	display: flex;
+
+	flex-direction: column;
+
+	align-items: center;
+
+	justify-content: center;
+
+
+	z-index: 99999999;
+
+	animation: fadeOut 1s ease-in-out forwards;
+
+	animation-delay: 3.5s;
+
+	pointer-events: none;
+
+}
+
+
+
+#loading-screen h1 {
+
+	font-size: 50px;
+
+	color: var(--main-blue);
+
+}
+
+
+
+#loading-screen p {
+
+	font-size: 20px;
+
+}
+
+
+
+/* ========================= */
+/* LOADING BAR */
+/* ========================= */
+
+.loading-bar {
+
+	width: 300px;
+
+	height: 15px;
+
+	background-color: #1f2937;
+
+	border-radius: 10px;
+
+	overflow: hidden;
+
+	margin-top: 20px;
+
+}
+
+
+
+.loading-progress {
+
+	width: 0%;
+
+	height: 100%;
+
+	background-color: var(--main-blue);
+
+	border-radius: 10px;
+
+	animation: loading 3s linear forwards;
+
+}
+
+
+
+@keyframes loading {
+
+	from {
+
+		width: 0%;
+
+	}
+
+
+	to {
+
+		width: 100%;
+
+	}
+
+}
+
+
+
+@keyframes fadeOut {
+
+	from {
+
+		opacity: 1;
+
+		visibility: visible;
+
+	}
+
+
+	to {
+
+		opacity: 0;
+
+		visibility: hidden;
+
+	}
+
+}
+
+
+
+/* ========================= */
+/* RULES PAGE */
+/* ========================= */
+
+
+.rules-grid {
+
+	display: grid;
+
+	grid-template-columns: repeat(2, 1fr);
+
+	gap: 15px;
+
+	width: 90%;
+
+	max-width: 1400px;
+
+	margin: 20px auto;
+
+}
+
+
+
+.rule-box {
+
+	background-color: #1f2937;
+
+	border-radius: 10px;
+
+	padding: 20px;
+
+	box-shadow: 0 0 10px black;
+
+	box-sizing: border-box;
+
+	text-align: center;
+
+}
+
+
+
+.rule-box h2 {
+
+	text-align: center;
+
+	padding-bottom: 10px;
+
+	border-bottom: 2px solid white;
+
+}
+
+
+
+/* Remove list dots */
+
+.rule-box ul {
+
+	list-style: none;
+
+	padding: 0;
+
+	margin: 0;
+
+}
+
+
+
+.rule-box li {
+
+	list-style: none;
+
+	text-align: center;
+
+	margin-bottom: 12px;
+
+}
+
+
+
+/* ========================= */
+/* TOP RULE BOX */
+/* ========================= */
+
+.full-rule-box {
+
+	width: 90%;
+
+	max-width: 1400px;
+
+	margin: 20px auto;
+
+	background-color: #1f2937;
+
+	border-radius: 10px;
+
+	padding: 20px;
+
+	box-shadow: 0 0 10px black;
+
+	text-align: center;
+
+}
+
+
+
+/* ========================= */
+/* SIDE RULE BOXES */
+/* ========================= */
+
+.side-rules {
+
+	display: grid;
+
+	grid-template-columns: repeat(2, 1fr);
+
+	gap: 15px;
+
+	width: 90%;
+
+	max-width: 1400px;
+
+	margin: 20px auto;
+
+}
+
+
+
+.side-rules .rule-box {
+
+	width: 100%;
+
+}
+
+
+
+/* ========================= */
+/* HOVER EFFECTS */
+/* ========================= */
+
+.discord-button,
+.menu-button {
+
+	box-shadow: 0 0 8px rgba(88,101,242,0.5);
+
+}
+
+
+
+.status-arrow,
+.suggestion-arrow {
+
+	box-shadow: 0 0 8px rgba(37,99,235,0.5);
+
+}
+
+
+
+.copy-button:hover,
+.youtube-button:hover,
+.nav-links a:hover,
+.link-button:hover {
+
+	transform: scale(1.05);
+
+}
+
+
+
+/* ========================= */
+/* MOBILE FIX START */
+/* ========================= */
+
+@media(max-width:900px) {
+
+
+	.rules-grid {
+
+		grid-template-columns: 1fr;
+
+	}
+
+
+	.side-rules {
+
+		grid-template-columns: 1fr;
+
+	}
+
+
+}
+/* ========================= */
+/* EAST SMP WEBSITE CSS */
+/* FINAL ASTRO VERSION */
+/* PART 4/4 */
+/* ========================= */
+
+
+/* ========================= */
+/* MOBILE RESPONSIVE */
+/* ========================= */
+
+@media (max-width:600px) {
+
+
+	body {
+
+		overflow-x:hidden;
+
+	}
+
+
+
+	.discord-button {
+
+		font-size:15px;
+
+		padding:8px 12px;
+
+		top:10px;
+
+		right:10px;
+
+	}
+
+
+
+	.menu-button {
+
+		font-size:26px;
+
+		padding:7px 12px;
+
+		top:10px;
+
+		left:10px;
+
+	}
+
+
+
+	section {
+
+		width:90%;
+
+		padding:15px;
+
+	}
+
+
+
+	.server-ip {
+
+		flex-direction:column;
+
+	}
+
+
+
+	.creator-container {
+
+		flex-direction:column;
+
+		align-items:center;
+
+	}
+
+
+
+	.creator-card {
+
+		width:85%;
+
+	}
+
+
+
+	.creator-card img {
+
+		width:180px;
+
+		height:180px;
+
+	}
+
+
+
+	.copy-button {
+
+		font-size:18px;
+
+		padding:10px 18px;
+
+	}
+
+
+
+	.nav-links {
+
+		width:230px;
+
+	}
+
+
+
+	.nav-links a {
+
+		font-size:18px;
+
+		width:80%;
+
+	}
+
+
+
+	.status-box {
+
+		width:160px;
+
+	}
+
+
+
+	.suggestion-box {
+
+		width:160px;
+
+	}
+
+
+
+	section,
+	.creator-card,
+	.page-content {
+
+		animation-duration:0.6s;
+
+	}
+
+}
+
+
+
+/* ========================= */
+/* VERY SMALL SCREENS */
+/* ========================= */
+
+@media(max-width:400px) {
+
+
+	.discord-button {
+
+		font-size:13px;
+
+		padding:6px 10px;
+
+	}
+
+
+
+	.menu-button {
+
+		font-size:22px;
+
+	}
+
+
+
+	.status-arrow,
+	.suggestion-arrow {
+
+		width:35px;
+
+		height:35px;
+
+		font-size:18px;
+
+	}
+
+}
+
+
+
+/* ========================= */
+/* FINAL DROPDOWN SAFETY FIX */
+/* ========================= */
+
+
+.status-container,
+.suggestion-container {
+
+	user-select:none;
+
+}
+
+
+
+.status-arrow,
+.suggestion-arrow {
+
+	outline:none;
+
+}
+
+
+
+.status-arrow:focus,
+.suggestion-arrow:focus {
+
+	outline:none;
+
+}
+
+
+
+/* ========================= */
+/* FINAL BUTTON EFFECT */
+/* ========================= */
+
+.status-arrow:active,
+.suggestion-arrow:active,
+.discord-button:active,
+.menu-button:active {
+
+	transform:scale(0.95);
+
+}
+
+
+
+/* ========================= */
+/* ASTRO LAYER FIX */
+/* ========================= */
+
+
+body {
+
+	position:relative;
+
+}
+
+
+
+body::before,
+body::after {
+
+	z-index:0 !important;
+
+}
+
+
+
+nav,
+.navbar,
+.menu-button {
+
+	position:relative;
+
+	z-index:999999 !important;
+
+}
+
+
+
+.menu-button {
+
+	position:fixed !important;
+
+	top:10px;
+
+	left:10px;
+
+	display:block !important;
+
+	pointer-events:auto !important;
+
+}
+
+
+
+.nav-links {
+
+	position:fixed !important;
+
+	z-index:999998 !important;
+
+}
+
+
+
+.page-content {
+
+	position:relative;
+
+	z-index:1;
+
+}
+
+
+
+/* ========================= */
+/* REPORT BOX */
+/* ========================= */
+
+#report-box {
+
+	margin-top:20px;
+
+	background-color:#1f2937;
+
+	color:white;
+
+	padding:20px;
+
+	border-radius:10px;
+
+	text-align:left;
+
+	font-family:monospace;
+
+	min-height:100px;
+
+	box-shadow:0 0 10px black;
+
+}
+
+
+
+/* ========================= */
+/* ROLES PAGE */
+/* ========================= */
+
+.roles-page {
+
+	display:flex;
+
+	gap:30px;
+
+}
+
+
+
+.role-tabs {
+
+	position:sticky;
+
+	top:100px;
+
+	height:max-content;
+
+	display:flex;
+
+	flex-direction:column;
+
+	gap:10px;
+
+	width:170px;
+
+}
+
+
+
+.role-tabs a {
+
+	background:#5865F2;
+
+	color:white;
+
+	padding:10px;
+
+	border-radius:8px;
+
+	text-decoration:none;
+
+	text-align:center;
+
+}
+
+
+
+.role-tabs a:hover {
+
+	background:#4752C4;
+
+}
+
+
+
+.roles-content {
+
+	flex:1;
+
+}
+
+
+
+section {
+
+	scroll-margin-top:100px;
+
+	margin-bottom:80px;
+
+}
+
+
+
+/* ========================= */
+/* RULES FINAL CENTER FIX */
+/* ========================= */
+
+.rules-layout {
+
+	display:flex !important;
+
+	flex-direction:row !important;
+
+	align-items:flex-start !important;
+
+	justify-content:center !important;
+
+	gap:25px !important;
+
+	width:100% !important;
+
+}
+
+
+
+.rules-content {
+
+	width:1100px !important;
+
+	flex:none !important;
+
+}
+
+
+
+.rule-tabs {
+
+	width:170px !important;
+
+	flex:none !important;
+
+	position:sticky !important;
+
+	top:100px !important;
+
+}
+
+
+
+.rule-box {
+
+	width:100% !important;
+
+}
+
+
+
+@media(max-width:900px){
+
+
+	.rules-layout {
+
+		flex-direction:column !important;
+
+		width:90% !important;
+
+		margin:auto !important;
+
+	}
+
+
+
+	.rules-content {
+
+		width:100% !important;
+
+	}
+
+
+
+	.rule-tabs {
+
+		width:100% !important;
+
+		position:static !important;
+
+	}
+
+}
+
+
+/* ========================= */
+/* END PART 4/4 */
+/* ========================= */
+/* ========================= */
+/* EAST SMP DARK LIQUID GLASS */
+/* ========================= */
+
+
+/* Glass boxes */
+
+section,
+.creator-card,
+.rule-box,
+.full-rule-box,
+.status-box,
+.suggestion-box {
+
+	background: rgba(15, 23, 42, 0.65) !important;
+
+	backdrop-filter: blur(25px);
+
+	-webkit-backdrop-filter: blur(25px);
+
+	border: 1px solid rgba(255,255,255,0.12);
+
+	box-shadow:
+	0 15px 45px rgba(0,0,0,0.65);
+
+}
+
+
+
+/* Glass buttons */
+
+.discord-button,
+.youtube-button,
+.link-button,
+.nav-links a,
+.role-tabs a,
+.rule-tabs a,
+.menu-button {
+
+	background: rgba(30,41,59,0.75);
+
+	backdrop-filter: blur(18px);
+
+	-webkit-backdrop-filter: blur(18px);
+
+	border: 1px solid rgba(255,255,255,0.12);
+
+}
+
+
+
+/* Button hover */
+
+.discord-button:hover,
+.youtube-button:hover,
+.link-button:hover,
+.nav-links a:hover,
+.role-tabs a:hover,
+.rule-tabs a:hover,
+.menu-button:hover {
+
+	background: rgba(88,101,242,0.45);
+
+}
+
+
+
+/* Dark liquid background */
+
+html,
+body {
+
+	background:
+
+	radial-gradient(
+		circle at top,
+		#172554,
+		#020617 75%
+	);
+
+}
+
+
+
+/* Blue moving glow */
+
+body::before {
+
+	content:"";
+
+	position:fixed;
+
+	inset:0;
+
+
+	background:
+
+	radial-gradient(
+		circle at 20% 20%,
+		rgba(37,99,235,0.35),
+		transparent 40%
+	),
+
+	radial-gradient(
+		circle at 80% 40%,
+		rgba(88,101,242,0.25),
+		transparent 45%
+	);
+
+
+	pointer-events:none;
+
+	z-index:0;
+
+	animation: liquidGlow 12s ease-in-out infinite alternate;
+
+}
+
+
+
+@keyframes liquidGlow {
+
+	from {
+
+		transform:scale(1);
+
+		opacity:0.8;
+
+	}
+
+
+	to {
+
+		transform:scale(1.15);
+
+		opacity:1;
+
+	}
+
+}
+
+
+
+/* Glass shine */
+
+section::before,
+.creator-card::before,
+.rule-box::before,
+.full-rule-box::before {
+
+	content:"";
+
+	position:absolute;
+
+	inset:0;
+
+	border-radius:inherit;
+
+
+	background:
+
+	linear-gradient(
+		135deg,
+		rgba(255,255,255,0.08),
+		transparent 35%
+	);
+
+
+	pointer-events:none;
+
+}
+
+
+
+/* Make cards work with shine */
+
+section,
+.creator-card,
+.rule-box,
+.full-rule-box {
+
+	position:relative;
+
+	overflow:hidden;
+
+}
+/* ========================= */
+/* FIX RULES + ROLES GLASS */
+/* ========================= */
+
+
+/* Make glass boxes behave correctly */
+
+section,
+.creator-card,
+.rule-box,
+.full-rule-box,
+.status-box,
+.suggestion-box {
+
+	position: relative;
+
+	overflow: hidden;
+
+}
+
+
+
+/* Keep text above glass shine */
+
+section > *,
+.creator-card > *,
+.rule-box > *,
+.full-rule-box > *,
+.status-box > *,
+.suggestion-box > * {
+
+	position: relative;
+
+	z-index: 2;
+
+}
+
+
+
+/* Fix Roles layout */
+
+.roles-page {
+
+	display: flex;
+
+	gap: 30px;
+
+	align-items: flex-start;
+
+}
+
+
+
+.roles-content {
+
+	flex: 1;
+
+}
+
+
+
+.role-tabs {
+
+	position: sticky;
+
+	top: 100px;
+
+	z-index: 5;
+
+}
+
+
+
+/* Fix Rules layout */
+
+.rules-layout {
+
+	display: flex !important;
+
+	flex-direction: row !important;
+
+	align-items: flex-start !important;
+
+	justify-content: center !important;
+
+	gap: 25px !important;
+
+}
+
+
+
+.rules-content {
+
+	width: 1100px !important;
+
+	max-width: 100%;
+
+}
+
+
+
+.rule-tabs {
+
+	position: sticky !important;
+
+	top: 100px;
+
+	z-index: 5;
+
+}
+
+
+
+/* Mobile fix */
+
+@media(max-width:900px){
+
+
+	.roles-page,
+	.rules-layout {
+
+		flex-direction: column !important;
+
+	}
+
+
+	.role-tabs,
+	.rule-tabs {
+
+		position: static !important;
+
+		width: 100%;
+
+	}
+
+}
+/* ========================= */
+/* RULE SEARCH */
+/* ========================= */
+
+.rules-search {
+
+	text-align: center;
+
+	margin: 10px auto;
+
+}
+
+
+.rules-search input {
+
+	width: 320px;
+
+	max-width: 90%;
+
+	padding: 8px 12px;
+
+	border-radius: 8px;
+
+	border: none;
+
+	font-size: 16px;
+
+}
+
+
+
+/* ========================= */
+/* RULES LAYOUT */
+/* ========================= */
+
+.rules-layout {
+
+	display: flex;
+
+	align-items: flex-start;
+
+	justify-content: center;
+
+	gap: 25px;
+
+	width: 90%;
+
+	max-width: 1500px;
+
+	margin: 30px auto;
+
+}
+
+
+
+.rules-content {
+
+	flex: 1;
+
+	max-width: 1200px;
+
+	display: flex;
+
+	flex-direction: column;
+
+	gap: 25px;
+
+}
+
+
+
+/* ========================= */
+/* RULE TABS */
+/* ========================= */
+
+.rule-tabs {
+
+	position: sticky;
+
+	top: 100px;
+
+	width: 170px;
+
+	flex-shrink: 0;
+
+	display: flex;
+
+	flex-direction: column;
+
+	gap: 10px;
+
+}
+
+
+
+.rule-tabs a {
+
+	background:#5865F2;
+
+	color:white;
+
+	padding:12px;
+
+	border-radius:8px;
+
+	text-decoration:none;
+
+	text-align:center;
+
+}
+
+
+
+.rule-tabs a:hover {
+
+	background:#4752C4;
+
+	transform:scale(1.05);
+
+}
+
+
+
+/* ========================= */
+/* ROLE TABS */
+/* ========================= */
+
+.roles-page {
+
+	display:flex;
+
+	gap:30px;
+
+}
+
+
+
+.role-tabs {
+
+	position:sticky;
+
+	top:100px;
+
+	height:max-content;
+
+	display:flex;
+
+	flex-direction:column;
+
+	gap:10px;
+
+	width:170px;
+
+}
+
+
+
+.role-tabs a {
+
+	background:#5865F2;
+
+	color:white;
+
+	padding:10px;
+
+	border-radius:8px;
+
+	text-decoration:none;
+
+	text-align:center;
+
+}
+
+
+
+.role-tabs a:hover {
+
+	background:#4752C4;
+
+}
+
+
+
+/* ========================= */
+/* MOBILE FIX */
+/* ========================= */
+
+@media(max-width:900px){
+
+
+	.rules-layout {
+
+		flex-direction:column;
+
+		width:90%;
+
+	}
+
+
+	.rules-content {
+
+		width:100%;
+
+	}
+
+
+	.rule-tabs {
+
+		position:static;
+
+		width:100%;
+
+		flex-direction:row;
+
+		flex-wrap:wrap;
+
+	}
+
+
+	.rule-tabs a {
+
+		flex:1;
+
+		min-width:120px;
+
+	}
+
+}
+/* ========================= */
+/* RULE SEARCH EXTRA SPACE */
+/* ========================= */
+
+
+.rules-search {
+
+	position: relative;
+
+	display: block;
+
+	margin-top: 80px !important;
+
+	margin-bottom: 50px !important;
+
+	padding-top: 20px;
+
+	padding-bottom: 20px;
+
+	z-index: 5;
+
+}
+
+
+
+.rules-search input {
+
+	margin-top: 20px;
+
+}
+/* ========================= */
+/* FORCE RULE SEARCH GAP */
+/* ========================= */
+
+.rules-search {
+	
+	transform: translateY(50px);
+
+	margin-bottom: 100px !important;
+
+	position: relative;
+
+	z-index: 10;
+
+}
+/* ========================= */
+/* RULE SEARCH RESULT SPACE */
+/* ========================= */
+
+#search-results {
+
+	margin-top: 40px !important;
+
+	padding-top: 20px;
+
+	display: flex;
+
+	flex-direction: column;
+
+	gap: 30px;
+
+}
+
+
+#search-results .rule-box {
+
+	margin-bottom: 30px;
+
+}
+
+.page-info {
+
+	text-align: center;
+
+}
+.rules-search {
+	text-align: center;
+	margin: 0 auto 10px auto;
+	padding: 0;
+}
+
+
+.rules-search input {
+	width: 320px;
+	max-width: 90%;
+	padding: 8px 12px;
+	border-radius: 8px;
+	border: none;
+	font-size: 16px;
+}
+
+
+#search-results {
+	margin-top: 10px;
+}
+
+
+.full-rule-box {
+	margin-top: 10px !important;
+}
+.rules-search {
+
+	margin-top: 0 !important;
+
+	padding-top: 0 !important;
+
+}
+
+
+.full-rule-box {
+
+	margin-top: 5px !important;
+
+}
+
+
+.full-rule-box {
+
+	margin-top: 15px !important;
+
+}
+/* FIX STATUS DROPDOWN STAYING IN PLACE */
+
+.status-container {
+
+	position: fixed !important;
+
+	right: 10px !important;
+
+	bottom: 10px !important;
+
+	z-index: 999999 !important;
+
+}
+.status-container {
+
+	position: fixed;
+
+	right: 10px;
+
+	bottom: 10px;
+
+	z-index: 999999;
+
+}
+
+
+.status-arrow {
+
+	width: 40px;
+
+	height: 40px;
+
+	border-radius: 50%;
+
+	border: none;
+
+	cursor: pointer;
+
+	background-color: var(--status-blue);
+
+	color: white;
+
+	font-size: 20px;
+
+	display: flex;
+
+	align-items: center;
+
+	justify-content: center;
+
+}
+
+
+.status-box {
+
+	display: none;
+
+	position: absolute;
+
+	right: 0;
+
+	bottom: 50px;
+
+	width: 220px;
+
+	padding: 15px;
+
+	background-color: var(--status-blue);
+
+	color: white;
+
+	border-radius: 10px;
+
+	text-align: center;
+
+	box-shadow: 0 0 15px black;
+
+}
+
+
+.status-box.open {
+
+	display: block;
+
+}
+/* ========================= */
+/* EAST SMP BETTER ANIMATIONS */
+/* ========================= */
+
+
+/* Smooth page entrance */
+
+.page-content {
+
+	animation: pageEnter 0.7s ease-out;
+
+}
+
+
+@keyframes pageEnter {
+
+	from {
+
+		opacity: 0;
+
+		transform: translateY(20px);
+
+	}
+
+
+	to {
+
+		opacity: 1;
+
+		transform: translateY(0);
+
+	}
+
+}
+
+
+
+/* Glass cards entrance */
+
+.rule-box,
+.creator-card,
+section,
+.status-box,
+.suggestion-box {
+
+	animation: glassEnter 0.6s ease-out;
+
+}
+
+
+
+@keyframes glassEnter {
+
+	from {
+
+		opacity: 0;
+
+		transform: translateY(30px) scale(0.98);
+
+	}
+
+
+	to {
+
+		opacity: 1;
+
+		transform: translateY(0) scale(1);
+
+	}
+
+}
+
+
+
+/* Better buttons */
+
+.discord-button,
+.youtube-button,
+.link-button,
+.nav-links a,
+.role-tabs a,
+.rule-tabs a,
+.status-arrow,
+.suggestion-arrow,
+.copy-button {
+
+	transition:
+
+		transform 0.25s ease,
+		background-color 0.25s ease,
+		box-shadow 0.25s ease;
+
+}
+
+
+
+/* Button hover lift */
+
+.discord-button:hover,
+.youtube-button:hover,
+.link-button:hover,
+.nav-links a:hover,
+.role-tabs a:hover,
+.rule-tabs a:hover,
+.status-arrow:hover,
+.suggestion-arrow:hover,
+.copy-button:hover {
+
+	transform: translateY(-3px) scale(1.04);
+
+}
+
+
+
+/* Dropdown animation */
+
+.status-box,
+.suggestion-box {
+
+	animation: dropdown 0.25s ease-out;
+
+}
+
+
+
+@keyframes dropdown {
+
+	from {
+
+		opacity: 0;
+
+		transform: translateY(15px) scale(0.95);
+
+	}
+
+
+	to {
+
+		opacity: 1;
+
+		transform: translateY(0) scale(1);
+
+	}
+
+}
+
+
+
+/* Menu animation */
+
+.nav-links {
+
+	transition:
+
+		left 0.35s ease,
+		box-shadow 0.35s ease;
+
+}
+
+
+
+/* Smooth scrolling */
+
+html {
+
+	scroll-behavior: smooth;
+
+}
+
+
+
+/* Reduce motion support */
+
+@media (prefers-reduced-motion: reduce) {
+
+
+	* {
+
+		animation-duration: 0.01ms !important;
+
+		transition-duration: 0.01ms !important;
+
+	}
+
+
+}
+/* ========================= */
+/* UPDATE CARDS */
+/* ========================= */
+
+
+.update-card {
+
+	transition:
+
+		transform .3s ease,
+		box-shadow .3s ease;
+
+
+}
+
+
+
+.update-card:hover {
+
+	transform: translateY(-6px);
+
+
+	box-shadow:
+
+	0 15px 35px rgba(0,0,0,0.35);
+
+
+}
+
+/* ========================= */
+/* UPDATE LOGGER CARDS */
+/* ========================= */
+
+.update-card,
+section {
+
+	margin-bottom: 30px;
+
+}
+
+
+.update-card,
+section {
+
+	padding: 20px;
+
+	border-radius: 20px;
+
+}
+.update-card {
+
+	transition: 
+		transform .3s ease,
+		box-shadow .3s ease;
+
+}
+
+
+.update-card:hover {
+
+	transform: translateY(-5px);
+
+	box-shadow: 0 15px 35px rgba(0,0,0,.35);
+
+}
+/* ========================= */
+/* UPDATE PAGE SPACING */
+/* ========================= */
+
+.updates-page {
+
+	padding-top: 120px;
+
+}
+/* Prevent navbar and Discord button overlap */
+
+.main-content {
+
+	padding-top: 40px;
+
+}
+/* Hide website while loading */
+
+body.loading #page-content,
+body.loading .discord-button,
+body.loading nav,
+body.loading .status-container,
+body.loading .suggestions-button {
+
+	opacity: 0;
+
+	pointer-events: none;
+
+}
+#loading-percent {
+
+	font-size: 18px;
+
+	margin-top: 10px;
+
+	color: white;
+
+}
+/* =========================
+   APPLICATIONS CENTER FIX
+========================= */
+
+.applications-page {
+
+	text-align: center;
+
+	display: flex;
+
+	flex-direction: column;
+
+	align-items: center;
+
+}
+
+
+
+.application-box {
+
+	text-align: center;
+
+}
+
+
+
+.application-box p {
+
+	text-align: center;
+
+}
+
+
+
+.application-box a {
+
+	display: inline-block;
+
+}
+/* =========================
+   UPDATE LOGGER 2.0
+========================= */
+
+
+.update-header-box {
+
+	text-align:center;
+
+	margin-bottom:30px;
+
+}
+
+
+
+.update-top {
+
+	display:flex;
+
+	justify-content:space-between;
+
+	align-items:center;
+
+	gap:20px;
+
+}
+
+
+
+.update-category {
+
+	background:#5865F2;
+
+	color:white;
+
+	padding:6px 14px;
+
+	border-radius:20px;
+
+	font-size:14px;
+
+}
+
+
+
+.update-date {
+
+	opacity:0.8;
+
+}
+
+
+
+.update-section {
+
+	margin-top:20px;
+
+	padding:15px;
+
+	background:rgba(255,255,255,0.05);
+
+	border-radius:10px;
+
+}
+
+
+
+.update-section ul {
+
+	list-style:none;
+
+	padding:0;
+
+}
+
+
+
+.update-section li {
+
+	margin:8px;
+
+}
+
+
+
+.update-card {
+
+	margin-bottom:30px;
+
+}
+
+
+
+@media(max-width:600px){
+
+
+	.update-top {
+
+		flex-direction:column;
+
+		text-align:center;
+
+	}
+
+
+}
+/* =========================
+GLOBAL BACKGROUND
+========================= */
+
+html,
+body {
+
+    background:
+    radial-gradient(
+        circle at top,
+        #172554,
+        #020617 75%
+    );
+
+    color:white;
+    min-height:100%;
+
+}
+
+
+/* =========================
+DEVELOPER SCANNER BOX
+========================= */
+
+.scanner-header {
+
+    max-width:900px;
+
+    margin:40px auto 20px;
+
+    padding:25px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:20px;
+
+
+    background:
+    rgba(255,255,255,0.08);
+
+
+    backdrop-filter:
+    blur(20px);
+
+    -webkit-backdrop-filter:
+    blur(20px);
+
+
+    border:
+
+    1px solid rgba(255,255,255,0.15);
+
+
+    border-radius:25px;
+
+
+    box-shadow:
+
+    0 10px 40px rgba(0,0,0,0.35);
+
+}
+
+
+
+.scanner-header h1 {
+
+    margin:0;
+
+    font-size:32px;
+
+}
+
+
+
+/* =========================
+BUTTON AREA
+========================= */
+
+.scanner-buttons {
+
+    display:flex;
+
+    gap:12px;
+
+}
+
+
+
+/* BOTH BUTTONS */
+
+.scanner-buttons button {
+
+
+    background:
+
+    rgba(255,255,255,0.12);
+
+
+    border:
+
+    1px solid rgba(255,255,255,0.2);
+
+
+    color:white;
+
+
+    padding:
+
+    12px 20px;
+
+
+    border-radius:
+
+    16px;
+
+
+    font-size:
+
+    15px;
+
+
+    cursor:pointer;
+
+
+    backdrop-filter:
+
+    blur(15px);
+
+
+    -webkit-backdrop-filter:
+
+    blur(15px);
+
+
+    transition:
+
+    0.25s;
+
+}
+
+
+
+.scanner-buttons button:hover {
+
+
+    transform:
+
+    translateY(-3px);
+
+
+    background:
+
+    rgba(255,255,255,0.25);
+
+}
+
+
+
+/* Refresh Button */
+
+.scanner-buttons button:first-child {
+
+
+    background:
+
+    rgba(59,130,246,0.45);
+
+}
+
+
+.scanner-buttons button:first-child:hover {
+
+
+    background:
+
+    rgba(59,130,246,0.75);
+
+}
+
+
+
+/* New Report Button */
+
+.scanner-buttons button:last-child {
+
+
+    background:
+
+    rgba(34,197,94,0.35);
+
+}
+
+
+.scanner-buttons button:last-child:hover {
+
+
+    background:
+
+    rgba(34,197,94,0.65);
+
+}
+
+
+
+/* =========================
+SCORE BOX
+========================= */
+
+
+.score {
+
+
+    max-width:500px;
+
+
+    margin:
+
+    20px auto;
+
+
+    text-align:center;
+
+
+    padding:25px;
+
+
+    background:
+
+    rgba(255,255,255,0.08);
+
+
+    backdrop-filter:
+
+    blur(20px);
+
+
+    border:
+
+    1px solid rgba(255,255,255,0.15);
+
+
+    border-radius:25px;
+
+
+}
+
+
+
+.score h2 {
+
+
+    font-size:35px;
+
+    margin-bottom:5px;
+
+}
+
+
+
+.score p {
+
+
+    opacity:0.8;
+
+}
+
+
+
+/* =========================
+RESULTS
+========================= */
+
+
+.results {
+
+
+    max-width:900px;
+
+
+    margin:
+
+    auto;
+
+
+}
+
+
+
+/* Each test */
+
+.scan-result {
+
+
+    margin:
+
+    12px auto;
+
+
+    padding:
+
+    18px;
+
+
+    border-radius:
+
+    18px;
+
+
+    background:
+
+    rgba(255,255,255,0.08);
+
+
+    backdrop-filter:
+
+    blur(15px);
+
+
+    -webkit-backdrop-filter:
+
+    blur(15px);
+
+
+    border:
+
+    1px solid rgba(255,255,255,0.12);
+
+
+    transition:
+
+    0.25s;
+
+
+}
+
+
+
+.scan-result:hover {
+
+
+    transform:
+
+    translateY(-3px);
+
+
+    background:
+
+    rgba(255,255,255,0.15);
+
+}
+
+
+
+.scan-result p {
+
+
+    margin:0;
+
+
+    font-size:17px;
+
+
+}
+
+
+
+.scan-result small {
+
+
+    display:block;
+
+
+    margin-top:8px;
+
+
+    opacity:0.75;
+
+}
+
+
+
+/* =========================
+PASS / FAIL COLORS
+========================= */
+
+
+.scan-result.success {
+
+
+    border-left:
+
+    5px solid #22c55e;
+
+}
+
+
+
+.scan-result.failed {
+
+
+    border-left:
+
+    5px solid #ef4444;
+
+}
+
+
+
+/* =========================
+MOBILE
+========================= */
+
+
+@media(max-width:700px){
+
+
+    .scanner-header {
+
+
+        flex-direction:column;
+
+
+        text-align:center;
+
+
+    }
+
+
+
+    .scanner-buttons {
+
+
+        width:100%;
+
+
+        justify-content:center;
+
+
+        flex-wrap:wrap;
+
+
+    }
+
+
+    .scanner-buttons button {
+
+
+        width:100%;
+
+
+    }
+
+
+}
+/* =========================
+CLICKABLE RESULT BOXES
+========================= */
+
+
+.scan-result {
+
+    cursor:pointer;
+
+    overflow:hidden;
+
+}
+
+
+
+.scan-result p {
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+}
+
+
+
+.arrow {
+
+    margin-left:auto;
+
+    transition:.3s;
+
+}
+
+
+
+.details {
+
+    max-height:0;
+
+    opacity:0;
+
+    overflow:hidden;
+
+    transition:
+
+    max-height .35s ease,
+
+    opacity .35s ease;
+
+
+    padding-left:25px;
+
+}
+
+
+
+.scan-result.open .details {
+
+
+    max-height:200px;
+
+    opacity:1;
+
+    margin-top:15px;
+
+
+}
+
+
+
+.scan-result.open .arrow {
+
+
+    transform:rotate(180deg);
+
+
+}
+html,
+body {
+
+    background:
+    radial-gradient(
+        circle at top,
+        #172554,
+        #020617 75%
+    );
+
+}
+
+
+/* MAIN */
+
+.scanner-page {
+
+    max-width:900px;
+
+    margin:40px auto;
+
+    padding:20px;
+
+}
+
+
+
+/* HEADER */
+
+.scanner-header {
+
+    background:
+    rgba(255,255,255,0.1);
+
+    backdrop-filter:blur(20px);
+
+    border:
+    1px solid rgba(255,255,255,0.2);
+
+    border-radius:20px;
+
+    padding:25px;
+
+    text-align:center;
+
+}
+
+
+
+.scanner-header h1 {
+
+    margin-bottom:20px;
+
+}
+
+
+
+/* BUTTONS */
+
+.scanner-buttons {
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+}
+
+
+
+.scanner-buttons button {
+
+    padding:12px 25px;
+
+    border-radius:15px;
+
+    border:
+    1px solid rgba(255,255,255,0.25);
+
+    background:
+    rgba(255,255,255,0.15);
+
+    backdrop-filter:blur(15px);
+
+    color:white;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+    transition:.2s;
+
+}
+
+
+
+.scanner-buttons button:hover {
+
+    transform:translateY(-3px);
+
+    background:
+    rgba(255,255,255,0.25);
+
+}
+
+
+
+/* SCORE */
+
+.score-box {
+
+    margin:25px auto;
+
+    padding:25px;
+
+    text-align:center;
+
+    background:
+    rgba(255,255,255,0.1);
+
+    backdrop-filter:blur(20px);
+
+    border-radius:20px;
+
+    border:
+    1px solid rgba(255,255,255,0.2);
+
+}
+
+
+
+/* RESULTS */
+
+.results {
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+}
+
+
+
+.scan-result {
+
+    background:
+    rgba(255,255,255,0.1);
+
+    backdrop-filter:blur(15px);
+
+    border-radius:18px;
+
+    border:
+    1px solid rgba(255,255,255,0.2);
+
+    padding:18px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+
+
+.scan-result:hover {
+
+    transform:translateY(-3px);
+
+}
+
+
+
+.result-title {
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+}
+
+
+
+.arrow {
+
+    margin-left:auto;
+
+}
+
+
+
+.details {
+
+    display:none;
+
+    margin-top:15px;
+
+    padding-top:15px;
+
+    border-top:
+    1px solid rgba(255,255,255,0.15);
+
+}
+
+
+
+.scan-result.open .details {
+
+    display:block;
+
+}
+/* ========================= */
+/* DROPDOWN SYSTEM */
+/* ========================= */
+
+.dropdown {
+	position: relative;
+	display: inline-block;
+}
+
+
+.dropdown-button {
+	cursor: pointer;
+	border: none;
+
+	transition:
+	transform .2s ease,
+	background .2s ease;
+}
+
+
+.dropdown-button:active {
+	transform: scale(.95);
+}
+
+
+/* Dropdown box */
+
+.dropdown-content {
+
+	position: absolute;
+
+	top: calc(100% + 8px);
+	right: 0;
+
+	min-width: 180px;
+
+	padding: 10px;
+
+	border-radius: 14px;
+
+	background: rgba(20,20,20,0.65);
+
+	backdrop-filter: blur(20px);
+	-webkit-backdrop-filter: blur(20px);
+
+	border: 1px solid rgba(255,255,255,0.12);
+
+
+	opacity: 0;
+
+	transform:
+	translateY(-10px)
+	scale(.96);
+
+
+	visibility: hidden;
+
+	pointer-events: none;
+
+
+	transition:
+
+	opacity .25s ease,
+
+	transform .25s ease,
+
+	visibility .25s ease;
+
+
+	z-index: 999999;
+
+}
+
+
+/* Open dropdown */
+
+.dropdown.open .dropdown-content {
+
+	opacity: 1;
+
+	transform:
+	translateY(0)
+	scale(1);
+
+
+	visibility: visible;
+
+	pointer-events: auto;
+
+}
+
+
+/* Dropdown links */
+
+.dropdown-content a {
+
+	display: block;
+
+	padding: 10px;
+
+	color: white;
+
+	text-decoration: none;
+
+	border-radius: 10px;
+
+}
+
+
+.dropdown-content a:hover {
+
+	background: rgba(255,255,255,0.15);
+
+}

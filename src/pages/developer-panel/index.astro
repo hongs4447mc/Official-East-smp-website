@@ -1,0 +1,982 @@
+---
+import "../../styles/Developer-panel.css";
+---
+html
+<!-- ===================================================
+     DEVELOPER PANEL LOADING SCREEN
+     =================================================== -->
+
+<div id="dev-loading">
+
+  <div class="dev-loading-inner">
+
+    <div class="dev-loading-logo">
+      EAST SMP
+    </div>
+
+    <div class="dev-loading-title">
+      DEVELOPER PANEL
+    </div>
+
+    <div class="dev-loading-spinner"></div>
+
+    <div
+      class="dev-loading-status"
+      id="dev-loading-status"
+    >
+      INITIALIZING...
+    </div>
+
+  </div>
+
+</div>
+
+
+<div class="dev-panel">
+
+  <!-- =====================================================
+       SIDEBAR
+       ===================================================== -->
+
+  <aside class="dev-sidebar">
+
+    <!-- Logo -->
+
+    <div class="dev-sidebar-logo">
+
+      <div class="dev-sidebar-logo-icon">
+        <span
+          class="dev-icon dev-icon-tools"
+          aria-hidden="true"
+        ></span>
+      </div>
+
+      <span>
+        East SMP
+      </span>
+
+    </div>
+
+
+    <!-- Section -->
+
+    <div class="dev-sidebar-section">
+      Developer
+    </div>
+
+
+    <!-- Navigation -->
+
+    <nav class="dev-nav">
+
+      <!-- Dashboard -->
+
+      <a
+        href="/Official-East-smp-website/developer-panel/"
+        class="dev-nav-item active"
+      >
+
+        <span class="dev-nav-icon">
+
+          <span
+            class="dev-icon dev-icon-home"
+            aria-hidden="true"
+          ></span>
+
+        </span>
+
+        <span class="dev-nav-label">
+          Dashboard
+        </span>
+
+      </a>
+
+
+      <!-- Scanner -->
+
+      <a
+        href="/Official-East-smp-website/developer-scanner/"
+        class="dev-nav-item"
+      >
+
+        <span class="dev-nav-icon">
+
+          <span
+            class="dev-icon dev-icon-scanner"
+            aria-hidden="true"
+          ></span>
+
+        </span>
+
+        <span class="dev-nav-label">
+          Scanner
+        </span>
+
+      </a>
+
+
+      <!-- AI Tools -->
+
+      <a
+        href="/Official-East-smp-website/beta-tester-bot/"
+        class="dev-nav-item"
+      >
+
+        <span class="dev-nav-icon">
+
+          <span
+            class="dev-icon dev-icon-ai"
+            aria-hidden="true"
+          ></span>
+
+        </span>
+
+        <span class="dev-nav-label">
+          AI Tools
+        </span>
+
+      </a>
+
+
+      <!-- Security -->
+
+      <a
+        href="/Official-East-smp-website/security/"
+        class="dev-nav-item"
+      >
+
+        <span class="dev-nav-icon">
+
+          <span
+            class="dev-icon dev-icon-security"
+            aria-hidden="true"
+          ></span>
+
+        </span>
+
+        <span class="dev-nav-label">
+          Security
+        </span>
+
+      </a>
+
+
+      <!-- Restore -->
+
+      <a
+        href="/Official-East-smp-website/restore/"
+        class="dev-nav-item"
+      >
+
+        <span class="dev-nav-icon">
+
+          <span
+            class="dev-icon dev-icon-restore"
+            aria-hidden="true"
+          ></span>
+
+        </span>
+
+        <span class="dev-nav-label">
+          Restore
+        </span>
+
+      </a>
+
+
+      <!-- Logs -->
+
+      <a
+        href="/Official-East-smp-website/logs/"
+        class="dev-nav-item"
+      >
+
+        <span class="dev-nav-icon">
+
+          <span
+            class="dev-icon dev-icon-logs"
+            aria-hidden="true"
+          ></span>
+
+        </span>
+
+        <span class="dev-nav-label">
+          Logs
+        </span>
+
+      </a>
+
+
+      <!-- Settings -->
+
+      <a
+        href="/Official-East-smp-website/settings/"
+        class="dev-nav-item"
+      >
+
+        <span class="dev-nav-icon">
+
+          <span
+            class="dev-icon dev-icon-settings"
+            aria-hidden="true"
+          ></span>
+
+        </span>
+
+        <span class="dev-nav-label">
+          Settings
+        </span>
+
+      </a>
+
+    </nav>
+
+
+    <!-- Divider -->
+
+    <div class="dev-sidebar-divider"></div>
+
+
+    <!-- Developer Status -->
+
+    <div class="dev-sidebar-bottom">
+
+      <div class="dev-user-status">
+
+        <div class="dev-user-status-icon">
+
+          <span
+            class="dev-icon dev-icon-online"
+            aria-hidden="true"
+          ></span>
+
+        </div>
+
+
+        <div class="dev-user-status-info">
+
+          <div class="dev-user-status-name">
+            Developer
+          </div>
+
+          <div class="dev-user-status-role">
+            Developer Control Center
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </aside>
+
+
+
+  <!-- =====================================================
+       MAIN CONTENT
+       ===================================================== -->
+
+  <main class="dev-main">
+
+
+    <!-- ===================================================
+         TOP BAR
+         =================================================== -->
+
+    <header class="dev-topbar">
+
+
+      <div class="dev-page-heading">
+
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            gap: 12px;
+          "
+        >
+
+
+          <!-- Mobile menu -->
+
+          <button
+            class="dev-mobile-menu"
+            aria-label="Open developer menu"
+            type="button"
+          >
+
+            <span
+              class="dev-icon dev-icon-menu"
+              aria-hidden="true"
+            ></span>
+
+          </button>
+
+
+          <!-- Page heading -->
+
+          <div>
+
+            <h1 class="dev-page-title">
+
+              <span
+                class="dev-title-icon dev-icon dev-icon-tools"
+                aria-hidden="true"
+              ></span>
+
+              Developer Control Center
+
+            </h1>
+
+
+            <p class="dev-page-subtitle">
+              East SMP Developer Control Center
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- Online status -->
+
+      <div class="dev-topbar-actions">
+
+        <div class="dev-status online">
+
+          <span class="dev-status-dot"></span>
+
+          Online
+
+        </div>
+
+      </div>
+
+    </header>
+
+
+
+    <!-- ===================================================
+         DASHBOARD
+         =================================================== -->
+
+    <section class="dev-tab active">
+
+
+      <!-- =================================================
+           STATUS CARDS
+           ================================================= -->
+
+      <div class="dev-grid-4">
+
+
+        <!-- Scanner Health -->
+
+        <div class="dev-stat-card">
+
+          <div class="dev-stat-label">
+            Scanner Health
+          </div>
+
+          <div class="dev-stat-value">
+            80%
+          </div>
+
+          <div class="dev-stat-description">
+            Website scanner health
+          </div>
+
+        </div>
+
+
+        <!-- Website Scanner -->
+
+        <div class="dev-stat-card">
+
+          <div class="dev-stat-label">
+            Website Scanner
+          </div>
+
+          <div class="dev-stat-value">
+
+            <span
+              class="dev-stat-icon dev-icon dev-icon-scanner"
+              aria-hidden="true"
+            ></span>
+
+          </div>
+
+          <div class="dev-stat-description">
+            Scanner available
+          </div>
+
+        </div>
+
+
+        <!-- Tester Bot -->
+
+        <div class="dev-stat-card">
+
+          <div class="dev-stat-label">
+            Tester Bot
+          </div>
+
+          <div class="dev-stat-value">
+
+            <span
+              class="dev-stat-icon dev-icon dev-icon-ai"
+              aria-hidden="true"
+            ></span>
+
+          </div>
+
+          <div class="dev-stat-description">
+            Automated website testing
+          </div>
+
+        </div>
+
+
+        <!-- Security -->
+
+        <div class="dev-stat-card">
+
+          <div class="dev-stat-label">
+            Security Center
+          </div>
+
+          <div class="dev-stat-value">
+
+            <span
+              class="dev-stat-icon dev-icon dev-icon-security"
+              aria-hidden="true"
+            ></span>
+
+          </div>
+
+          <div class="dev-stat-description">
+            Developer security
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- =================================================
+           MAIN CARDS
+           ================================================= -->
+
+      <div
+        class="dev-grid-2"
+        style="margin-top: 18px;"
+      >
+
+
+        <!-- =================================================
+             SYSTEM STATUS
+             ================================================= -->
+
+        <div class="dev-card">
+
+
+          <div class="dev-card-header">
+
+            <div class="dev-card-heading">
+
+              <h2 class="dev-card-title">
+                System Status
+              </h2>
+
+              <p class="dev-card-description">
+                Current developer system status
+              </p>
+
+            </div>
+
+
+            <span class="dev-status online">
+
+              <span class="dev-status-dot"></span>
+
+              Online
+
+            </span>
+
+          </div>
+
+
+          <div class="dev-card-body">
+
+            <div class="dev-list">
+
+
+              <!-- Scanner -->
+
+              <div class="dev-list-item">
+
+                <div class="dev-list-left">
+
+                  <div class="dev-list-icon">
+
+                    <span
+                      class="dev-icon dev-icon-scanner"
+                      aria-hidden="true"
+                    ></span>
+
+                  </div>
+
+
+                  <div>
+
+                    <div class="dev-list-title">
+                      Website Scanner
+                    </div>
+
+                    <div class="dev-list-description">
+                      Project scanning system
+                    </div>
+
+                  </div>
+
+                </div>
+
+
+                <span class="dev-status online">
+
+                  <span class="dev-status-dot"></span>
+
+                  Ready
+
+                </span>
+
+              </div>
+
+
+
+              <!-- Tester Bot -->
+
+              <div class="dev-list-item">
+
+                <div class="dev-list-left">
+
+                  <div class="dev-list-icon">
+
+                    <span
+                      class="dev-icon dev-icon-ai"
+                      aria-hidden="true"
+                    ></span>
+
+                  </div>
+
+
+                  <div>
+
+                    <div class="dev-list-title">
+                      Tester Bot
+                    </div>
+
+                    <div class="dev-list-description">
+                      Automated testing tools
+                    </div>
+
+                  </div>
+
+                </div>
+
+
+                <span class="dev-status online">
+
+                  <span class="dev-status-dot"></span>
+
+                  Ready
+
+                </span>
+
+              </div>
+
+
+
+              <!-- Security -->
+
+              <div class="dev-list-item">
+
+                <div class="dev-list-left">
+
+                  <div class="dev-list-icon">
+
+                    <span
+                      class="dev-icon dev-icon-security"
+                      aria-hidden="true"
+                    ></span>
+
+                  </div>
+
+
+                  <div>
+
+                    <div class="dev-list-title">
+                      Security Center
+                    </div>
+
+                    <div class="dev-list-description">
+                      Developer security controls
+                    </div>
+
+                  </div>
+
+                </div>
+
+
+                <span class="dev-status online">
+
+                  <span class="dev-status-dot"></span>
+
+                  Protected
+
+                </span>
+
+              </div>
+
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             QUICK ACTIONS
+             ================================================= -->
+
+        <div class="dev-card">
+
+
+          <div class="dev-card-header">
+
+            <div class="dev-card-heading">
+
+              <h2 class="dev-card-title">
+                Quick Actions
+              </h2>
+
+              <p class="dev-card-description">
+                Common developer tools
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="dev-card-body">
+
+            <div class="dev-list">
+
+
+              <!-- Scanner -->
+
+              <div class="dev-list-item">
+
+                <div class="dev-list-left">
+
+                  <div class="dev-list-icon">
+
+                    <span
+                      class="dev-icon dev-icon-scanner"
+                      aria-hidden="true"
+                    ></span>
+
+                  </div>
+
+
+                  <div>
+
+                    <div class="dev-list-title">
+                      Website Scanner
+                    </div>
+
+                    <div class="dev-list-description">
+                      Scan the website
+                    </div>
+
+                  </div>
+
+                </div>
+
+
+                <a
+                  href="/Official-East-smp-website/developer-scanner/"
+                  class="dev-button"
+                >
+                  Open
+                </a>
+
+              </div>
+
+
+
+              <!-- Tester Bot -->
+
+              <div class="dev-list-item">
+
+                <div class="dev-list-left">
+
+                  <div class="dev-list-icon">
+
+                    <span
+                      class="dev-icon dev-icon-ai"
+                      aria-hidden="true"
+                    ></span>
+
+                  </div>
+
+
+                  <div>
+
+                    <div class="dev-list-title">
+                      Tester Bot
+                    </div>
+
+                    <div class="dev-list-description">
+                      Run website tests
+                    </div>
+
+                  </div>
+
+                </div>
+
+
+                <a
+                  href="/Official-East-smp-website/beta-tester-bot/"
+                  class="dev-button"
+                >
+                  Open
+                </a>
+
+              </div>
+
+
+
+              <!-- Logs -->
+
+              <div class="dev-list-item">
+
+                <div class="dev-list-left">
+
+                  <div class="dev-list-icon">
+
+                    <span
+                      class="dev-icon dev-icon-logs"
+                      aria-hidden="true"
+                    ></span>
+
+                  </div>
+
+
+                  <div>
+
+                    <div class="dev-list-title">
+                      Logs
+                    </div>
+
+                    <div class="dev-list-description">
+                      View developer activity
+                    </div>
+
+                  </div>
+
+                </div>
+
+
+                <a
+                  href="/Official-East-smp-website/logs/"
+                  class="dev-button"
+                >
+                  Open
+                </a>
+
+              </div>
+
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- =================================================
+           DEVELOPER INFORMATION
+           ================================================= -->
+
+      <div
+        class="dev-card"
+        style="margin-top: 18px;"
+      >
+
+
+        <div class="dev-card-header">
+
+          <div class="dev-card-heading">
+
+            <h2 class="dev-card-title">
+              Developer Panel
+            </h2>
+
+            <p class="dev-card-description">
+              East SMP development tools and controls
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="dev-card-body">
+
+          <div class="dev-info-grid">
+
+
+            <!-- Left -->
+
+            <div>
+
+              <div class="dev-info-row">
+
+                <span class="dev-info-label">
+                  Panel Status
+                </span>
+
+                <span class="dev-info-value">
+                  Online
+                </span>
+
+              </div>
+
+
+              <div class="dev-info-row">
+
+                <span class="dev-info-label">
+                  Scanner Health
+                </span>
+
+                <span class="dev-info-value">
+                  80%
+                </span>
+
+              </div>
+
+
+              <div class="dev-info-row">
+
+                <span class="dev-info-label">
+                  Environment
+                </span>
+
+                <span class="dev-info-value">
+                  Development
+                </span>
+
+              </div>
+
+            </div>
+
+
+            <!-- Right -->
+
+            <div>
+
+              <div class="dev-info-row">
+
+                <span class="dev-info-label">
+                  Scanner
+                </span>
+
+                <span class="dev-info-value">
+                  Available
+                </span>
+
+              </div>
+
+
+              <div class="dev-info-row">
+
+                <span class="dev-info-label">
+                  Tester Bot
+                </span>
+
+                <span class="dev-info-value">
+                  Available
+                </span>
+
+              </div>
+
+
+              <div class="dev-info-row">
+
+                <span class="dev-info-label">
+                  Security
+                </span>
+
+                <span class="dev-info-value">
+                  Protected
+                </span>
+
+              </div>
+
+            </div>
+
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+    </section>
+
+  </main>
+
+</div>
+
+<script>
+  window.addEventListener("load", () => {
+    const loadingScreen =
+      document.getElementById("dev-loading");
+
+    const loadingStatus =
+      document.getElementById("dev-loading-status");
+
+    if (!loadingScreen) return;
+
+    if (loadingStatus) {
+      loadingStatus.textContent =
+        "LOADING DASHBOARD...";
+    }
+
+    window.setTimeout(() => {
+
+      if (loadingStatus) {
+        loadingStatus.textContent =
+          "READY";
+      }
+
+      window.setTimeout(() => {
+        loadingScreen.classList .add("hidden");
+      }, 250);
+
+    }, 650);
+  });
+</script>
+

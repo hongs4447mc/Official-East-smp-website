@@ -1,5 +1,6 @@
 ---
 import "../styles/styles.css";
+import "../styles/rules.css";
 
 import { ClientRouter } from "astro:transitions";
 
@@ -51,32 +52,26 @@ const disableTransitions =
 
 
 
-<div id="loading-screen">
 
+<div id="loading-screen">
 
 	<h1>
 		East SMP
 	</h1>
 
 
-
 	<div class="loading-bar">
-
 
 		<div class="loading-progress"></div>
 
-
 	</div>
-
-
 
 	<p id="loading-percent">
 		0%
 	</p>
 
-
-
 	<div id="loading-list"></div>
+
 
 
 
@@ -94,16 +89,17 @@ const disableTransitions =
 
 
 
-<a 
-class="discord-button" 
-href="https://discord.gg/uSeBnAh5Px" 
-target="_blank"
->
 
-	Join Discord
+	<a 
+	class="discord-button" 
+	href="https://discord.gg/uSeBnAh5Px" 
+	target="_blank"
+	>
 
-</a>
+		Join Discord
 
+	</a>
+ 
 
 
 
@@ -212,6 +208,7 @@ document.addEventListener(
 
 <script type="module">
 	import "../scripts/eastsmp.js";
+	import "../scripts/skipLoading.js";
 </script>
 
 
